@@ -94,6 +94,25 @@ export const ButtonEditProfile = styled.button`
   border: none;
 
   &:hover {
-    background-color: #454545
+    background-color: #454545;
   }
+`;
+
+export const ContainerPics = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  flex-direction: column;
+`;
+
+export const IconNoPosts = styled.img`
+  margin-bottom: 0;
+  width: 80px;
+`;
+
+export const TitleNoPosts = styled.p`
+  font-size: 24px;
+  color: #d1d1d1;
+  text-transform: uppercase;
 `;

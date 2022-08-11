@@ -13,9 +13,13 @@ import {
   ContainerButtonsProfile,
   ButtonSaves,
   ButtonEditProfile,
+  ContainerPics,
+  IconNoPosts,
+  TitleNoPosts,
 } from "./styles";
 import ProfileCR7 from "../../assets/profile.jpg";
 import Saves from "../../assets/saves.svg";
+import NoPost from "../../assets/noPostsYet.svg";
 
 const ProfileDiv = () => {
   return (
@@ -48,6 +52,10 @@ const ProfileDiv = () => {
             <ButtonSaves src={Saves}></ButtonSaves>
             <ButtonEditProfile>Edit Profile</ButtonEditProfile>
           </ContainerButtonsProfile>
+          <ContainerPics>
+            <IconNoPosts src={NoPost}></IconNoPosts>
+            <TitleNoPosts>No posts yet</TitleNoPosts>
+          </ContainerPics>
         </Container>
       </AlignAllCenter>
     </>

@@ -11,7 +11,7 @@ export const Container = styled.nav`
 `;
 
 export const LinkHome = styled(Link)`
-  padding: 8px 20px;
+  padding: 8px 40px;
   margin: 8px;
   color: #d1d1d1;
   text-decoration: none;
@@ -28,7 +28,7 @@ export const ContainerIcons = styled.div`
   justify-content: center;
   align-items: center;
   width: fit-content;
-  margin: 20px;
+  margin: 20px 40px;
 `;
 
 export const DirectIcon = styled.img`
