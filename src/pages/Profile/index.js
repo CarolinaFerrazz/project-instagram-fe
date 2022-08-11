@@ -1,7 +1,12 @@
 import {} from "./styles";
+import ProfileDiv from "../../components/ProfileDiv";
 
 const Profile = () => {
-  return <></>;
+  return (
+    <>
+      <ProfileDiv />
+    </>
+  );
 };
 
 export default Profile;

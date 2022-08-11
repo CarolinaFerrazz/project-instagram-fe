@@ -11,6 +11,7 @@ import {
   ContainerButtonRegister,
   TextRegister,
   ButtonRegister,
+  LinkRegister,
 } from "./styles";
 
 const Login = () => {
@@ -40,7 +41,7 @@ const Login = () => {
         <ContainerRegister>
           <ContainerButtonRegister>
             <TextRegister>Do not have an account?</TextRegister>
-            <ButtonRegister>Register</ButtonRegister>
+            <ButtonRegister><LinkRegister title="Register" href="/register">Register</LinkRegister></ButtonRegister>
           </ContainerButtonRegister>
         </ContainerRegister>
     </>

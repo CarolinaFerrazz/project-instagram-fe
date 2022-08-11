@@ -13,6 +13,7 @@ import {
   ContainerButtonLogin,
   TextLogin,
   ButtonLogin,
+  LinkLogin,
 } from "./styles";
 
 const Register = () => {
@@ -64,7 +65,7 @@ const Register = () => {
       <ContainerLogin>
         <ContainerButtonLogin>
           <TextLogin>Have an account?</TextLogin>
-          <ButtonLogin>Login</ButtonLogin>
+          <ButtonLogin><LinkLogin title="Login" href="/login">Login</LinkLogin></ButtonLogin>
         </ContainerButtonLogin>
       </ContainerLogin>
     </>

@@ -14,11 +14,12 @@ export const LinkHome = styled(Link)`
   padding: 8px 20px;
   margin: 8px;
   color: #d1d1d1;
-  border: none;
+  text-decoration: none;
+  font-size: 28px;
 
   &:hover {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.3);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.1);
   }
 `;
 
@@ -60,4 +61,4 @@ export const LinksHeader = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;

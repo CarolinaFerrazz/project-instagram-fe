@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const ContainerRegister = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 170px;
+  margin-top: 28px;
 `;
 
 export const Container = styled.div`
   border-radius: 16px;
   background-color: #303030;
-  margin: 8px 0px;
-  padding: 20px 98px;
+  margin: 40px 0px;
+  padding: 20px 100px;
   min-width: 40%;
 `;
 
@@ -33,7 +33,7 @@ export const ContainerFormRegister = styled.div`
 `;
 
 export const InputRegister = styled.input`
-  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.2));
   border: none;
   margin-bottom: 10px;
   outline: none;
@@ -89,7 +89,7 @@ export const ContainerButtonLogin = styled.div`
   border-radius: 16px;
   background-color: #303030;
   padding: 20px 100px;
-  min-width: 50%;
+  min-width: 44%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,6 +107,15 @@ export const ButtonLogin = styled.button`
   background: none;
   border: none;
   padding-left: 8px;
+`;
+
+export const LinkLogin = styled.a`
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d1d1d1;
+  text-decoration: none;
 
   &:hover {
     color: #ffff;

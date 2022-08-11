@@ -28,7 +28,7 @@ export const ContainerFormLogin = styled.div`
 `;
 
 export const InputLogin = styled.input`
-  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.2));
   border: none;
   margin-bottom: 10px;
   outline: none;
@@ -93,13 +93,17 @@ export const TextRegister = styled.a`
 `;
 
 export const ButtonRegister = styled.button`
-  color: #d1d1d1;
-  font-size: 20px;
   background: none;
   border: none;
   padding-left: 8px;
+`;
+
+export const LinkRegister = styled.a`
+  color: #d1d1d1;
+  font-size: 20px;
+  text-decoration: none;
 
   &:hover {
-    color: #ffff
+    color: #ffff;
   }
 `;

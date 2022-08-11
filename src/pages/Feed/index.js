@@ -1,7 +1,12 @@
 import {} from "./styles";
+import Header from "../../components/Header";
 
 const Feed = () => {
-  return <></>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default Feed;
