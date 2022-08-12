@@ -6,4 +6,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #202020;
   color: #d1d1d1;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#root {
+  min-width: 100%;
+  min-height: 100%;
 }

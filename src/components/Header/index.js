@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <>
       <Container>
-        <LinkHome title="Home Page" to="/">
+        <LinkHome title="Home Page" to="/feed">
           Fake Instagram
         </LinkHome>
         <ContainerIcons>

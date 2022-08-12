@@ -116,3 +116,16 @@ export const TitleNoPosts = styled.p`
   color: #d1d1d1;
   text-transform: uppercase;
 `;
+
+export const LinksPages = styled.a`
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d1d1d1;
+  text-decoration: none;
+
+  &:hover {
+    color: #ffff;
+  }
+`;

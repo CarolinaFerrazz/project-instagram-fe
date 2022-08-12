@@ -16,6 +16,7 @@ import {
   ContainerPics,
   IconNoPosts,
   TitleNoPosts,
+  LinksPages,
 } from "./styles";
 import ProfileCR7 from "../../assets/profile.jpg";
 import Saves from "../../assets/saves.svg";
@@ -49,11 +50,17 @@ const ProfileDiv = () => {
             decricao a falar sobre a pesoa vla bla bla kwdedr8fr4hfurfrbnfnv
           </DescriptionProfile>
           <ContainerButtonsProfile>
-            <ButtonSaves src={Saves}></ButtonSaves>
-            <ButtonEditProfile>Edit Profile</ButtonEditProfile>
+            <LinksPages href="/saves" title="Saves">
+              <ButtonSaves src={Saves} alt="icon"></ButtonSaves>
+            </LinksPages>
+            <ButtonEditProfile>
+              <LinksPages href="/editprofile" title="Saves">
+                Edit Profile
+              </LinksPages>
+            </ButtonEditProfile>
           </ContainerButtonsProfile>
           <ContainerPics>
-            <IconNoPosts src={NoPost}></IconNoPosts>
+            <IconNoPosts src={NoPost} alt="icon"></IconNoPosts>
             <TitleNoPosts>No posts yet</TitleNoPosts>
           </ContainerPics>
         </Container>

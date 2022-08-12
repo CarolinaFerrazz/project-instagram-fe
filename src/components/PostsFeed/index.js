@@ -20,10 +20,10 @@ import {
   AddNewComment,
 } from "./styles";
 import Post from "../../assets/profile.jpg";
-import IconLikeEnabled from "../../assets/likeEnabled.svg";
+// import IconLikeEnabled from "../../assets/likeEnabled.svg";
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
 import IconSaveEnabled from "../../assets/saveDisabled.svg";
-import IconSaveDisabled from "../../assets/saveDisabled.svg";
+// import IconSaveDisabled from "../../assets/saveDisabled.svg";
 import IconComment from "../../assets/comment.svg";
 
 const PostsFeed = () => {

@@ -7,6 +7,8 @@ import Profile from "../pages/Profile";
 import Settings from "../pages/Settings";
 import EditProfile from "../pages/EditProfile";
 import Feed from "../pages/Feed";
+import Saves from "../pages/Saves";
+import Direct from "../pages/Direct";
 
 const Router = () => {
   return (
@@ -20,6 +22,8 @@ const Router = () => {
         <Route path="settings" element={<Settings />} />
         <Route path="editprofile" element={<EditProfile />} />
         <Route path="feed" element={<Feed />} />
+        <Route path="saves" element={<Saves />} />
+        <Route path="direct" element={<Direct />} />
       </Routes>
     </BrowserRouter>
   );
