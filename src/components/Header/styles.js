@@ -49,7 +49,6 @@ export const FeedIcon = styled.img`
   }
 `;
 
-
 export const LinksHeader = styled.a`
   text-align: center;
   display: flex;

@@ -1,3 +1,5 @@
+import Footer from "../../components/Footer";
+import LoginDiv from "../../components/LoginDiv";
 import {
   ContainerRegister,
   Container,
@@ -9,7 +11,6 @@ import {
   ButtonRegister,
   ContainerTextAboutRegister,
   TextAboutRegister,
-  ContainerLogin,
   ContainerButtonLogin,
   TextLogin,
   ButtonLogin,
@@ -19,6 +20,7 @@ import {
 const Register = () => {
   return (
     <>
+      <LoginDiv />
       <ContainerRegister>
         <Container>
           <TitleRegister>Fake Instagram</TitleRegister>
@@ -60,14 +62,17 @@ const Register = () => {
           <ContainerButtonRegister>
             <ButtonRegister>Next</ButtonRegister>
           </ContainerButtonRegister>
+          <ContainerButtonLogin>
+            <TextLogin>Have an account?</TextLogin>
+            <ButtonLogin>
+              <LinkLogin title="Login" href="/login">
+                Login
+              </LinkLogin>
+            </ButtonLogin>
+          </ContainerButtonLogin>
         </Container>
       </ContainerRegister>
-      <ContainerLogin>
-        <ContainerButtonLogin>
-          <TextLogin>Have an account?</TextLogin>
-          <ButtonLogin><LinkLogin title="Login" href="/login">Login</LinkLogin></ButtonLogin>
-        </ContainerButtonLogin>
-      </ContainerLogin>
+      <Footer />
     </>
   );
 };

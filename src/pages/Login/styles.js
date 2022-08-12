@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerLogin = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 140px;
+  margin: 60px 0;
 `;
 
 export const Container = styled.div`
@@ -35,12 +35,12 @@ export const InputLogin = styled.input`
   box-sizing: border-box;
   font-size: 18px;
   padding: 8px 16px;
-  color: #8d8d8d;
-  background: #363636;
+  color: #ffff;
+  background: #74B3CE;
   border-radius: 16px;
 
   &::placeholder {
-    color: #8d8d8d;
+    color: #ffff;
     justify-content: center;
   }
 `;
@@ -51,10 +51,10 @@ export const ContainerButtonLogin = styled.div`
 `;
 
 export const ButtonLogin = styled.button`
-  color: #8d8d8d;
+  color: #ffff;
   margin-top: 8px;
   padding: 8px 34px;
-  background: #363636;
+  background: #508991;
   border-radius: 16px;
   font-size: 16px;
   border: none;
@@ -69,12 +69,6 @@ export const TextForgottenPassw = styled.p`
   color: #8d8d8d;
   font-size: 16px;
   text-align: center;
-`;
-
-export const ContainerRegister = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 140px;
 `;
 
 export const ContainerButtonRegister = styled.div`
@@ -100,7 +94,7 @@ export const ButtonRegister = styled.button`
 `;
 
 export const LinkRegister = styled.a`
-  color: #d1d1d1;
+  color: #508991;
   font-size: 20px;
   text-decoration: none;
 

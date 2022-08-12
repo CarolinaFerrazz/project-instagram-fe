@@ -11,6 +11,7 @@ export const Container = styled.div`
   border-top: solid 1px #404040;
   border-bottom: solid 1px #404040;
   bottom: 0;
+
 `;
 
 export const TextFooter = styled.p`

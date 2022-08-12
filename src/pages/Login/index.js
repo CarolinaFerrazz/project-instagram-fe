@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer";
+import LoginDiv from "../../components/LoginDiv";
 import {
   ContainerLogin,
   Container,
@@ -8,7 +9,6 @@ import {
   ContainerButtonLogin,
   ButtonLogin,
   TextForgottenPassw,
-  ContainerRegister,
   ContainerButtonRegister,
   TextRegister,
   ButtonRegister,
@@ -18,6 +18,7 @@ import {
 const Login = () => {
   return (
     <>
+    <LoginDiv />
       <ContainerLogin>
         <Container>
           <TitleLogin>Fake Instagram</TitleLogin>
@@ -37,10 +38,7 @@ const Login = () => {
             <ButtonLogin>Login</ButtonLogin>
           </ContainerButtonLogin>
           <TextForgottenPassw>Fogotten your password?</TextForgottenPassw>
-        </Container>
-      </ContainerLogin>
-      <ContainerRegister>
-        <ContainerButtonRegister>
+          <ContainerButtonRegister>
           <TextRegister>Do not have an account?</TextRegister>
           <ButtonRegister>
             <LinkRegister title="Register" href="/register">
@@ -48,7 +46,8 @@ const Login = () => {
             </LinkRegister>
           </ButtonRegister>
         </ContainerButtonRegister>
-      </ContainerRegister>
+        </Container>
+      </ContainerLogin>
       <Footer />
     </>
   );

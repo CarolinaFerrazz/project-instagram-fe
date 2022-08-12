@@ -8,7 +8,6 @@ export const AlignAllCenter = styled.div`
 
 export const Container = styled.div`
   margin: 20px 8px;
-  flex-wrap: wrap;
   border: solid 1px #404040;
   display: flex;
   flex-direction: column;
@@ -30,6 +29,7 @@ export const NameUser = styled.p`
 export const ImagePost = styled.img`
   max-width: 500px;
   margin-top: 4px;
+  flex-wrap: wrap;
 `;
 
 export const ContainerIconsPost = styled.div`

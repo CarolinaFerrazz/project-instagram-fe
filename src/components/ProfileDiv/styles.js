@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const UserName = styled.p`
   color: #ffffff;
   font-size: 30px;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 `;
 
 export const ContainerImageAndNumbers = styled.div`
@@ -60,7 +60,7 @@ export const NameProfile = styled.p`
   color: #fff;
   font-size: 24px;
   margin: 0;
-  margin-top: 8px;
+  margin-top: 20px;
 `;
 
 export const DescriptionProfile = styled.p`
@@ -87,14 +87,14 @@ export const ButtonSaves = styled.img`
 
 export const ButtonEditProfile = styled.button`
   padding: 8px 20px;
-  min-width: 94%;
-  background: #404040;
+  min-width: 92%;
+  background: #74B3CE;
   border-radius: 16px;
   color: #fff;
   border: none;
 
   &:hover {
-    background-color: #454545;
+    color: #fff;
   }
 `;
 

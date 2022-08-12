@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerRegister = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 28px;
+  margin: 60px 0; 
 `;
 
 export const Container = styled.div`
@@ -23,6 +23,7 @@ export const TitleRegister = styled.p`
 export const TextRegister = styled.p`
   font-size: 22px;
   color: #8d8d8d;
+  text-align: center;
 `;
 
 export const ContainerFormRegister = styled.div`
@@ -40,12 +41,12 @@ export const InputRegister = styled.input`
   box-sizing: border-box;
   font-size: 18px;
   padding: 8px 16px;
-  color: #8d8d8d;
-  background: #363636;
+  color: #fff;
+  background: #74B3CE;
   border-radius: 16px;
 
   &::placeholder {
-    color: #8d8d8d;
+    color: #fff;
     justify-content: center;
   }
 `;
@@ -56,10 +57,10 @@ export const ContainerButtonRegister = styled.div`
 `;
 
 export const ButtonRegister = styled.button`
-  color: #8d8d8d;
+  color: #fff;
   margin-top: 8px;
   padding: 8px 34px;
-  background: #363636;
+  background: #508991;
   border-radius: 16px;
   font-size: 16px;
   border: none;
@@ -80,11 +81,6 @@ export const TextAboutRegister = styled.p`
   font-size: 14px;
 `;
 
-export const ContainerLogin = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
 export const ContainerButtonLogin = styled.div`
   border-radius: 16px;
   background-color: #303030;
@@ -102,7 +98,6 @@ export const TextLogin = styled.a`
 `;
 
 export const ButtonLogin = styled.button`
-  color: #d1d1d1;
   font-size: 20px;
   background: none;
   border: none;
@@ -114,7 +109,7 @@ export const LinkLogin = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #d1d1d1;
+  color: #74B3CE;
   text-decoration: none;
 
   &:hover {

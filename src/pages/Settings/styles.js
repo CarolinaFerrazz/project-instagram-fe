@@ -3,24 +3,23 @@ import styled from "styled-components";
 export const AllAlignCenter = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 140px;
 `;
 
 export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #282828;
-  min-width: 70%;
-  margin-top: 100px;
   border-radius: 16px;
+  background-color: #303030;
+  margin: 40px 0px;
+  padding: 20px 100px;
+  min-width: 40%;
 `;
 
 export const TitleInstagram = styled.p`
   color: #d1d1d1;
   font-size: 40px;
   margin-bottom: 8px;
+  text-align: center;
 `;
 
 export const TitleSettings = styled.p`
@@ -28,12 +27,14 @@ export const TitleSettings = styled.p`
   font-size: 24px;
   margin-top: 0;
   text-transform: uppercase;
+  text-align: center;
 `;
 
 export const ContainerFormSettings = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 20px;
 `;
 
 export const InputSettings = styled.input`
@@ -42,12 +43,11 @@ export const InputSettings = styled.input`
   margin-bottom: 10px;
   outline: none;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 18px;
   padding: 8px 16px;
   color: #8d8d8d;
   background: #363636;
   border-radius: 16px;
-  min-width: 800px;
 
   &::placeholder {
     color: #8d8d8d;

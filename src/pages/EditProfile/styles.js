@@ -4,6 +4,7 @@ export const AllAlignCenter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 40px 0%;
 `;
 
 export const Container = styled.div`
@@ -11,10 +12,10 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
-  margin: 80px 0;
-  width: 500px;
-  background-color: #282828;
-  padding: 40px 80px;
+  margin: 40px 0;
+  min-width: 40%;
+  background-color: #303030;
+  padding: 20px 100px;
   border-radius: 16px;
 `;
 
