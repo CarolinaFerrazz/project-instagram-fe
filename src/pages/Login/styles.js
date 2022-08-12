@@ -74,6 +74,7 @@ export const TextForgottenPassw = styled.p`
 export const ContainerRegister = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 140px;
 `;
 
 export const ContainerButtonRegister = styled.div`

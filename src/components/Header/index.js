@@ -1,7 +1,7 @@
 // import { useNavigate } from "react-router-dom";
+import DropdownProfile from "../DropdownProfile";
 import {
   Container,
-  ProfileIcon,
   FeedIcon,
   LinkHome,
   DirectIcon,
@@ -10,7 +10,6 @@ import {
 } from "./styles";
 import IconDirect from "../../assets/direct.svg";
 import IconFeed from "../../assets/feed.svg";
-import IconProfile from "../../assets/profile.svg";
 
 const Header = () => {
   return (
@@ -26,9 +25,7 @@ const Header = () => {
           <LinksHeader title="Messages" href="/direct">
             <DirectIcon src={IconDirect} alt="Messages icon"></DirectIcon>
           </LinksHeader>
-          <LinksHeader title="Profile" href="/profile">
-            <ProfileIcon src={IconProfile} alt="Profile icon"></ProfileIcon>
-          </LinksHeader>
+            <DropdownProfile/>
         </ContainerIcons>
       </Container>
     </>

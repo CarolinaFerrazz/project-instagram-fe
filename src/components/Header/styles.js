@@ -49,12 +49,6 @@ export const FeedIcon = styled.img`
   }
 `;
 
-export const ProfileIcon = styled.img`
-  &:hover {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.3);
-  }
-`;
 
 export const LinksHeader = styled.a`
   text-align: center;
