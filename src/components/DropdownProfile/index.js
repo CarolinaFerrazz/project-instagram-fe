@@ -5,10 +5,20 @@
 //   ContainerLinksMenu,
 //   LinksMenu,
 // } from "./styles";
+import { useNavigate } from "react-router-dom";
 import IconProfile from "../../assets/profile.svg";
+import useAuth from "../../hooks/useAuth";
 import "./index.css";
 
 const DropdownProfile = () => {
+  const navigate = useNavigate();
+  const { setAuth } = useAuth();
+  function logout() {
+    localStorage.removeItem('token')
+    setAuth({});
+    navigate("/")
+  }
+
   return (
     <>
       {/* <Dropdown>
@@ -21,14 +31,14 @@ const DropdownProfile = () => {
           <LinksMenu to="/login">Logout</LinksMenu>
         </ContainerLinksMenu>
       </Dropdown> */}
-      <div class="dropdown">
-        <button class="dropButton">
+      <div className="dropdown">
+        <button className="dropButton">
           <img src={IconProfile}></img>
         </button>
-        <div class="dropdown-content">
+        <div className="dropdown-content">
           <a href="/profile">Profile</a>
           <a href="/settings">Settings</a>
-          <a href="/login">Logout</a>
+          <a href="/" onClick={logout}>Logout</a>
         </div>
       </div>
     </>

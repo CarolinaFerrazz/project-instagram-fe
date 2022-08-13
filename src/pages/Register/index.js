@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import RegisterUser from "../../services/RegisterUser";
 import {
   ContainerRegister,
   Container,
@@ -17,6 +20,38 @@ import {
 } from "./styles";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [fail, setFail] = useState(false);
+  async function registerUser() {
+    if (email === "" || userName === "" || password === "" || fullName === "") {
+      setFail(true);
+      return;
+    }
+    const userToRegister = {
+      name: fullName,
+      username: userName,
+      email: email,
+      password: password
+    }
+
+    const user = await RegisterUser(userToRegister);
+    if (user === null) {
+      setFail(true);
+      console.log("fail")
+    } else {
+      setFail(false);
+
+      console.log("ok")
+      navigate("/login");
+    }
+
+  }
+
+
   return (
     <>
       <ContainerRegister>
@@ -27,24 +62,32 @@ const Register = () => {
           </TextRegister>
           <ContainerFormRegister>
             <InputRegister
-              placeholder="Mobile number or email address"
-              name="mobileOrEmail"
+              placeholder="email address"
+              name="Email"
               type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             ></InputRegister>
             <InputRegister
               placeholder="Full name"
               name="fullName"
               type="text"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
             ></InputRegister>
             <InputRegister
               placeholder="Username"
               name="username"
               type="text"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
             ></InputRegister>
             <InputRegister
               placeholder="Password"
               name="password"
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             ></InputRegister>
           </ContainerFormRegister>
 
@@ -58,7 +101,7 @@ const Register = () => {
             </TextAboutRegister>
           </ContainerTextAboutRegister>
           <ContainerButtonRegister>
-            <ButtonRegister>Next</ButtonRegister>
+            <ButtonRegister onClick={registerUser}>Next</ButtonRegister>
           </ContainerButtonRegister>
         </Container>
       </ContainerRegister>
