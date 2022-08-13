@@ -1,4 +1,7 @@
+import { useState } from "react";
 import Footer from "../../components/Footer";
+import useAuth from "../../hooks/useAuth";
+import LoginUser from "../../services/LoginUser";
 import {
   ContainerLogin,
   Container,
@@ -15,7 +18,36 @@ import {
   LinkRegister,
 } from "./styles";
 
+
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { setAuth } = useAuth()
+  async function handleClick() {
+    const credentials = {
+      email: email,
+      password: password
+    }
+    const token = await LoginUser(credentials);
+    if (token !== null) {
+      setAuth({ email, token })
+      setEmail("");
+      setPassword("")
+    } else {
+      setAuth({})
+    }
+
+
+    /*     const response = await axios.get("/api/v1/post", {
+      headers: {
+        Authorization: token
+      }
+    }); */
+
+  }
+
+
+
   return (
     <>
       <ContainerLogin>
@@ -23,18 +55,22 @@ const Login = () => {
           <TitleLogin>Fake Instagram</TitleLogin>
           <ContainerFormLogin>
             <InputLogin
-              placeholder="Phone number, username or email address"
-              name="name"
+              placeholder="email address"
+              name="email"
               type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             ></InputLogin>
             <InputLogin
               placeholder="Password"
               name="password"
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             ></InputLogin>
           </ContainerFormLogin>
           <ContainerButtonLogin>
-            <ButtonLogin>Login</ButtonLogin>
+            <ButtonLogin onClick={handleClick}>Login</ButtonLogin>
           </ContainerButtonLogin>
           <TextForgottenPassw>Fogotten your password?</TextForgottenPassw>
         </Container>
