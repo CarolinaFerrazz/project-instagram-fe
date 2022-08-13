@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import Home from "../pages/Home";
-import Profile from "../pages/Profile";
-import Settings from "../pages/Settings";
-import EditProfile from "../pages/EditProfile";
-import Feed from "../pages/Feed";
-import Saves from "../pages/Saves";
-import Direct from "../pages/Direct";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
+import EditProfile from "./pages/EditProfile";
+import Feed from "./pages/Feed";
+import Saves from "./pages/Saves";
+import Direct from "./pages/Direct";
 
 function App() {
   return (

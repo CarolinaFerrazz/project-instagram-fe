@@ -8,7 +8,7 @@ export const AlignAllCenter = styled.div`
 
 export const Container = styled.div`
   margin: 20px 8px;
-  border: solid 1px #404040;
+  border: solid 1px #74B3CE;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -18,8 +18,8 @@ export const ContainerNameUser = styled.div``;
 
 export const NameUser = styled.p`
   font-size: 24px;
-  color: #fff;
-  border-bottom: solid 1px #404040;
+  color: #74B3CE;
+  border-bottom: solid 1px #74B3CE;
   margin: 0;
   margin-top: 16px;
   padding-left: 20px;
@@ -92,7 +92,7 @@ export const ContainerNameAndDescription = styled.div`
 `;
 
 export const NameUserPost = styled.p`
-  color: #fff;
+  color: #74B3CE;
   font-size: 16px;
   margin-top: 0;
   font-weight: 700;
@@ -120,8 +120,14 @@ export const TimePost = styled.p`
 `;
 
 export const HrComment = styled.hr`
-  color: #404040;
+  color: #74B3CE;
   width: 100%;
+`;
+
+export const ContainerNewCommentAndPublish = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const AddNewComment = styled.p`
@@ -129,4 +135,12 @@ export const AddNewComment = styled.p`
   font-size: 16px;
   margin: 12px 0;
   margin-left: 20px;
+`;
+
+export const ButtonPublish = styled.button`
+  color: #74B3CE;
+  font-size: 12px;
+  border: none;
+  background: none;
+  margin-right: 20px;
 `;

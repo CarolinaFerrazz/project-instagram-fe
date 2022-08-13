@@ -17,7 +17,9 @@ import {
   AllComents,
   TimePost,
   HrComment,
+  ContainerNewCommentAndPublish,
   AddNewComment,
+  ButtonPublish,
 } from "./styles";
 import Post from "../../assets/profile.jpg";
 // import IconLikeEnabled from "../../assets/likeEnabled.svg";
@@ -43,7 +45,7 @@ const PostsFeed = () => {
             <IconSavePost src={IconSaveEnabled} />
           </ContainerIconsPost>
           <ContainerLikes>
-          <NumberOfLikes>102</NumberOfLikes>
+            <NumberOfLikes>102</NumberOfLikes>
             <TextLikes>likes</TextLikes>
           </ContainerLikes>
           <ContainerNameAndDescription>
@@ -52,8 +54,11 @@ const PostsFeed = () => {
           </ContainerNameAndDescription>
           <AllComents>ver todos os comentarios</AllComents>
           <TimePost>ha 10 horas</TimePost>
-          <HrComment/>
+          <HrComment />
+          <ContainerNewCommentAndPublish>
             <AddNewComment>adicionar comentario</AddNewComment>
+            <ButtonPublish>publish</ButtonPublish>
+          </ContainerNewCommentAndPublish>
         </Container>
       </AlignAllCenter>
     </>

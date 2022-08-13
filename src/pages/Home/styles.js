@@ -19,7 +19,7 @@ export const ContainerHeader = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 1px #74B3CE;
+  border-bottom: solid 1px #404040;
 `;
 
 export const LinkHome = styled(Link)`

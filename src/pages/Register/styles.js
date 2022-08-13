@@ -41,12 +41,14 @@ export const InputRegister = styled.input`
   box-sizing: border-box;
   font-size: 18px;
   padding: 8px 16px;
-  color: #fff;
+  color: #202020;
   background: #74B3CE;
   border-radius: 16px;
+  opacity: 60%;
 
   &::placeholder {
-    color: #fff;
+    opacity: 100%;
+    color: #404040;
     justify-content: center;
   }
 `;
@@ -109,7 +111,7 @@ export const LinkLogin = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #74B3CE;
+  color: #508991;
   text-decoration: none;
 
   &:hover {
