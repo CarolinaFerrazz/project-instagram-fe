@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <>
-    <LoginDiv />
+      <LoginDiv />
       <ContainerLogin>
         <Container>
           <TitleLogin>Fake Instagram</TitleLogin>
@@ -71,13 +71,13 @@ const Login = () => {
           </ContainerButtonLogin>
           <TextForgottenPassw>Fogotten your password?</TextForgottenPassw>
           <ContainerButtonRegister>
-          <TextRegister>Do not have an account?</TextRegister>
-          <ButtonRegister>
-            <LinkRegister title="Register" href="/register">
-              Register
-            </LinkRegister>
-          </ButtonRegister>
-        </ContainerButtonRegister>
+            <TextRegister>Do not have an account?</TextRegister>
+            <ButtonRegister>
+              <LinkRegister title="Register" href="/register">
+                Register
+              </LinkRegister>
+            </ButtonRegister>
+          </ContainerButtonRegister>
         </Container>
       </ContainerLogin>
       <Footer />

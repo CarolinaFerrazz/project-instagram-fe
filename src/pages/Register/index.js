@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 import Footer from "../../components/Footer";
 import LoginDiv from "../../components/LoginDiv";
-=======
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import RegisterUser from "../../services/RegisterUser";
->>>>>>> ff70b185a17a53426d533c66338301bc01f5408e
 import {
   ContainerRegister,
   Container,

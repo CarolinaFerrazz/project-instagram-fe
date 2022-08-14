@@ -1,4 +1,4 @@
-import {} from "./styles";
+import { } from "./styles";
 import Header from "../../components/Header";
 import PostsFeed from "../../components/PostsFeed";
 import Footer from "../../components/Footer";

@@ -25,7 +25,7 @@ const Header = () => {
           <LinksHeader title="Messages" href="/direct">
             <DirectIcon src={IconDirect} alt="Messages icon"></DirectIcon>
           </LinksHeader>
-            <DropdownProfile/>
+          <DropdownProfile />
         </ContainerIcons>
       </Container>
     </>
