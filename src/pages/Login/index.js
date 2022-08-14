@@ -20,6 +20,7 @@ import {
   ButtonRegister,
   LinkRegister,
 } from "./styles";
+import GetUser from "../../services/GetUser";
 
 
 const Login = () => {
@@ -35,7 +36,9 @@ const Login = () => {
     }
     const token = await LoginUser(credentials);
     if (token !== null) {
-      setAuth({ email, token });
+      const user = await GetUser(token);
+      const id = user.data.id;
+      setAuth({ email, token, id });
       setEmail("");
       setPassword("");
       alert("ok");
@@ -48,6 +51,8 @@ const Login = () => {
 
   return (
     <>
+
+
       <LoginDiv />
       <ContainerLogin>
         <Container>

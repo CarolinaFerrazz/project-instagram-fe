@@ -1,9 +1,10 @@
 import axios from "axios";
 import LINK from "./link";
+export default async function GetPostFromUserIsFollowing(token) {
 
-export default async function GetUser(token) {
+
     try {
-        const response = await axios.get("/api/v1/user", {
+        const response = await axios.get(LINK + "/api/v1/post/following", {
             headers: {
                 Authorization: token
             }
@@ -12,4 +13,6 @@ export default async function GetUser(token) {
     } catch (error) {
         return null
     }
+
+
 }
