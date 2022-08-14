@@ -18,21 +18,21 @@ import {
   TitleNoPosts,
   LinksPages,
 } from "./styles";
-import ProfileCR7 from "../../assets/profile.jpg";
 import Saves from "../../assets/saves.svg";
 import NoPost from "../../assets/noPostsYet.svg";
 
-const ProfileDiv = () => {
+const ProfileDiv = (props) => {
+  const { name, userName, avatar, description, postList } = props;
   return (
     <>
       <AlignAllCenter>
         <Container>
-          <UserName>name user</UserName>
+          <UserName>{userName}</UserName>
           <ContainerImageAndNumbers>
-            <ImageProfile src={ProfileCR7}></ImageProfile>
+            <ImageProfile src={avatar}></ImageProfile>
             <ContainerInfoNumbers>
               <ContainerNumberAndTitle>
-                <NumberInfoNumbers>0</NumberInfoNumbers>
+                <NumberInfoNumbers>{postList.length} </NumberInfoNumbers>
                 <TitleInfoNumbers>Posts</TitleInfoNumbers>
               </ContainerNumberAndTitle>
               <ContainerNumberAndTitle>
@@ -45,9 +45,9 @@ const ProfileDiv = () => {
               </ContainerNumberAndTitle>
             </ContainerInfoNumbers>
           </ContainerImageAndNumbers>
-          <NameProfile>name profile</NameProfile>
+          <NameProfile>{name}</NameProfile>
           <DescriptionProfile>
-            decricao a falar sobre a pesoa vla bla bla kwdedr8fr4hfurfrbnfnv
+            {description ? description : "Say whats on your mind"}
           </DescriptionProfile>
           <ContainerButtonsProfile>
             <LinksPages href="/saves" title="Saves">

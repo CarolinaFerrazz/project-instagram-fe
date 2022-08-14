@@ -1,5 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
+<<<<<<< HEAD
+=======
+//import AuthContext from "../../context/Auth";
+import useAuth from "../../hooks/useAuth";
+//import useAuth from "../../hooks/useAuth";
+import LoginUser from "../../services/LoginUser";
+>>>>>>> ff70b185a17a53426d533c66338301bc01f5408e
 import {
   ContainerLogin,
   Container,
@@ -17,9 +25,11 @@ import {
 
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setAuth } = useAuth()
+  const { setAuth } = useAuth();
+
   async function handleClick() {
     const credentials = {
       email: email,
@@ -27,20 +37,13 @@ const Login = () => {
     }
     const token = await LoginUser(credentials);
     if (token !== null) {
-      setAuth({ email, token })
+      setAuth({ email, token });
       setEmail("");
-      setPassword("")
+      setPassword("");
+      navigate("/home")
     } else {
-      setAuth({})
+      setAuth({});
     }
-
-
-    /*     const response = await axios.get("/api/v1/post", {
-      headers: {
-        Authorization: token
-      }
-    }); */
-
   }
 
 
