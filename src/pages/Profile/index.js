@@ -6,27 +6,30 @@ import { useEffect, useState } from "react";
 import GetUser from "../../services/GetUser";
 
 const Profile = () => {
-  const token = localStorage.getItem('token')
-  const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState("");
-  const [name, setName] = useState("");
-  const [userName, setUsername] = useState("");
-  const [List, setPostList] = useState([]);
-  const [description, setdescription] = useState("");
+  const token = localStorage.getItem('token');
+  const [userData, setUserData] = useState({});
+  const [list, setPostList] = useState([]);
+
+
   useEffect(() => {
 
     async function getProfileInfo() {
       const data = await GetUser(token);
       const user = data.data;
-      console.log(data)
-      setEmail(user.email);
-      setAvatar(user.profilePhoto);
-      setName(user.name);
-      setUsername(user.username);
+      const userInfo = {
+        email: user.email,
+        avatar: user.profilePhoto,
+        name: user.name,
+        userName: user.username,
+        description: user.description
+      }
+
+      setUserData(userInfo);
       setPostList(user.postList)
-      setdescription(user.description)
+
     }
     getProfileInfo();
+    // eslint-disable-next-line
   }, [])
 
 
@@ -35,12 +38,13 @@ const Profile = () => {
       <Header />
       <Container>
         <ProfileDiv
-          email={email}
-          avatar={avatar}
-          name={name}
-          userName={userName}
-          description={description}
-          postList={List} />
+          userData={userData}
+          email={userData.email}
+          avatar={userData.avatar}
+          name={userData.name}
+          userName={userData.userName}
+          description={userData.description}
+          postList={list} />
       </Container>
       <Footer />
     </>

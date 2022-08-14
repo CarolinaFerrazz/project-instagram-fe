@@ -117,6 +117,7 @@ export const TitleNoPosts = styled.p`
   text-transform: uppercase;
 `;
 
+
 export const LinksPages = styled.a`
   text-align: center;
   display: flex;
