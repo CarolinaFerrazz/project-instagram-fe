@@ -42,10 +42,11 @@ const Register = () => {
     const user = await RegisterUser(userToRegister);
     if (user === null) {
       setFail(true);
+      alert("fail");
       console.log("fail")
     } else {
       setFail(false);
-
+      alert("ok");
       console.log("ok")
       navigate("/login");
     }

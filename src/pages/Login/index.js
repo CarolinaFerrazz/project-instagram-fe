@@ -38,8 +38,10 @@ const Login = () => {
       setAuth({ email, token });
       setEmail("");
       setPassword("");
+      alert("ok");
       navigate("/home")
     } else {
+      alert("fail");
       setAuth({});
     }
   }
