@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LoginDiv from "../../components/LoginDiv"
 import Footer from "../../components/Footer";
-<<<<<<< HEAD
-=======
 //import AuthContext from "../../context/Auth";
 import useAuth from "../../hooks/useAuth";
 //import useAuth from "../../hooks/useAuth";
 import LoginUser from "../../services/LoginUser";
->>>>>>> ff70b185a17a53426d533c66338301bc01f5408e
 import {
   ContainerLogin,
   Container,
@@ -45,8 +43,6 @@ const Login = () => {
       setAuth({});
     }
   }
-
-
 
   return (
     <>
