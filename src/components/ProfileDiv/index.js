@@ -20,9 +20,10 @@ import {
 } from "./styles";
 import Saves from "../../assets/saves.svg";
 import NoPost from "../../assets/noPostsYet.svg";
+import { Link } from "react-router-dom";
 
 const ProfileDiv = (props) => {
-  const { name, userName, avatar, description, postList } = props;
+  const { userData, name, userName, avatar, description, postList } = props;
   return (
     <>
       <AlignAllCenter>
@@ -54,9 +55,10 @@ const ProfileDiv = (props) => {
               <ButtonSaves src={Saves} alt="icon"></ButtonSaves>
             </LinksPages>
             <ButtonEditProfile>
-              <LinksPages href="/editprofile" title="Saves">
+              <Link className="ok" to="/editprofile" state={{ userData }}>Edit Profile</Link>
+              {/*               <LinksPages href="/editprofile" title="Saves">
                 Edit Profile
-              </LinksPages>
+              </LinksPages> */}
             </ButtonEditProfile>
           </ContainerButtonsProfile>
           <ContainerPics>

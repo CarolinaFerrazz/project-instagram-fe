@@ -11,8 +11,25 @@ import {
   ButtonConfirm,
   LinkBack,
 } from "./styles";
+import { useState } from "react";
 
 const Settings = () => {
+  const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+
+  function update() {
+    const updateUser = {};
+    if (password.replace(/\s/g, '').length !== 0) updateUser.password = password;
+    if (userName.replace(/\s/g, '').length !== 0) updateUser.username = userName;
+    if (email.replace(/\s/g, '').length !== 0) updateUser.email = email;
+
+
+
+  }
+
+
+
   return (
     <>
       <Header />
@@ -25,24 +42,30 @@ const Settings = () => {
               placeholder="Change Username"
               name="username"
               type="text"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
             ></InputSettings>
             <InputSettings
               placeholder="Change Password"
               name="password"
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             ></InputSettings>
             <InputSettings
               placeholder="Change Email"
               name="email"
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             ></InputSettings>
           </ContainerFormSettings>
           <ContainerButtonConfirm>
             {" "}
-            <ButtonConfirm>
-              <LinkBack title="Back" href="/feed">
-                Confirm
-              </LinkBack>
+            <ButtonConfirm onClick={update}>
+              Confirm
+              {/*   <LinkBack title="Back" href="/feed">
+              </LinkBack> */}
             </ButtonConfirm>
           </ContainerButtonConfirm>
         </Container>
