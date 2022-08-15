@@ -32,7 +32,7 @@ export const ContainerInfoPost = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid #74b3ce;
-  max-width: 40%;
+  width: 40%;
   max-height: 600px;
 `;
 
@@ -59,6 +59,7 @@ export const NameUser = styled.p`
 `;
 
 export const ImagePost = styled.img`
+  max-height: 600px;
   max-width: 600px;
   flex-wrap: wrap;
   border: solid 1px #74b3ce;
@@ -161,6 +162,7 @@ export const ButtonPublish = styled.button`
 export const ContainerComents = styled.div`
   overflow-y: scroll;
   max-height: 34%;
+  max-width: 100%;
 
   ::-webkit-scrollbar {
     width: 10px;

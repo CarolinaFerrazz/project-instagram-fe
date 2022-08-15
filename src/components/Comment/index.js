@@ -5,6 +5,7 @@ import {
   ContainerUserNameAndComment,
   LikeComment,
   NumberLikesComment,
+  ContainerComment,
   TextComment,
   TimeComment,
   UserNameComment,
@@ -17,7 +18,10 @@ const Comment = (props) => {
     <ContainerAllComents>
       <ContainerUserNameAndComment>
         <UserNameComment>{user}</UserNameComment>
-        <TextComment>{description}</TextComment>
+        <ContainerComment>
+          {" "}
+          <TextComment>{description}</TextComment>
+        </ContainerComment>
       </ContainerUserNameAndComment>
       <ContainerTimeAndLike>
         <TimeComment>{creationDate}</TimeComment>
