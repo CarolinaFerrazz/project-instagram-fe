@@ -16,21 +16,19 @@ import useAuth from "../../hooks/useAuth";
 import UpdateProfile from "../../services/UpdateProfile";
 
 const Settings = () => {
-
   const { auth } = useAuth();
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
 
-
-
   function update() {
     const updateUser = {};
-    if (password.replace(/\s/g, '').length !== 0) updateUser.password = password;
-    if (userName.replace(/\s/g, '').length !== 0) updateUser.username = userName;
-    if (email.replace(/\s/g, '').length !== 0) updateUser.email = email;
-    const user = UpdateProfile(updateUser, auth.token)
-
+    if (password.replace(/\s/g, "").length !== 0)
+      updateUser.password = password;
+    if (userName.replace(/\s/g, "").length !== 0)
+      updateUser.username = userName;
+    if (email.replace(/\s/g, "").length !== 0) updateUser.email = email;
+    const user = UpdateProfile(updateUser, auth.token);
 
     if (user === null) {
       alert("fail");
@@ -40,14 +38,7 @@ const Settings = () => {
       setUserName("");
       setEmail("");
     }
-
-
-
-
-
   }
-
-
 
   return (
     <>
