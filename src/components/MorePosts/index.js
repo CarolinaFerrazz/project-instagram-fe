@@ -8,9 +8,8 @@ import {
   NameUser,
   ImageProfileUser,
   ImagePost,
-  ContainerIconsPost,
+  ContainerLike,
   IconLike,
-  ContainerLikes,
   TextLikes,
   NumberOfLikes,
   ContainerDescription,
@@ -99,11 +98,11 @@ const MorePosts = (props) => {
     <>
       <AlignAllCenter>
         <ContainerImagePost>
-        <ContainerButtonBack>
-        <ButtonBack onClick={showMoreHandler}>
-          <IconBack src={IconBackPage} />
-        </ButtonBack>
-      </ContainerButtonBack>
+          <ContainerButtonBack>
+            <ButtonBack onClick={showMoreHandler}>
+              <IconBack src={IconBackPage} />
+            </ButtonBack>
+          </ContainerButtonBack>
           <ImagePost src={photo} />
         </ContainerImagePost>
         <ContainerInfoPost>
@@ -138,16 +137,14 @@ const MorePosts = (props) => {
             )}
           </ContainerComents>
 
-          <ContainerIconsPost>
+          <ContainerLike>
             <IconLike
               src={!isLiked ? IconLikeDisabled : IconLikeEnabled}
               onClick={handleLikes}
             />
-          </ContainerIconsPost>
-          <ContainerLikes>
             <NumberOfLikes>{numOfLikes}</NumberOfLikes>
             <TextLikes>likes</TextLikes>
-          </ContainerLikes>
+          </ContainerLike>
           <TimePost>{creationDate}</TimePost>
           <ContainerNewCommentAndPublish>
             <AddNewComment
