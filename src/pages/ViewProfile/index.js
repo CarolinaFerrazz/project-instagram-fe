@@ -1,56 +1,110 @@
 import {
   AlignAllCenter,
   Container,
-  UserName,
-  ContainerImageAndNumbers,
-  ImageProfile,
-  ContainerInfoNumbers,
-  ContainerNumberAndTitle,
-  NumberInfoNumbers,
-  TitleInfoNumbers,
-  NameProfile,
-  DescriptionProfile,
-  ContainerButtonsProfile,
-  ButtonFollow,
 } from "./styles";
-import ProfileCR7 from "../../assets/profile.jpg";
+
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import GetUserById from "../../services/GetUserById";
+import useAuth from "../../hooks/useAuth";
+import ViewProfileDiv from "../../components/ViewProfileDiv";
+import MorePosts from "../../components/MorePosts";
 import Header from "../../components/Header";
+import PostsProfile from "../../components/PostsProfile";
+import Footer from "../../components/Footer";
+// import Follow from "../../assets/follow.svg";
 
 const ViewProfile = () => {
+  const location = useLocation();
+  const { auth } = useAuth();
+  const [userData, setUserData] = useState({});
+  const [list, setPostList] = useState([]);
+  const [likeClicked, setLikeClicked] = useState(false);
+  const [postId, setPostId] = useState("");
+  const [showMore, setShowMore] = useState(false);
+  const [followers, setFollowers] = useState([]);
+  const [following, setFollowing] = useState([]);
+
+  function showMoreHandler(id) {
+    if (!showMore) {
+      setPostId(id);
+      setShowMore(!showMore);
+    } else {
+      setPostId("");
+      setShowMore(!showMore);
+    }
+  }
+
+  function handleLikeClicked() {
+    setLikeClicked(!likeClicked);
+  }
+
+  useEffect(() => {
+    console.log(location.state.id)
+    async function get() {
+      const data = await GetUserById(location.state.id, auth.token);
+      const user = data.data;
+      const userInfo = {
+        id: user.id,
+        email: user.email,
+        avatar: user.profilePhoto,
+        name: user.name,
+        userName: user.username,
+        description: user.description,
+      };
+      setUserData(userInfo);
+      setPostList(user.postList);
+      setFollowers(user.followers);
+      setFollowing(user.following);
+
+
+    }
+    get()
+  }, [likeClicked])
+
+
+
+
+
+
   return (
     <>
       <Header />
       <AlignAllCenter>
+        {showMore
+          ?
+          <MorePosts
+            postId={postId}
+            showMoreHandler={showMoreHandler}
+            handleLikeClicked={handleLikeClicked}
+          />
+          : null}
         <Container>
-          <UserName>UserName</UserName>
-          <ContainerImageAndNumbers>
-            <ImageProfile src={ProfileCR7}></ImageProfile>
-            <ContainerInfoNumbers>
-              <ContainerNumberAndTitle>
-                <NumberInfoNumbers>0 </NumberInfoNumbers>
-                <TitleInfoNumbers>Posts</TitleInfoNumbers>
-              </ContainerNumberAndTitle>
-              <ContainerNumberAndTitle>
-                <NumberInfoNumbers>0</NumberInfoNumbers>
-                <TitleInfoNumbers>Followers</TitleInfoNumbers>
-              </ContainerNumberAndTitle>
-              <ContainerNumberAndTitle>
-                <NumberInfoNumbers>0</NumberInfoNumbers>
-                <TitleInfoNumbers>Following</TitleInfoNumbers>
-              </ContainerNumberAndTitle>
-            </ContainerInfoNumbers>
-          </ContainerImageAndNumbers>
-          <NameProfile>Name</NameProfile>
-          <DescriptionProfile>descricao</DescriptionProfile>
-          <ContainerButtonsProfile>
-            {/* SE CARREGAR NO BOTAO O TEXTO PASSA PARA O ICON que esta comentado na linha de baixo e o seu IMPORT la em cima */}
-            <ButtonFollow>
-              Follow
-              {/* <img alt="icon" src={Follow} /> */}
-            </ButtonFollow>
-          </ContainerButtonsProfile>
+          {!showMore
+            ? <ViewProfileDiv
+              userData={userData}
+              email={userData.email}
+              avatar={userData.avatar}
+              name={userData.name}
+              userName={userData.userName}
+              description={userData.description}
+              postList={list}
+              followers={followers}
+              following={following} />
+            : null}
         </Container>
+
       </AlignAllCenter>
+      {!showMore
+        ?
+        list.length === 0
+          ? null
+          : <PostsProfile
+            list={list}
+            showMoreHandler={showMoreHandler}
+            handleLikeClicked={handleLikeClicked} />
+        : null}
+      <Footer />
     </>
   );
 };

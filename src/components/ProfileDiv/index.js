@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   AlignAllCenter,
   Container,
@@ -17,7 +18,14 @@ import {
 } from "./styles";
 
 const ProfileDiv = (props) => {
-  const { userData, name, userName, avatar, description, postList } = props;
+  const { userData, name, userName, avatar,
+    description, postList, followers, following } = props;
+  const navigate = useNavigate();
+
+
+  console.log(userData)
+
+
   return (
     <>
       <AlignAllCenter>
@@ -31,12 +39,12 @@ const ProfileDiv = (props) => {
                 <TitleInfoNumbers>Posts</TitleInfoNumbers>
               </ContainerNumberAndTitle>
               <ContainerNumberAndTitle>
-                <NumberInfoNumbers>0</NumberInfoNumbers>
-                <TitleInfoNumbers>Followers</TitleInfoNumbers>
+                <NumberInfoNumbers>{followers.length}</NumberInfoNumbers>
+                <TitleInfoNumbers >followers</TitleInfoNumbers>
               </ContainerNumberAndTitle>
-              <ContainerNumberAndTitle>
-                <NumberInfoNumbers>0</NumberInfoNumbers>
-                <TitleInfoNumbers>Following</TitleInfoNumbers>
+              <ContainerNumberAndTitle onClick={() => navigate("/viewfollowing", { state: { id: userData.id } })}>
+                <NumberInfoNumbers>{following.length}</NumberInfoNumbers>
+                <TitleInfoNumbers >Following</TitleInfoNumbers>
               </ContainerNumberAndTitle>
             </ContainerInfoNumbers>
           </ContainerImageAndNumbers>
