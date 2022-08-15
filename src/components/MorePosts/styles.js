@@ -32,7 +32,7 @@ export const ContainerInfoPost = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid #74b3ce;
-  min-width: 40%;
+  max-width: 40%;
   max-height: 600px;
 `;
 
@@ -64,11 +64,11 @@ export const ImagePost = styled.img`
   border: solid 1px #74b3ce;
 `;
 
-export const ContainerIconsPost = styled.div`
+export const ContainerLike = styled.div`
   margin: 20px 16px;
   display: flex;
-  justify-content: left;
   margin-bottom: 16px;
+  align-items: center;
 `;
 
 export const IconLike = styled.img`
@@ -87,17 +87,14 @@ export const IconComments = styled.img`
   }
 `;
 
-export const ContainerLikes = styled.div`
-  display: flex;
-  margin: 0 20px;
-`;
-
 export const NumberOfLikes = styled.p`
   color: #fff;
   font-size: 18px;
   margin-top: 0;
   font-weight: 700;
   margin-bottom: 8px;
+  margin-left: 8px;
+  text-align: center;
 `;
 
 export const TextLikes = styled.p`
@@ -107,6 +104,7 @@ export const TextLikes = styled.p`
   margin-bottom: 8px;
   margin-left: 4px;
   font-weight: 700;
+  text-align: center;
 `;
 
 export const ContainerDescription = styled.div`
@@ -148,7 +146,7 @@ export const AddNewComment = styled.textarea`
   min-width: 80%;
   background: none;
   border: none;
-  min-height: 100px;
+  max-height: 100px;
   resize: none;
 `;
 
@@ -165,19 +163,19 @@ export const ContainerComents = styled.div`
   max-height: 34%;
 
   ::-webkit-scrollbar {
-  width: 10px;
-}
+    width: 10px;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: grey; 
-  border-radius: 10px;
-}
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+  }
 `;
 
 export const IconBack = styled.img`
