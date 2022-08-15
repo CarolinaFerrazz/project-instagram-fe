@@ -37,7 +37,7 @@ export const ContainerTextUserAndPicture = styled.div`
 `;
 
 export const TextUserName = styled.p`
-  color: #ffff;
+  color: #74b3ce;
   font-size: 24px;
   font-weight: 700px;
 
@@ -45,7 +45,25 @@ export const TextUserName = styled.p`
 `;
 
 export const TextChangePicture = styled.p`
-  margin-top: 0;
+  margin: 0;
+  margin-bottom: 8px;
+`;
+
+export const InputChangePicture = styled.input`
+  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.2));
+  border: none;
+  margin-bottom: 10px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  padding: 8px 16px;
+  color: #8d8d8d;
+  background: #363636;
+
+  &::placeholder {
+    color: #8d8d8d;
+    justify-content: center;
+  }
 `;
 
 export const ContainerFormEditProfile = styled.div`
@@ -63,6 +81,7 @@ export const LabelChangeName = styled.label`
 export const LabelChangeBio = styled.label`
   color: #d1d1d1;
   font-size: 20px;
+  margin-top: 8px;
 `;
 
 export const InputChangeName = styled.input`
@@ -84,7 +103,7 @@ export const InputChangeName = styled.input`
   }
 `;
 
-export const InputChangeBio = styled.input`
+export const InputChangeBio = styled.textarea`
   filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.2));
   border: none;
   margin-bottom: 10px;
@@ -95,6 +114,7 @@ export const InputChangeBio = styled.input`
   color: #8d8d8d;
   background: #363636;
   min-height: 120px;
+  resize: none;
 
   &::placeholder {
     color: #8d8d8d;
@@ -115,10 +135,10 @@ export const ContainerButtonConfirm = styled.div`
 `;
 
 export const ButtonConfirm = styled.button`
-  color: #8d8d8d;
+  color: #fff;
   margin-top: 8px;
   padding: 8px 34px;
-  background: #363636;
+  background: #74b3ce;
   border-radius: 16px;
   font-size: 16px;
   border: none;
@@ -126,6 +146,6 @@ export const ButtonConfirm = styled.button`
   &:hover {
     -webkit-transform: scale(1.4);
     transform: scale(1.1);
-    color: #fff;
+    font-weight: 700;
   }
 `;

@@ -15,19 +15,13 @@ export const Container = styled.div`
   min-width: 40%;
 `;
 
-export const TitleInstagram = styled.p`
-  color: #d1d1d1;
-  font-size: 40px;
-  margin-bottom: 8px;
-  text-align: center;
-`;
-
 export const TitleSettings = styled.p`
   color: #8d8d8d;
-  font-size: 24px;
-  margin-top: 0;
+  font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
 `;
 
 export const ContainerFormSettings = styled.div`
@@ -62,10 +56,10 @@ export const ContainerButtonConfirm = styled.div`
 `;
 
 export const ButtonConfirm = styled.button`
-  color: #8d8d8d;
+  color: #fff;
   margin-top: 8px;
   padding: 8px 34px;
-  background: #363636;
+  background: #74b3ce;
   border-radius: 16px;
   font-size: 16px;
   border: none;
@@ -73,6 +67,7 @@ export const ButtonConfirm = styled.button`
   &:hover {
     -webkit-transform: scale(1.4);
     transform: scale(1.1);
+    font-weight: 700;
   }
 `;
 

@@ -9,6 +9,7 @@ import {
   TextUserName,
   TextChangePicture,
   ContainerFormEditProfile,
+  InputChangePicture,
   LabelChangeName,
   LabelChangeBio,
   InputChangeName,
@@ -75,7 +76,7 @@ const EditProfile = () => {
               <TextUserName>{user.userName}</TextUserName>
               <LabelChangeName>
                 <TextChangePicture>change your profile picture</TextChangePicture>
-                <InputChangeName name="change avatar" value={avatar} onChange={(e) => setAvatar(e.target.value)} />
+                <InputChangePicture name="change avatar" value={avatar} onChange={(e) => setAvatar(e.target.value)} />
               </LabelChangeName>
             </ContainerTextUserAndPicture>
           </ContainerPictureAndName>

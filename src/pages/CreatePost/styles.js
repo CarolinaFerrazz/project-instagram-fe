@@ -20,6 +20,8 @@ export const TitleCreate = styled.p`
   font-size: 40px;
   text-align: center;
   margin-bottom: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
 `;
 
 export const ContainerInfoUser = styled.div`
@@ -109,15 +111,3 @@ export const ButtonPost = styled.button`
   }
 `;
 
-// export const LinkBack = styled.a`
-//   text-align: center;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   color: #d1d1d1;
-//   text-decoration: none;
-
-//   &:hover {
-//     color: #ffff;
-//   }
-// `;

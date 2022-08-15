@@ -3,13 +3,11 @@ import Footer from "../../components/Footer";
 import {
   AllAlignCenter,
   Container,
-  TitleInstagram,
   TitleSettings,
   ContainerFormSettings,
   InputSettings,
   ContainerButtonConfirm,
   ButtonConfirm,
-  LinkBack,
 } from "./styles";
 import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
@@ -45,7 +43,6 @@ const Settings = () => {
       <Header />
       <AllAlignCenter>
         <Container>
-          <TitleInstagram>Fake Instagram</TitleInstagram>
           <TitleSettings>Settings</TitleSettings>
           <ContainerFormSettings>
             <InputSettings
@@ -72,11 +69,7 @@ const Settings = () => {
           </ContainerFormSettings>
           <ContainerButtonConfirm>
             {" "}
-            <ButtonConfirm onClick={update}>
-              Confirm
-              {/*   <LinkBack title="Back" href="/feed">
-              </LinkBack> */}
-            </ButtonConfirm>
+            <ButtonConfirm onClick={update}>Confirm</ButtonConfirm>
           </ContainerButtonConfirm>
         </Container>
       </AllAlignCenter>

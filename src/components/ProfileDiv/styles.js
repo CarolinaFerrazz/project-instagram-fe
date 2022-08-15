@@ -28,6 +28,7 @@ export const ContainerImageAndNumbers = styled.div`
 export const ImageProfile = styled.img`
   border-radius: 50%;
   width: 200px;
+  height: 200px;
 `;
 
 export const ContainerInfoNumbers = styled.div`
@@ -97,6 +98,7 @@ export const ButtonEditProfile = styled.button`
 
   &:hover {
     color: #fff;
+    background: #85CDEC;
   }
 `;
 
