@@ -22,38 +22,79 @@ import {
   ButtonPublish,
 } from "./styles";
 import Post from "../../assets/profile.jpg";
-// import IconLikeEnabled from "../../assets/likeEnabled.svg";
+import IconLikeEnabled from "../../assets/likeEnabled.svg";
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
 import IconSaveEnabled from "../../assets/saveDisabled.svg";
 // import IconSaveDisabled from "../../assets/saveDisabled.svg";
 import IconComment from "../../assets/comment.svg";
+import { useEffect, useState } from "react";
+import RemoveLike from "../../services/RemoveLike";
+import useAuth from "../../hooks/useAuth";
+import AddLike from "../../services/AddLike";
 
-const PostsFeed = () => {
+const PostsFeed = (props) => {
+  const { auth } = useAuth();
+  const { postId, photo, name, commentList, description,
+    creationDate, numLikes, tagList, like } = props;
+  const [isLiked, setIsLiked] = useState(like);
+  const [numOfLikes, setNumOfLikes] = useState('');
+
+  useEffect(() => {
+    setNumOfLikes(numLikes);
+
+  }, [])
+
+
+
+  async function handleLikes() {
+    const body = {
+      postId: postId,
+    }
+    console.log(body);
+    if (isLiked) {
+      await RemoveLike(body, auth.token);
+      setIsLiked(!isLiked);
+      setNumOfLikes(numOfLikes - 1);
+    } else {
+      await AddLike(body, auth.token);
+      setIsLiked(!isLiked);
+      setNumOfLikes(numOfLikes + 1);
+    }
+
+
+  }
+
+
   return (
     <>
       <AlignAllCenter>
         <Container>
           <ContainerNameUser>
-            <NameUser>name user</NameUser>
+            <NameUser>{name}</NameUser>
           </ContainerNameUser>
-          <ImagePost src={Post} />
+          <ImagePost src={photo} />
           <ContainerIconsPost>
             <div>
-              <IconLike src={IconLikeDisabled} />
+              <span onClick={handleLikes}>
+                {!isLiked
+                  ? <IconLike src={IconLikeDisabled} />
+                  : <IconLike src={IconLikeEnabled} />}
+
+              </span>
               <IconComments src={IconComment} />
             </div>
             <IconSavePost src={IconSaveEnabled} />
           </ContainerIconsPost>
           <ContainerLikes>
-            <NumberOfLikes>102</NumberOfLikes>
+            <NumberOfLikes>{numOfLikes}</NumberOfLikes>
             <TextLikes>likes</TextLikes>
           </ContainerLikes>
           <ContainerNameAndDescription>
-            <NameUserPost>nameUser</NameUserPost>
-            <DescriptionPost>descricao da foto la la</DescriptionPost>
+            <NameUserPost>{name}</NameUserPost>
+            <DescriptionPost>{description}</DescriptionPost>
           </ContainerNameAndDescription>
           <AllComents>ver todos os comentarios</AllComents>
-          <TimePost>ha 10 horas</TimePost>
+          <TimePost>{creationDate}</TimePost>
           <HrComment />
           <ContainerNewCommentAndPublish>
             <AddNewComment>adicionar comentario</AddNewComment>

@@ -12,7 +12,7 @@ export default function PersistLogin() {
             setIsLoading(true);
             if (token !== null) {
                 const user = await GetUser(token);
-                if (user !== null) setAuth({ email: user?.data?.email, token });
+                if (user !== null) setAuth({ email: user?.data?.email, token, id: user?.data?.id });
             }
             setIsLoading(false);
         }
