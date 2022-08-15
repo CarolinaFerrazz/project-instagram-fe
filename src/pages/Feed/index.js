@@ -65,7 +65,7 @@ const Feed = () => {
           handleLikeClicked={handleLikeClicked}
         />
       ) : (
-        posts.map((post) => {
+        posts.sort((a, b) => b.id - a.id).map((post) => {
           return (
             <PostsFeed
               postId={post.id}
