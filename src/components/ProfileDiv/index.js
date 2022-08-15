@@ -17,10 +17,10 @@ import {
   IconNoPosts,
   TitleNoPosts,
   LinksPages,
+  LinkEditProfile,
 } from "./styles";
 import Saves from "../../assets/saves.svg";
 import NoPost from "../../assets/noPostsYet.svg";
-import { Link } from "react-router-dom";
 
 const ProfileDiv = (props) => {
   const { userData, name, userName, avatar, description, postList } = props;
@@ -55,10 +55,7 @@ const ProfileDiv = (props) => {
               <ButtonSaves src={Saves} alt="icon"></ButtonSaves>
             </LinksPages>
             <ButtonEditProfile>
-              <Link className="ok" to="/editprofile" state={{ userData }}>Edit Profile</Link>
-              {/*               <LinksPages href="/editprofile" title="Saves">
-                Edit Profile
-              </LinksPages> */}
+              <LinkEditProfile title="Edit" className="ok" to="/editprofile" state={{ userData }}>Edit Profile</LinkEditProfile>
             </ButtonEditProfile>
           </ContainerButtonsProfile>
           <ContainerPics>

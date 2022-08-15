@@ -1,10 +1,3 @@
-// import {
-//   Dropdown,
-//   ButtonDropDown,
-//   ProfileIcon,
-//   ContainerLinksMenu,
-//   LinksMenu,
-// } from "./styles";
 import { useNavigate } from "react-router-dom";
 
 import IconProfile from "../../assets/profile.svg";
@@ -22,19 +15,9 @@ const DropdownProfile = () => {
 
   return (
     <>
-      {/* <Dropdown>
-        <ButtonDropDown>
-          <ProfileIcon src={IconProfile} />
-        </ButtonDropDown>
-        <ContainerLinksMenu>
-          <LinksMenu to="/profile">Profile</LinksMenu>
-          <LinksMenu to="/settings">Settings</LinksMenu>
-          <LinksMenu to="/login">Logout</LinksMenu>
-        </ContainerLinksMenu>
-      </Dropdown> */}
       <div className="dropdown">
         <button className="dropButton">
-          <img src={IconProfile}></img>
+          <img alt="Icon" src={IconProfile}></img>
         </button>
         <div className="dropdown-content">
           <a href="/profile">Profile</a>

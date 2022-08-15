@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const AlignAllCenter = styled.div`
   display: flex;
@@ -12,9 +13,10 @@ export const Container = styled.div`
 `;
 
 export const UserName = styled.p`
-  color: #ffffff;
-  font-size: 30px;
+  color: #74b3ce;
+  font-size: 28px;
   margin-bottom: 24px;
+  font-weight: 700;
 `;
 
 export const ContainerImageAndNumbers = styled.div`
@@ -88,7 +90,7 @@ export const ButtonSaves = styled.img`
 export const ButtonEditProfile = styled.button`
   padding: 8px 20px;
   min-width: 92%;
-  background: #74B3CE;
+  background: #74b3ce;
   border-radius: 16px;
   color: #fff;
   border: none;
@@ -117,7 +119,6 @@ export const TitleNoPosts = styled.p`
   text-transform: uppercase;
 `;
 
-
 export const LinksPages = styled.a`
   text-align: center;
   display: flex;
@@ -128,5 +129,18 @@ export const LinksPages = styled.a`
 
   &:hover {
     color: #ffff;
+  }
+`;
+
+export const LinkEditProfile = styled(Link)`
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    font-weight: 700;
   }
 `;

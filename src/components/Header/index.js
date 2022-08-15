@@ -6,7 +6,7 @@ import {
   LinkHome,
   DirectIcon,
   ContainerIcons,
-  LinksHeader
+  LinksHeader,
 } from "./styles";
 import IconDirect from "../../assets/direct.svg";
 import IconFeed from "../../assets/feed.svg";
@@ -18,6 +18,7 @@ const Header = () => {
         <LinkHome title="Home Page" to="/feed">
           Fake Instagram
         </LinkHome>
+        <LinkHome></LinkHome>
         <ContainerIcons>
           <LinksHeader title="Feed" href="/feed">
             <FeedIcon src={IconFeed} alt="Feed icon"></FeedIcon>
