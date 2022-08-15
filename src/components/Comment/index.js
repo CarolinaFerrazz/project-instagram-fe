@@ -9,12 +9,12 @@ import {
 } from '../MorePosts/styles'
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
 const Comment = (props) => {
-    const { creationDate, description, id, likes } = props;
+    const { creationDate, description, id, user, likes } = props;
 
     return (
         <ContainerAllComents>
             <ContainerUserNameAndComment>
-                <UserNameComment>USERNAME</UserNameComment>
+                <UserNameComment>{user}</UserNameComment>
                 <TextComment>{description}</TextComment>
             </ContainerUserNameAndComment>
             <ContainerTimeAndLike>

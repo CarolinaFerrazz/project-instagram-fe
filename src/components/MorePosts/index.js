@@ -26,28 +26,53 @@ import {
   TimeComment,
   LikeComment,
 } from "./styles";
-// import IconLikeEnabled from "../../assets/likeEnabled.svg";
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
 import IconComment from "../../assets/comment.svg";
-import ImageFeed from "../../assets/profile.jpg";
-import ImageProfileCR7 from "../../assets/profile.jpg"
 import { useEffect, useState } from "react";
 import GetPostById from "../../services/GetPostById";
 import useAuth from "../../hooks/useAuth";
 import Comment from "../Comment";
 import PostComment from "../../services/PostComment";
+import RemoveLike from "../../services/RemoveLike";
+import AddLike from "../../services/AddLike";
+import IconLikeEnabled from "../../assets/likeEnabled.svg";
 
 const MorePosts = (props) => {
   const { auth } = useAuth();
-  const { showMoreHandler, postId, likes } = props;
+  const { showMoreHandler, postId, likes, liked, handleLikeClicked } = props;
   const [photo, setPhoto] = useState("");
   const [author, setAuthor] = useState("");
   const [comments, setComments] = useState([]);
   const [discription, setDiscription] = useState("");
   const [creationDate, setCreationDate] = useState("");
-  const [tags, setTags] = useState();
+  const [tags, setTags] = useState("");
   const [writingComment, setWritingComment] = useState("");
   const [commentAdded, setCommentAdded] = useState(true);
+  const [postUserAvatar, setPostUserAvatar] = useState("");
+  const [numOfLikes, setNumOfLikes] = useState("");
+  const [isLiked, setIsLiked] = useState(false);
+
+
+
+
+  async function handleLikes() {
+    const body = {
+      postId: postId,
+    };
+    if (isLiked) {
+      await RemoveLike(body, auth.token);
+      setIsLiked(!isLiked);
+      setNumOfLikes(numOfLikes - 1);
+      handleLikeClicked()
+    } else {
+      await AddLike(body, auth.token);
+      setIsLiked(!isLiked);
+      setNumOfLikes(numOfLikes + 1);
+      handleLikeClicked()
+    }
+  }
+
+
 
   async function handleCommentPost() {
     const body = {
@@ -71,10 +96,15 @@ const MorePosts = (props) => {
       setDiscription(description)
       setCreationDate(creationDate);
       setTags(tagList.map(tag => tag.tag).join(","));
+      setPostUserAvatar(userId.profilePhoto)
+      setNumOfLikes(likes)
+      setIsLiked(liked)
       console.log()
     }
     get();
   }, [commentAdded]);
+
+
   return (
     <>
       <AlignAllCenter>
@@ -84,7 +114,7 @@ const MorePosts = (props) => {
         </ContainerImagePost>
         <ContainerInfoPost>
           <ContainerNameAndImageUser>
-            <ImageProfileUser src={ImageProfileCR7} />
+            <ImageProfileUser src={postUserAvatar} />
             <NameUser>{author}</NameUser>
           </ContainerNameAndImageUser>
           <ContainerDescription>
@@ -95,21 +125,21 @@ const MorePosts = (props) => {
 
 
           </ContainerDescription>
-          {comments.map(({ creationDate, description, id, commentUserLikeList }) =>
+          {comments.map(({ creationDate, description, id, commentUserLikeList, userId }) =>
             <Comment
               creationDate={creationDate}
               description={description}
               id={id}
+              user={userId.name}
               likes={commentUserLikeList.length}
               key={id}
             />)}
 
           <ContainerIconsPost>
-            <IconLike src={IconLikeDisabled} />
-            <IconComments src={IconComment} />
+            <IconLike src={!isLiked ? IconLikeDisabled : IconLikeEnabled} onClick={handleLikes} />
           </ContainerIconsPost>
           <ContainerLikes>
-            <NumberOfLikes>{likes}</NumberOfLikes>
+            <NumberOfLikes>{numOfLikes}</NumberOfLikes>
             <TextLikes>likes</TextLikes>
           </ContainerLikes>
           <TimePost>{creationDate}</TimePost>

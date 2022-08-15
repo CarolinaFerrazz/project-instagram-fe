@@ -73,7 +73,7 @@ const PostsFeed = (props) => {
           <ContainerNameUser>
             <NameUser>{name}</NameUser>
           </ContainerNameUser>
-          <ImagePost src={photo} />
+          <ImagePost src={photo} onClick={() => showMoreHandler(postId, numLikes, isLiked)} />
           <ContainerIconsPost>
             <div>
               <span onClick={handleLikes}>
@@ -83,7 +83,6 @@ const PostsFeed = (props) => {
                   <IconLike src={IconLikeEnabled} />
                 )}
               </span>
-              <IconComments src={IconComment} />
             </div>
           </ContainerIconsPost>
           <ContainerLikes>
@@ -91,17 +90,9 @@ const PostsFeed = (props) => {
             <TextLikes>likes</TextLikes>
           </ContainerLikes>
           <ContainerNameAndDescription>
-            <NameUserPost>{name}</NameUserPost>
             <DescriptionPost>{description}</DescriptionPost>
           </ContainerNameAndDescription>
           <TimePost>{creationDate}</TimePost>
-          <HrComment />
-          <ContainerNewCommentAndPublish>
-            {/* LINK PARA VER INFORMACOES DO POST */}
-
-            <div onClick={() => showMoreHandler(postId, numLikes)}>more</div>
-            {/* <ViewMoreInformation onClick={() => setShowMore(!showMore)}>more</ViewMoreInformation> */}
-          </ContainerNewCommentAndPublish>
         </Container>
       </AlignAllCenter>
     </>

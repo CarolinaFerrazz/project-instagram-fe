@@ -16,6 +16,8 @@ const Feed = () => {
   const [postId, setPostId] = useState("");
   const [numLikes, setNumLikes] = useState("");
   const [likeClicked, setLikeClicked] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+
 
   function handleLikeClicked() {
     setLikeClicked(!likeClicked);
@@ -32,15 +34,17 @@ const Feed = () => {
     getPosts();
   }, [likeClicked]);
 
-  function showMoreHandler(id, numLikes) {
+  function showMoreHandler(id, numLikes, isLiked) {
     if (!showMore) {
       setPostId(id);
       setNumLikes(numLikes)
       setShowMore(!showMore);
+      setIsLiked(isLiked)
     } else {
       setPostId("");
       setShowMore(!showMore);
       setNumLikes("");
+      setIsLiked(false);
     }
   }
 
@@ -55,7 +59,7 @@ const Feed = () => {
       </ContainerIcon>
       {!showMore ? <IconAdd src={IconAddPost} /> : null}
       <Messages mesgError="Error" />
-      {showMore ? <MorePosts postId={postId} showMoreHandler={showMoreHandler} likes={numLikes} /> :
+      {showMore ? <MorePosts postId={postId} showMoreHandler={showMoreHandler} likes={numLikes} liked={isLiked} handleLikeClicked={handleLikeClicked} /> :
         posts.map((post) => {
           return <PostsFeed
             postId={post.id}
