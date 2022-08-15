@@ -4,7 +4,6 @@ import {
   ContainerNameUser,
   NameUser,
   ImagePost,
-  ContainerIconsPost,
   IconLike,
   ContainerLikes,
   TextLikes,
@@ -14,12 +13,10 @@ import {
 } from "./styles";
 import IconLikeEnabled from "../../assets/likeEnabled.svg";
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
-import IconComment from "../../assets/comment.svg";
 import { useEffect, useState } from "react";
 import RemoveLike from "../../services/RemoveLike";
 import useAuth from "../../hooks/useAuth";
 import AddLike from "../../services/AddLike";
-import MorePosts from "../MorePosts";
 
 const PostsFeed = (props) => {
   const { auth } = useAuth();
@@ -34,7 +31,7 @@ const PostsFeed = (props) => {
     tagList,
     like,
     showMoreHandler,
-    handleLikeClicked
+    handleLikeClicked,
   } = props;
   const [isLiked, setIsLiked] = useState(like);
   const [numOfLikes, setNumOfLikes] = useState("");
@@ -51,12 +48,12 @@ const PostsFeed = (props) => {
       await RemoveLike(body, auth.token);
       setIsLiked(!isLiked);
       setNumOfLikes(numOfLikes - 1);
-      handleLikeClicked()
+      handleLikeClicked();
     } else {
       await AddLike(body, auth.token);
       setIsLiked(!isLiked);
       setNumOfLikes(numOfLikes + 1);
-      handleLikeClicked()
+      handleLikeClicked();
     }
   }
 
@@ -67,8 +64,11 @@ const PostsFeed = (props) => {
           <ContainerNameUser>
             <NameUser>{name}</NameUser>
           </ContainerNameUser>
-          <ImagePost src={photo} onClick={() => showMoreHandler(postId, numLikes, isLiked)} />
-          <ContainerIconsPost>
+          <ImagePost
+            src={photo}
+            onClick={() => showMoreHandler(postId, numLikes, isLiked)}
+          />
+          <ContainerLikes>
             <div>
               <span onClick={handleLikes}>
                 {!isLiked ? (
@@ -78,12 +78,10 @@ const PostsFeed = (props) => {
                 )}
               </span>
             </div>
-          </ContainerIconsPost>
-          <ContainerLikes>
             <NumberOfLikes>{numOfLikes}</NumberOfLikes>
             <TextLikes>likes</TextLikes>
           </ContainerLikes>
-            <DescriptionPost>{description}</DescriptionPost>
+          <DescriptionPost>{description}</DescriptionPost>
           <TimePost>{creationDate}</TimePost>
         </Container>
       </AlignAllCenter>

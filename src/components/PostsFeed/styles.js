@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const AlignAllCenter = styled.div`
   display: flex;
@@ -15,8 +14,7 @@ export const Container = styled.div`
   border-radius: 16px;
 `;
 
-export const ContainerNameUser = styled.div`
-`;
+export const ContainerNameUser = styled.div``;
 
 export const NameUser = styled.p`
   font-size: 24px;
@@ -35,12 +33,12 @@ export const ImagePost = styled.img`
   border-bottom: solid 2px #74b3ce;
 `;
 
-export const ContainerIconsPost = styled.div`
-  padding: 8px 16px;
+export const ContainerLikes = styled.div`
+  padding: 0 16px;
   display: flex;
-  justify-content: space-between;
   margin-bottom: 16px;
   margin-bottom: 4px;
+  align-items: center;
 `;
 
 export const IconLike = styled.img`
@@ -50,23 +48,17 @@ export const IconLike = styled.img`
   }
 `;
 
-export const ContainerLikes = styled.div`
-  display: flex;
-  margin: 0 20px;
-`;
-
 export const NumberOfLikes = styled.p`
   color: #fff;
   font-size: 18px;
   margin: 0;
   font-weight: 700;
+  margin-left: 8px;
 `;
 
 export const TextLikes = styled.p`
   color: #fff;
   font-size: 18px;
-  margin-top: 0;
-  margin-bottom: 8px;
   margin-left: 4px;
   font-weight: 700;
 `;
