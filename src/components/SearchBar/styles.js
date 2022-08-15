@@ -6,7 +6,6 @@ export const InputSearch = styled.input`
   padding: 4px 0;
   outline: none;
   width: 80%;
-  margin-right: 20px;
   color: #fff;
   background: none;
   font-size: 16px;
@@ -14,4 +13,5 @@ export const InputSearch = styled.input`
 
 export const IconSearchBar = styled.img`
   margin-right: 4px;
+  width: 25px;
 `;

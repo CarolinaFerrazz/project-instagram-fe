@@ -45,6 +45,7 @@ export const NameUser = styled.p`
 
 export const ImagePost = styled.img`
   max-width: 500px;
+  min-height: 500px;
   margin-top: 4px;
   flex-wrap: wrap;
   border-top: solid 2px #74b3ce;
