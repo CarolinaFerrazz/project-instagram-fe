@@ -19,7 +19,7 @@ export const AlignAllCenter = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-bottom: 40px;
+  margin: 40px 0;
 `;
 
 export const ContainerImagePost = styled.div`
@@ -46,7 +46,9 @@ export const ContainerNameAndImageUser = styled.div`
 export const ImageProfileUser = styled.img`
   border-radius: 50%;
   max-width: 50px;
+  min-width: 50px;
   max-height: 50px;
+  min-height: 50px;
 `;
 
 export const NameUser = styled.p`
@@ -61,7 +63,9 @@ export const NameUser = styled.p`
 
 export const ImagePost = styled.img`
   max-height: 600px;
+  min-height: 600px;
   max-width: 600px;
+  min-width: 600px;
   flex-wrap: wrap;
   border: solid 1px #74b3ce;
 `;
