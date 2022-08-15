@@ -23,36 +23,3 @@ export const LinkHome = styled(Link)`
   }
 `;
 
-export const ContainerIcons = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  margin: 20px 40px;
-`;
-
-export const DirectIcon = styled.img`
-  margin-right: 30px;
-
-  &:hover {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.3);
-  }
-`;
-
-export const FeedIcon = styled.img`
-  margin-right: 30px;
-
-  &:hover {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.3);
-  }
-`;
-
-
-export const LinksHeader = styled.a`
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;

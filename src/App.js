@@ -11,8 +11,8 @@ import Feed from "./pages/Feed";
 import Saves from "./pages/Saves";
 import Direct from "./pages/Direct";
 import PersistLogin from "./components/PersistLogin";
+import InfoPost from "./pages/InfoPost";
 function App() {
-
   return (
     <>
       <Routes>
@@ -29,6 +29,7 @@ function App() {
               <Route path="feed" element={<Feed />} />
               <Route path="saves" element={<Saves />} />
               <Route path="direct" element={<Direct />} />
+              <Route path="infopost" element={<InfoPost />} />
             </Route>
           </Route>
         </Route>

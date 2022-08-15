@@ -14,18 +14,14 @@ import {
   ContainerNameAndDescription,
   NameUserPost,
   DescriptionPost,
-  AllComents,
   TimePost,
   HrComment,
   ContainerNewCommentAndPublish,
-  AddNewComment,
-  ButtonPublish,
+  ViewMoreInformation,
 } from "./styles";
-import Post from "../../assets/profile.jpg";
 import IconLikeEnabled from "../../assets/likeEnabled.svg";
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
 import IconSaveEnabled from "../../assets/saveDisabled.svg";
-// import IconSaveDisabled from "../../assets/saveDisabled.svg";
 import IconComment from "../../assets/comment.svg";
 import { useEffect, useState } from "react";
 import RemoveLike from "../../services/RemoveLike";
@@ -34,22 +30,28 @@ import AddLike from "../../services/AddLike";
 
 const PostsFeed = (props) => {
   const { auth } = useAuth();
-  const { postId, photo, name, commentList, description,
-    creationDate, numLikes, tagList, like } = props;
+  const {
+    postId,
+    photo,
+    name,
+    commentList,
+    description,
+    creationDate,
+    numLikes,
+    tagList,
+    like,
+  } = props;
   const [isLiked, setIsLiked] = useState(like);
-  const [numOfLikes, setNumOfLikes] = useState('');
+  const [numOfLikes, setNumOfLikes] = useState("");
 
   useEffect(() => {
     setNumOfLikes(numLikes);
-
-  }, [])
-
-
+  }, []);
 
   async function handleLikes() {
     const body = {
       postId: postId,
-    }
+    };
     console.log(body);
     if (isLiked) {
       await RemoveLike(body, auth.token);
@@ -60,10 +62,7 @@ const PostsFeed = (props) => {
       setIsLiked(!isLiked);
       setNumOfLikes(numOfLikes + 1);
     }
-
-
   }
-
 
   return (
     <>
@@ -76,10 +75,11 @@ const PostsFeed = (props) => {
           <ContainerIconsPost>
             <div>
               <span onClick={handleLikes}>
-                {!isLiked
-                  ? <IconLike src={IconLikeDisabled} />
-                  : <IconLike src={IconLikeEnabled} />}
-
+                {!isLiked ? (
+                  <IconLike src={IconLikeDisabled} />
+                ) : (
+                  <IconLike src={IconLikeEnabled} />
+                )}
               </span>
               <IconComments src={IconComment} />
             </div>
@@ -93,12 +93,11 @@ const PostsFeed = (props) => {
             <NameUserPost>{name}</NameUserPost>
             <DescriptionPost>{description}</DescriptionPost>
           </ContainerNameAndDescription>
-          <AllComents>ver todos os comentarios</AllComents>
           <TimePost>{creationDate}</TimePost>
           <HrComment />
           <ContainerNewCommentAndPublish>
-            <AddNewComment>adicionar comentario</AddNewComment>
-            <ButtonPublish>publish</ButtonPublish>
+            {/* LINK PARA VER INFORMACOES DO POST */}
+            <ViewMoreInformation to="/">more</ViewMoreInformation>
           </ContainerNewCommentAndPublish>
         </Container>
       </AlignAllCenter>

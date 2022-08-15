@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import LINK from "../../services/Link";
 
 export const AlignAllCenter = styled.div`
   display: flex;
@@ -105,12 +107,6 @@ export const DescriptionPost = styled.p`
   margin-left: 8px;
 `;
 
-export const AllComents = styled.p`
-  color: #b0b0b0;
-  font-size: 16px;
-  margin: 0 0 8px 20px;
-`;
-
 export const TimePost = styled.p`
   color: #b0b0b0;
   font-size: 12px;
@@ -130,17 +126,10 @@ export const ContainerNewCommentAndPublish = styled.div`
   align-items: center;
 `;
 
-export const AddNewComment = styled.p`
+export const ViewMoreInformation = styled(Link)`
   color: #b0b0b0;
   font-size: 16px;
   margin: 12px 0;
   margin-left: 20px;
-`;
-
-export const ButtonPublish = styled.button`
-  color: #74B3CE;
-  font-size: 12px;
-  border: none;
-  background: none;
-  margin-right: 20px;
+  text-decoration: none;
 `;
