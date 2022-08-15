@@ -105,7 +105,6 @@ const ViewProfile = () => {
             showMoreHandler={showMoreHandler}
             handleLikeClicked={handleLikeClicked} />
         : null}
-      <Footer />
     </>
   );
 };
