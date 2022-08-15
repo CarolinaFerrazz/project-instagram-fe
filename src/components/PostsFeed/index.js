@@ -3,6 +3,7 @@ import {
   Container,
   ContainerNameUser,
   NameUser,
+  ImageUser,
   ImagePost,
   IconLike,
   ContainerLikes,
@@ -17,6 +18,7 @@ import { useEffect, useState } from "react";
 import RemoveLike from "../../services/RemoveLike";
 import useAuth from "../../hooks/useAuth";
 import AddLike from "../../services/AddLike";
+import CR7 from "../../assets/profile.jpg";
 
 const PostsFeed = (props) => {
   const { auth } = useAuth();
@@ -62,6 +64,7 @@ const PostsFeed = (props) => {
       <AlignAllCenter>
         <Container>
           <ContainerNameUser>
+            <ImageUser src={CR7} />
             <NameUser>{name}</NameUser>
           </ContainerNameUser>
           <ImagePost

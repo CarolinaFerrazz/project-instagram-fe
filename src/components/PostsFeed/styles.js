@@ -14,14 +14,22 @@ export const Container = styled.div`
   border-radius: 16px;
 `;
 
-export const ContainerNameUser = styled.div``;
+export const ContainerNameUser = styled.div`
+  display: flex;
+  align-items: center;
+  padding-left: 4px;
+`;
+
+export const ImageUser = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+`;
 
 export const NameUser = styled.p`
-  font-size: 24px;
+  font-size: 20px;
   color: #74b3ce;
-  margin-top: 8px;
-  margin-bottom: 4px;
-  padding-left: 20px;
+  padding-left: 8px;
   font-weight: 700;
 `;
 
