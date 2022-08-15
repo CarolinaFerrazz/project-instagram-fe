@@ -17,7 +17,7 @@ const DropdownProfile = () => {
     <>
       <div className="dropdown">
         <button className="dropButton">
-          <img alt="Icon" src={IconProfile}></img>
+          <img className="dropdownImage" alt="Icon" src={IconProfile}></img>
         </button>
         <div className="dropdown-content">
           <a href="/profile">Profile</a>

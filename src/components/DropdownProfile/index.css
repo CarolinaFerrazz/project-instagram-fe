@@ -1,6 +1,7 @@
 .dropButton {
   border: none;
   background: none;
+  margin: 0;
 }
 
 .dropdown {
@@ -9,7 +10,7 @@
 }
 
 .dropdownImage {
-  width: 25px;
+  min-width: 25px;
 }
 
 .dropdownImage:hover {
@@ -29,6 +30,7 @@
 
 .dropdown-content a {
   color: #fff;
+  font-weight: 700;
   padding: 6px 8px;
   text-decoration: none;
   display: flex;

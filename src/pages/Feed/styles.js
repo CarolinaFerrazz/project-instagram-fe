@@ -1,10 +1,18 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ContainerIcon = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 80px;
+  bottom: 8px;
+  position: fixed;
+`;
+
+export const ButtonAddPost = styled.button`
+  background: none;
+  border: none;
 `;
 
 export const IconAdd = styled.img`
@@ -15,3 +23,8 @@ export const IconAdd = styled.img`
     transform: scale(1.1);
   }
 `;
+
+export const LinkAddPost = styled(Link)`
+
+`;
+

@@ -19,6 +19,7 @@ export const AlignAllCenter = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
+  margin-bottom: 40px;
 `;
 
 export const ContainerImagePost = styled.div`

@@ -4,7 +4,7 @@ export const AllAlignCenter = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 60px;
-  margin-bottom: 140px;
+  margin-bottom: 40px;
 `;
 
 export const Container = styled.div`

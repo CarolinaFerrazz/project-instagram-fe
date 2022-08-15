@@ -10,12 +10,23 @@ export const Container = styled.nav`
   border-bottom: solid 1px #404040;
 `;
 
+export const ContainerHome = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const IconHome = styled.img`
+  margin-right: 8px;
+  width: 28px;
+`;
+
 export const LinkHome = styled(Link)`
   padding: 8px 40px;
   margin: 8px;
   color: #d1d1d1;
   text-decoration: none;
   font-size: 28px;
+  text-align: center;
 
   &:hover {
     -webkit-transform: scale(1.2);

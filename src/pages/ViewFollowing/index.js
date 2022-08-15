@@ -53,7 +53,6 @@ const ViewFollowing = () => {
             />)}
         </Container>
       </AllAlignCenter>
-      <Footer />
     </>
   );
 };
