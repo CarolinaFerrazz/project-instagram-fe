@@ -25,8 +25,10 @@ const Header = () => {
             Fake Instagram
           </LinkHome>
         </ContainerHome>
-        <ContainerIcons>
+        <div>
           <SearchBar />
+        </div>
+        <ContainerIcons>
           <LinksHeader title="Feed" href="/feed">
             <FeedIcon src={IconFeed} alt="Feed icon"></FeedIcon>
           </LinksHeader>

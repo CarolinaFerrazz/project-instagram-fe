@@ -24,7 +24,4 @@ export const IconAdd = styled.img`
   }
 `;
 
-export const LinkAddPost = styled(Link)`
-
-`;
-
+export const LinkAddPost = styled(Link)``;

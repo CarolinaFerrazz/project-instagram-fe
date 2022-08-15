@@ -49,6 +49,7 @@ export const ImageProfileUser = styled.img`
   min-width: 50px;
   max-height: 50px;
   min-height: 50px;
+  object-fit: cover;
 `;
 
 export const NameUser = styled.p`
@@ -67,6 +68,7 @@ export const ImagePost = styled.img`
   max-width: 600px;
   min-width: 600px;
   flex-wrap: wrap;
+  object-fit: cover;
   border: solid 1px #74b3ce;
 `;
 
@@ -143,6 +145,7 @@ export const ContainerNewCommentAndPublish = styled.div`
   align-items: center;
   border-top: solid 1px #74b3ce;
   max-height: 20%;
+  bottom: 0;
 `;
 
 export const AddNewComment = styled.textarea`
@@ -153,7 +156,6 @@ export const AddNewComment = styled.textarea`
   min-width: 80%;
   background: none;
   border: none;
-  max-height: 100px;
   resize: none;
 `;
 
@@ -167,7 +169,8 @@ export const ButtonPublish = styled.button`
 
 export const ContainerComents = styled.div`
   overflow-y: scroll;
-  max-height: 34%;
+  min-height: 45%;
+  max-height: 45%;
   max-width: 100%;
 
   ::-webkit-scrollbar {

@@ -13,6 +13,7 @@ import CreatePost from "./pages/CreatePost";
 import ViewProfile from "./pages/ViewProfile";
 import ViewFollowing from "./pages/ViewFollowing";
 import ViewFollowers from "./pages/ViewFollowers";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path="viewprofile" element={<ViewProfile />} />
               <Route path="viewfollowing" element={<ViewFollowing />} />
               <Route path="viewfollowers" element={<ViewFollowers />} />
+              <Route path="search" element={<Search />} />
             </Route>
           </Route>
         </Route>

@@ -52,7 +52,6 @@ const Feed = () => {
       <ContainerIcon>
         <ButtonAddPost>
           <LinkAddPost to="/createpost">
-            {" "}
             {!showMore ? <IconAdd src={IconAddPost} /> : null}
           </LinkAddPost>
         </ButtonAddPost>

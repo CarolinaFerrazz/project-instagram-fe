@@ -29,9 +29,12 @@ export const ButtonUser = styled.button`
 export const LinkProfileUser = styled(Link)``;
 
 export const ImageUser = styled.img`
-  width: 50px;
-  height: 50px;
+  max-width: 50px;
+  min-width: 50px;
+  max-height: 50px;
+  min-height: 50px;
   border-radius: 50%;
+  object-fit: cover;
 `;
 
 export const NameUser = styled.p`

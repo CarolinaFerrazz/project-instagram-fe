@@ -1,18 +1,23 @@
-import { InputSearch, IconSearchBar } from "./styles";
+import React from "react";
+import { Container, Input, LinkSearch, IconSearchBar } from "./styles";
 import IncoSearch from "../../assets/search.svg";
 
 const SearchBar = () => (
   <>
-    <IconSearchBar alt="icon" src={IncoSearch}></IconSearchBar>
-    <form action="/viewprofile" method="get">
-      <InputSearch
-        type="text"
-        id="header-search"
-        placeholder="Search profile"
-        name="user"
-        onChange={(e) => console.log(e.target.value)}
-      ></InputSearch>
-    </form>
+    <Container>
+        <LinkSearch to="search">
+      <IconSearchBar alt="icon" src={IncoSearch}></IconSearchBar>
+      </LinkSearch>
+      <form action="/" method="get">
+        <Input
+          type="text"
+          id="header-search"
+          placeholder="Search a product"
+          name="product"
+          onChange={(e) => console.log(e.target.value)}
+        />
+      </form>
+    </Container>
   </>
 );
 

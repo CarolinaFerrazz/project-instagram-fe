@@ -29,6 +29,7 @@ export const ImageProfile = styled.img`
   border-radius: 50%;
   width: 200px;
   height: 200px;
+  object-fit: cover;
 `;
 
 export const ContainerInfoNumbers = styled.div`
