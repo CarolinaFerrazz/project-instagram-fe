@@ -18,11 +18,9 @@ const Feed = () => {
   const [likeClicked, setLikeClicked] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
 
-
   function handleLikeClicked() {
     setLikeClicked(!likeClicked);
   }
-
 
   useEffect(() => {
     async function getPosts() {
@@ -37,9 +35,9 @@ const Feed = () => {
   function showMoreHandler(id, numLikes, isLiked) {
     if (!showMore) {
       setPostId(id);
-      setNumLikes(numLikes)
+      setNumLikes(numLikes);
       setShowMore(!showMore);
-      setIsLiked(isLiked)
+      setIsLiked(isLiked);
     } else {
       setPostId("");
       setShowMore(!showMore);
@@ -48,34 +46,46 @@ const Feed = () => {
     }
   }
 
-
   console.log(auth);
   return (
     <>
       <Header />
       <ContainerIcon>
         {/* BOTAO PARA AIDIONAR POSTS  */}
-
+        {!showMore ? <IconAdd src={IconAddPost} /> : null}
       </ContainerIcon>
-      {!showMore ? <IconAdd src={IconAddPost} /> : null}
+
       <Messages mesgError="Error" />
-      {showMore ? <MorePosts postId={postId} showMoreHandler={showMoreHandler} likes={numLikes} liked={isLiked} handleLikeClicked={handleLikeClicked} /> :
+      {showMore ? (
+        <MorePosts
+          postId={postId}
+          showMoreHandler={showMoreHandler}
+          likes={numLikes}
+          liked={isLiked}
+          handleLikeClicked={handleLikeClicked}
+        />
+      ) : (
         posts.map((post) => {
-          return <PostsFeed
-            postId={post.id}
-            photo={post.photo}
-            commentList={post.commentList}
-            description={post.description}
-            creationDate={post.creationDate}
-            numLikes={post?.postUserLikeList.length}
-            tagList={post?.tagList}
-            name={post?.userId?.name}
-            like={post?.postUserLikeList.some((like) => like.userId === auth.id)}
-            key={post.id}
-            showMoreHandler={showMoreHandler}
-            handleLikeClicked={handleLikeClicked}
-          />
-        })}
+          return (
+            <PostsFeed
+              postId={post.id}
+              photo={post.photo}
+              commentList={post.commentList}
+              description={post.description}
+              creationDate={post.creationDate}
+              numLikes={post?.postUserLikeList.length}
+              tagList={post?.tagList}
+              name={post?.userId?.name}
+              like={post?.postUserLikeList.some(
+                (like) => like.userId === auth.id
+              )}
+              key={post.id}
+              showMoreHandler={showMoreHandler}
+              handleLikeClicked={handleLikeClicked}
+            />
+          );
+        })
+      )}
       <Footer />
     </>
   );

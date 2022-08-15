@@ -1,4 +1,6 @@
 import {
+  ContainerButtonBack,
+  ButtonBack,
   AlignAllCenter,
   ContainerImagePost,
   ContainerInfoPost,
@@ -8,7 +10,6 @@ import {
   ImagePost,
   ContainerIconsPost,
   IconLike,
-  IconComments,
   ContainerLikes,
   TextLikes,
   NumberOfLikes,
@@ -18,16 +19,10 @@ import {
   ContainerNewCommentAndPublish,
   AddNewComment,
   ButtonPublish,
-  ContainerAllComents,
-  ContainerUserNameAndComment,
-  UserNameComment,
-  TextComment,
-  ContainerTimeAndLike,
-  TimeComment,
-  LikeComment,
+  ContainerComents,
+  IconBack,
 } from "./styles";
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
-import IconComment from "../../assets/comment.svg";
 import { useEffect, useState } from "react";
 import GetPostById from "../../services/GetPostById";
 import useAuth from "../../hooks/useAuth";
@@ -36,6 +31,7 @@ import PostComment from "../../services/PostComment";
 import RemoveLike from "../../services/RemoveLike";
 import AddLike from "../../services/AddLike";
 import IconLikeEnabled from "../../assets/likeEnabled.svg";
+import IconBackPage from "../../assets/back.svg";
 
 const MorePosts = (props) => {
   const { auth } = useAuth();
@@ -52,9 +48,6 @@ const MorePosts = (props) => {
   const [numOfLikes, setNumOfLikes] = useState("");
   const [isLiked, setIsLiked] = useState(false);
 
-
-
-
   async function handleLikes() {
     const body = {
       postId: postId,
@@ -63,53 +56,53 @@ const MorePosts = (props) => {
       await RemoveLike(body, auth.token);
       setIsLiked(!isLiked);
       setNumOfLikes(numOfLikes - 1);
-      handleLikeClicked()
+      handleLikeClicked();
     } else {
       await AddLike(body, auth.token);
       setIsLiked(!isLiked);
       setNumOfLikes(numOfLikes + 1);
-      handleLikeClicked()
+      handleLikeClicked();
     }
   }
-
-
 
   async function handleCommentPost() {
     const body = {
       description: writingComment,
-      postId: postId
-    }
+      postId: postId,
+    };
     await PostComment(body, auth.token);
     setWritingComment("");
     setCommentAdded(!commentAdded);
   }
 
-
   useEffect(() => {
-
     async function get() {
       const post = await GetPostById(postId, auth.token);
-      const { commentList, creationDate, description, userId, photo, tagList } = post.data
+      const { commentList, creationDate, description, userId, photo, tagList } =
+        post.data;
       setPhoto(photo);
       setAuthor(userId.name);
       setComments(commentList);
-      setDiscription(description)
+      setDiscription(description);
       setCreationDate(creationDate);
-      setTags(tagList.map(tag => tag.tag).join(","));
-      setPostUserAvatar(userId.profilePhoto)
-      setNumOfLikes(likes)
-      setIsLiked(liked)
-      console.log()
+      setTags(tagList.map((tag) => tag.tag).join(","));
+      setPostUserAvatar(userId.profilePhoto);
+      setNumOfLikes(likes);
+      setIsLiked(liked);
+      console.log();
     }
     get();
   }, [commentAdded]);
 
-
   return (
     <>
       <AlignAllCenter>
-        <button onClick={showMoreHandler}>Show Less</button>
         <ContainerImagePost>
+        <ContainerButtonBack>
+        <ButtonBack onClick={showMoreHandler}>
+          <IconBack src={IconBackPage} />
+        </ButtonBack>
+      </ContainerButtonBack>
           <ImagePost src={photo} />
         </ContainerImagePost>
         <ContainerInfoPost>
@@ -122,21 +115,33 @@ const MorePosts = (props) => {
               <DescriptionPost>{discription}</DescriptionPost>
               <DescriptionPost>{tags}</DescriptionPost>
             </div>
-
-
           </ContainerDescription>
-          {comments.map(({ creationDate, description, id, commentUserLikeList, userId }) =>
-            <Comment
-              creationDate={creationDate}
-              description={description}
-              id={id}
-              user={userId.name}
-              likes={commentUserLikeList.length}
-              key={id}
-            />)}
+          <ContainerComents>
+            {comments.map(
+              ({
+                creationDate,
+                description,
+                id,
+                commentUserLikeList,
+                userId,
+              }) => (
+                <Comment
+                  creationDate={creationDate}
+                  description={description}
+                  id={id}
+                  user={userId.name}
+                  likes={commentUserLikeList.length}
+                  key={id}
+                />
+              )
+            )}
+          </ContainerComents>
 
           <ContainerIconsPost>
-            <IconLike src={!isLiked ? IconLikeDisabled : IconLikeEnabled} onClick={handleLikes} />
+            <IconLike
+              src={!isLiked ? IconLikeDisabled : IconLikeEnabled}
+              onClick={handleLikes}
+            />
           </ContainerIconsPost>
           <ContainerLikes>
             <NumberOfLikes>{numOfLikes}</NumberOfLikes>
@@ -144,11 +149,14 @@ const MorePosts = (props) => {
           </ContainerLikes>
           <TimePost>{creationDate}</TimePost>
           <ContainerNewCommentAndPublish>
-            <AddNewComment placeholder="Add a comment..." value={writingComment} onChange={(e) => setWritingComment(e.target.value)}></AddNewComment>
+            <AddNewComment
+              placeholder="Add a comment..."
+              value={writingComment}
+              onChange={(e) => setWritingComment(e.target.value)}
+            ></AddNewComment>
             <ButtonPublish onClick={handleCommentPost}>Post</ButtonPublish>
           </ContainerNewCommentAndPublish>
         </ContainerInfoPost>
-
       </AlignAllCenter>
     </>
   );

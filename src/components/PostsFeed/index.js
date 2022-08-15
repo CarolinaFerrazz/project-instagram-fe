@@ -6,17 +6,11 @@ import {
   ImagePost,
   ContainerIconsPost,
   IconLike,
-  IconComments,
   ContainerLikes,
   TextLikes,
   NumberOfLikes,
-  ContainerNameAndDescription,
-  NameUserPost,
   DescriptionPost,
   TimePost,
-  HrComment,
-  ContainerNewCommentAndPublish,
-  ViewMoreInformation,
 } from "./styles";
 import IconLikeEnabled from "../../assets/likeEnabled.svg";
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
@@ -89,9 +83,7 @@ const PostsFeed = (props) => {
             <NumberOfLikes>{numOfLikes}</NumberOfLikes>
             <TextLikes>likes</TextLikes>
           </ContainerLikes>
-          <ContainerNameAndDescription>
             <DescriptionPost>{description}</DescriptionPost>
-          </ContainerNameAndDescription>
           <TimePost>{creationDate}</TimePost>
         </Container>
       </AlignAllCenter>
