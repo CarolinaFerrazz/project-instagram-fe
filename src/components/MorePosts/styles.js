@@ -32,7 +32,7 @@ export const ContainerInfoPost = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid #74b3ce;
-  min-width: 40%;
+  max-width: 40%;
   max-height: 600px;
 `;
 
@@ -146,7 +146,7 @@ export const AddNewComment = styled.textarea`
   min-width: 80%;
   background: none;
   border: none;
-  min-height: 100px;
+  max-height: 100px;
   resize: none;
 `;
 
