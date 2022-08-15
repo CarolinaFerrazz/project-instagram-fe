@@ -54,7 +54,7 @@ const Profile = () => {
     }
     getProfileInfo();
     // eslint-disable-next-line
-  }, []);
+  }, [likeClicked]);
 
   return (
     <>
@@ -65,8 +65,6 @@ const Profile = () => {
           <MorePosts
             postId={postId}
             showMoreHandler={showMoreHandler}
-            likes={numLikes}
-            liked={isLiked}
             handleLikeClicked={handleLikeClicked}
           />
 

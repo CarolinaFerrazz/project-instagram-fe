@@ -60,8 +60,6 @@ const Feed = () => {
         <MorePosts
           postId={postId}
           showMoreHandler={showMoreHandler}
-          likes={numLikes}
-          liked={isLiked}
           handleLikeClicked={handleLikeClicked}
         />
       ) : (

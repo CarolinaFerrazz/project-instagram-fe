@@ -35,7 +35,7 @@ import IconBackPage from "../../assets/back.svg";
 
 const MorePosts = (props) => {
   const { auth } = useAuth();
-  const { showMoreHandler, postId, likes, liked, handleLikeClicked } = props;
+  const { showMoreHandler, postId, handleLikeClicked } = props;
   const [photo, setPhoto] = useState("");
   const [author, setAuthor] = useState("");
   const [comments, setComments] = useState([]);
@@ -78,7 +78,7 @@ const MorePosts = (props) => {
   useEffect(() => {
     async function get() {
       const post = await GetPostById(postId, auth.token);
-      const { commentList, creationDate, description, userId, photo, tagList } =
+      const { commentList, creationDate, description, userId, photo, tagList, postUserLikeList } =
         post.data;
       setPhoto(photo);
       setAuthor(userId.name);
@@ -87,8 +87,8 @@ const MorePosts = (props) => {
       setCreationDate(creationDate);
       setTags(tagList.map((tag) => tag.tag).join(","));
       setPostUserAvatar(userId.profilePhoto);
-      setNumOfLikes(likes);
-      setIsLiked(liked);
+      setNumOfLikes(postUserLikeList.length);
+      setIsLiked(postUserLikeList.some((like) => like.userId === auth.id));
       console.log();
     }
     get();
