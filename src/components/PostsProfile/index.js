@@ -10,7 +10,7 @@ const PostsProfile = (props) => {
     <>
       <AlignAllCenter>
         <Container>
-          {list.map(post =>
+          {list.sort((a, b) => b.id - a.id).map(post =>
             <ContainerPost
               onClick={() =>
                 showMoreHandler(
