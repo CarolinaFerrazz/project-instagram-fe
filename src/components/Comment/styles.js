@@ -26,6 +26,7 @@ export const ContainerComment = styled.div`
 export const UserNameComment = styled.p`
   color: #74b3ce;
   margin-bottom: 0;
+  min-width: fit-content;
 `;
 
 export const TextComment = styled.p`
