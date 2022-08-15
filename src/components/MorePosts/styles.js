@@ -161,22 +161,23 @@ export const ButtonPublish = styled.button`
 `;
 
 export const ContainerComents = styled.div`
-  overflow: scroll;
+  overflow-y: scroll;
   max-height: 34%;
-  scrollbar-color: none;
-  ::-webkit-scrollbar-thumb {
-    background: none;
-  }
-  ::-webkit-scrollbar-track-piece {
-    background: none;
-    
-  }
-  ::-webkit-scrollbar-track {
-    background: none;
-  }
-  ::-webkit-scrollbar-button {
-    background: none;
-  }
+
+  ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 10px;
+}
 `;
 
 export const IconBack = styled.img`
