@@ -78,8 +78,15 @@ const MorePosts = (props) => {
   useEffect(() => {
     async function get() {
       const post = await GetPostById(postId, auth.token);
-      const { commentList, creationDate, description, userId, photo, tagList, postUserLikeList } =
-        post.data;
+      const {
+        commentList,
+        creationDate,
+        description,
+        userId,
+        photo,
+        tagList,
+        postUserLikeList,
+      } = post.data;
       setPhoto(photo);
       setAuthor(userId.name);
       setComments(commentList);

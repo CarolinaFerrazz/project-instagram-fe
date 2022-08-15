@@ -5,7 +5,9 @@ export const ContainerIcon = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 80px;
+  bottom: 0;
+  position: fixed;
 `;
 
 export const ButtonAddPost = styled.button`
@@ -23,5 +25,5 @@ export const IconAdd = styled.img`
 `;
 
 export const LinkAddPost = styled(Link)`
-  
+
 `;
