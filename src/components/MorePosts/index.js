@@ -31,8 +31,50 @@ import IconLikeDisabled from "../../assets/likeDisabled.svg";
 import IconComment from "../../assets/comment.svg";
 import ImageFeed from "../../assets/profile.jpg";
 import ImageProfileCR7 from "../../assets/profile.jpg"
+import { useEffect, useState } from "react";
+import GetPostById from "../../services/GetPostById";
+import useAuth from "../../hooks/useAuth";
+import Comment from "../Comment";
+import PostComment from "../../services/PostComment";
 
-const MorePosts = () => {
+const MorePosts = (props) => {
+  const { auth } = useAuth();
+  const { showMoreHandler, postId, likes } = props;
+  const [photo, setPhoto] = useState("");
+  const [author, setAuthor] = useState("");
+  const [comments, setComments] = useState([]);
+  const [discription, setDiscription] = useState("");
+  const [creationDate, setCreationDate] = useState("");
+  const [tags, setTags] = useState();
+  const [writingComment, setWritingComment] = useState("");
+  const [commentAdded, setCommentAdded] = useState(true);
+
+  async function handleCommentPost() {
+    const body = {
+      description: writingComment,
+      postId: postId
+    }
+    await PostComment(body, auth.token);
+    setWritingComment("");
+    setCommentAdded(!commentAdded);
+  }
+
+
+  useEffect(() => {
+
+    async function get() {
+      const post = await GetPostById(postId, auth.token);
+      const { commentList, creationDate, description, userId, photo, tagList } = post.data
+      setPhoto(photo);
+      setAuthor(userId.name);
+      setComments(commentList);
+      setDiscription(description)
+      setCreationDate(creationDate);
+      setTags(tagList.map(tag => tag.tag).join(","));
+      console.log()
+    }
+    get();
+  }, [commentAdded]);
   return (
     <>
       <AlignAllCenter>
@@ -43,7 +85,7 @@ const MorePosts = () => {
         <ContainerInfoPost>
           <ContainerNameAndImageUser>
             <ImageProfileUser src={ImageProfileCR7} />
-            <NameUser>NAME</NameUser>
+            <NameUser>{author}</NameUser>
           </ContainerNameAndImageUser>
           <ContainerDescription>
             <div>
