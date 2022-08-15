@@ -7,7 +7,6 @@ import {
   ContainerIconsPost,
   IconLike,
   IconComments,
-  IconSavePost,
   ContainerLikes,
   TextLikes,
   NumberOfLikes,
@@ -21,7 +20,6 @@ import {
 } from "./styles";
 import IconLikeEnabled from "../../assets/likeEnabled.svg";
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
-import IconSaveEnabled from "../../assets/saveDisabled.svg";
 import IconComment from "../../assets/comment.svg";
 import { useEffect, useState } from "react";
 import RemoveLike from "../../services/RemoveLike";
@@ -87,7 +85,6 @@ const PostsFeed = (props) => {
               </span>
               <IconComments src={IconComment} />
             </div>
-            <IconSavePost src={IconSaveEnabled} />
           </ContainerIconsPost>
           <ContainerLikes>
             <NumberOfLikes>{numOfLikes}</NumberOfLikes>

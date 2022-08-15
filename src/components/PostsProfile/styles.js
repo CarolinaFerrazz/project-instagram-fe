@@ -6,6 +6,7 @@ export const AlignAllCenter = styled.div`
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 60px;
+  margin-top: 20px;
 `;
 
 export const Container = styled.div`

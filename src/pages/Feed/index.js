@@ -7,6 +7,7 @@ import GetPostFromUserIsFollowing from "../../services/GetPostFromUserIsFollowin
 import useAuth from "../../hooks/useAuth";
 import IconAddPost from "../../assets/addImage.svg";
 import MorePosts from "../../components/MorePosts";
+import Messages from "../../components/Messages";
 
 const Feed = () => {
   const { auth } = useAuth();
@@ -31,15 +32,6 @@ const Feed = () => {
     getPosts();
   }, [likeClicked]);
 
-
-
-
-
-
-
-
-
-
   function showMoreHandler(id, numLikes) {
     if (!showMore) {
       setPostId(id);
@@ -62,6 +54,7 @@ const Feed = () => {
 
       </ContainerIcon>
       {!showMore ? <IconAdd src={IconAddPost} /> : null}
+      <Messages mesgError="Error" />
       {showMore ? <MorePosts postId={postId} showMoreHandler={showMoreHandler} likes={numLikes} /> :
         posts.map((post) => {
           return <PostsFeed

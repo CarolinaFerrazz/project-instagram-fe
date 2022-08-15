@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const AlignAllCenter = styled.div`
   display: flex;
@@ -79,7 +78,7 @@ export const ContainerButtonsProfile = styled.div`
   margin-top: 32px;
 `;
 
-export const ButtonEditProfile = styled.button`
+export const ButtonFollow = styled.button`
   padding: 8px 20px;
   min-width: 100%;
   background: #74b3ce;
@@ -93,28 +92,3 @@ export const ButtonEditProfile = styled.button`
   }
 `;
 
-export const LinksPages = styled.a`
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #d1d1d1;
-  text-decoration: none;
-
-  &:hover {
-    color: #ffff;
-  }
-`;
-
-export const LinkEditProfile = styled(Link)`
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-decoration: none;
-
-  &:hover {
-    font-weight: 700;
-  }
-`;

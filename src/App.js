@@ -12,6 +12,9 @@ import Saves from "./pages/Saves";
 import Direct from "./pages/Direct";
 import PersistLogin from "./components/PersistLogin";
 import InfoPost from "./pages/InfoPost";
+import CreatePost from "./pages/CreatePost";
+import ViewProfile from "./pages/ViewProfile";
+
 function App() {
   return (
     <>
@@ -30,6 +33,8 @@ function App() {
               <Route path="saves" element={<Saves />} />
               <Route path="direct" element={<Direct />} />
               <Route path="infopost" element={<InfoPost />} />
+              <Route path="createpost" element={<CreatePost />} />
+              <Route path="viewprofile" element={<ViewProfile />} />
             </Route>
           </Route>
         </Route>
