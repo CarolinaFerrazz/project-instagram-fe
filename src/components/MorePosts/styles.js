@@ -167,6 +167,16 @@ export const ContainerComents = styled.div`
   ::-webkit-scrollbar-thumb {
     background: none;
   }
+  ::-webkit-scrollbar-track-piece {
+    background: none;
+    
+  }
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+  ::-webkit-scrollbar-button {
+    background: none;
+  }
 `;
 
 export const IconBack = styled.img`
