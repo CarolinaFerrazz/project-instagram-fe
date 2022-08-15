@@ -163,6 +163,10 @@ export const ButtonPublish = styled.button`
 export const ContainerComents = styled.div`
   overflow: scroll;
   max-height: 34%;
+  scrollbar-color: none;
+  ::-webkit-scrollbar-thumb {
+    background: none;
+  }
 `;
 
 export const IconBack = styled.img`
