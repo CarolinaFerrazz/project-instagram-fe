@@ -33,12 +33,11 @@ const EditProfile = () => {
   const [failToUpdate, setFailToUpdate] = useState(false);
 
   async function update() {
-
     const update = {
       name: name,
       profilePhoto: avatar,
-      description: bio
-    }
+      description: bio,
+    };
     const updatedUser = await UpdateProfile(update, auth.token);
 
     if (updatedUser === null) {
@@ -47,7 +46,7 @@ const EditProfile = () => {
       const user = {
         avatar: updatedUser.profilePhoto,
         userName: updatedUser.username,
-      }
+      };
       setUser(user);
       setName(updatedUser.name);
       setBio(updatedUser.description);
@@ -62,7 +61,7 @@ const EditProfile = () => {
     setBio(userData.description);
     setAvatar(userData.avatar);
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   return (
     <>
@@ -74,15 +73,25 @@ const EditProfile = () => {
             <ContainerTextUserAndPicture>
               <TextUserName>{user.userName}</TextUserName>
               <LabelChangeName>
-                <TextChangePicture>change your profile picture</TextChangePicture>
-                <InputChangePicture name="change avatar" value={avatar} onChange={(e) => setAvatar(e.target.value)} />
+                <TextChangePicture>
+                  change your profile picture
+                </TextChangePicture>
+                <InputChangePicture
+                  name="change avatar"
+                  value={avatar}
+                  onChange={(e) => setAvatar(e.target.value)}
+                />
               </LabelChangeName>
             </ContainerTextUserAndPicture>
           </ContainerPictureAndName>
           <ContainerFormEditProfile>
             <LabelChangeName>
               Name
-              <InputChangeName name="name" value={name} onChange={(e) => setName(e.target.value)} />
+              <InputChangeName
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </LabelChangeName>
             <TextAboutChangeName>
               Help people find your account using the name they call you: your
@@ -91,10 +100,12 @@ const EditProfile = () => {
             <TextAboutChangeName>
               You can only change your name twice every 14 days.
             </TextAboutChangeName>
-            <LabelChangeBio>
-              Bio
-            </LabelChangeBio>
-            <InputChangeBio name="bio" value={bio} onChange={(e) => setBio(e.target.value)} />
+            <LabelChangeBio>Bio</LabelChangeBio>
+            <InputChangeBio
+              name="bio"
+              value={bio}
+              onChange={(e) => setBio(e.target.value)}
+            />
           </ContainerFormEditProfile>
           <ContainerButtonConfirm>
             <ButtonConfirm onClick={update}>Confirm</ButtonConfirm>
