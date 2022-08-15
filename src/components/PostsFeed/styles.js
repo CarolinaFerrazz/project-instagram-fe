@@ -60,7 +60,7 @@ export const ContainerLikes = styled.div`
   padding: 0 16px;
   display: flex;
   margin-bottom: 16px;
-  margin-bottom: 4px;
+  margin-bottom: 0;
   align-items: center;
 `;
 
