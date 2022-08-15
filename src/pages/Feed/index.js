@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import GetPostFromUserIsFollowing from "../../services/GetPostFromUserIsFollowing";
 import useAuth from "../../hooks/useAuth";
 import IconAddPost from "../../assets/addImage.svg";
+import Messages from "../../components/Messages";
 
 const Feed = () => {
   const { auth } = useAuth();
@@ -28,6 +29,7 @@ const Feed = () => {
         {/* BOTAO PARA AIDIONAR POSTS  */}
         <IconAdd src={IconAddPost} />
       </ContainerIcon>
+      <Messages mesgError="Error" />
 
       {posts.map((post) => (
         <PostsFeed

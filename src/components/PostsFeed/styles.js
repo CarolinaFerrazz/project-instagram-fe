@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import LINK from "../../services/Link";
 
 export const AlignAllCenter = styled.div`
   display: flex;
@@ -50,15 +49,6 @@ export const IconLike = styled.img`
 
 export const IconComments = styled.img`
   margin-left: 20px;
-
-  &:hover {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.1);
-  }
-`;
-
-export const IconSavePost = styled.img`
-  max-width: 25px;
 
   &:hover {
     -webkit-transform: scale(1.2);
