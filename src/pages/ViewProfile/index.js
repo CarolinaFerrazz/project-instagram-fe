@@ -11,7 +11,6 @@ import ViewProfileDiv from "../../components/ViewProfileDiv";
 import MorePosts from "../../components/MorePosts";
 import Header from "../../components/Header";
 import PostsProfile from "../../components/PostsProfile";
-import Footer from "../../components/Footer";
 // import Follow from "../../assets/follow.svg";
 
 const ViewProfile = () => {

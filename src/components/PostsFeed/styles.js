@@ -43,11 +43,14 @@ export const NameUser = styled.p`
 
 export const ImagePost = styled.img`
   max-width: 500px;
+  min-width: 500px;
   min-height: 500px;
+  max-height: 500px;
   margin-top: 4px;
   flex-wrap: wrap;
   border-top: solid 2px #74b3ce;
   border-bottom: solid 2px #74b3ce;
+  object-fit: cover;
 `;
 
 export const ContainerLikes = styled.div`
