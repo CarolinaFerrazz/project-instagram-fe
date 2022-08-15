@@ -11,28 +11,22 @@ const Profile = () => {
   const token = localStorage.getItem("token");
   const [userData, setUserData] = useState({});
   const [list, setPostList] = useState([]);
-
   const [likeClicked, setLikeClicked] = useState(false);
   const [postId, setPostId] = useState("");
-  const [numLikes, setNumLikes] = useState("");
   const [showMore, setShowMore] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
-
+  const [followers, setFollowers] = useState([]);
+  const [following, setFollowing] = useState([]);
   function handleLikeClicked() {
     setLikeClicked(!likeClicked);
   }
 
-  function showMoreHandler(id, numLikes, isLiked) {
+  function showMoreHandler(id) {
     if (!showMore) {
       setPostId(id);
-      setNumLikes(numLikes);
       setShowMore(!showMore);
-      setIsLiked(isLiked);
     } else {
       setPostId("");
       setShowMore(!showMore);
-      setNumLikes("");
-      setIsLiked(false);
     }
   }
 
@@ -42,15 +36,18 @@ const Profile = () => {
       const data = await GetUser(token);
       const user = data.data;
       const userInfo = {
+        id: user.id,
         email: user.email,
         avatar: user.profilePhoto,
         name: user.name,
         userName: user.username,
         description: user.description,
       };
-
+      console.log(user)
       setUserData(userInfo);
       setPostList(user.postList);
+      setFollowers(user.followers);
+      setFollowing(user.following);
     }
     getProfileInfo();
     // eslint-disable-next-line
@@ -59,16 +56,16 @@ const Profile = () => {
   return (
     <>
       <Header />
-      <Container>
-        {showMore
-          ?
-          <MorePosts
-            postId={postId}
-            showMoreHandler={showMoreHandler}
-            handleLikeClicked={handleLikeClicked}
-          />
+      {showMore
+        ?
+        <MorePosts
+          postId={postId}
+          showMoreHandler={showMoreHandler}
+          handleLikeClicked={handleLikeClicked}
+        />
 
-          : null}
+        : null}
+      <Container>
         {!showMore
           ?
           <ProfileDiv
@@ -79,6 +76,8 @@ const Profile = () => {
             userName={userData.userName}
             description={userData.description}
             postList={list}
+            followers={followers}
+            following={following}
           />
           : null}
       </Container>
