@@ -70,15 +70,16 @@ const ViewProfile = () => {
   return (
     <>
       <Header />
+      {showMore
+        ?
+        <MorePosts
+          postId={postId}
+          showMoreHandler={showMoreHandler}
+          handleLikeClicked={handleLikeClicked}
+        />
+        : null}
       <AlignAllCenter>
-        {showMore
-          ?
-          <MorePosts
-            postId={postId}
-            showMoreHandler={showMoreHandler}
-            handleLikeClicked={handleLikeClicked}
-          />
-          : null}
+
         <Container>
           {!showMore
             ? <ViewProfileDiv
