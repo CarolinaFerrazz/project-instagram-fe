@@ -59,6 +59,7 @@ export const NameUser = styled.p`
 `;
 
 export const ImagePost = styled.img`
+  max-height: 600px;
   max-width: 600px;
   flex-wrap: wrap;
   border: solid 1px #74b3ce;

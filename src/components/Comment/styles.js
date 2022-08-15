@@ -16,6 +16,13 @@ export const ContainerUserNameAndComment = styled.div`
   flex-direction: row;
 `;
 
+export const ContainerComment = styled.div`
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+`;
+
 export const UserNameComment = styled.p`
   color: #74b3ce;
   margin-bottom: 0;
