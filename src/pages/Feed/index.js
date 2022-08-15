@@ -18,6 +18,7 @@ const Feed = () => {
       console.log(data.data);
     }
     getPosts();
+    // eslint-disable-next-linve
   }, []);
 
   console.log(auth);
