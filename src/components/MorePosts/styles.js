@@ -118,6 +118,11 @@ export const ContainerDescription = styled.div`
 export const DescriptionPost = styled.p`
   color: #c9c9c9;
   font-size: 16px;
+  margin-bottom: 0;
+`;
+
+export const TextHashtag = styled.p`
+  margin-top: 4px;
 `;
 
 export const TimePost = styled.p`
@@ -143,7 +148,7 @@ export const AddNewComment = styled.textarea`
   min-width: 80%;
   background: none;
   border: none;
-  max-height: 40px;
+  min-height: 100px;
   resize: none;
 `;
 

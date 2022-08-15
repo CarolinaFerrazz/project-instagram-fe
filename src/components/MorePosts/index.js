@@ -15,6 +15,7 @@ import {
   NumberOfLikes,
   ContainerDescription,
   DescriptionPost,
+  TextHashtag,
   TimePost,
   ContainerNewCommentAndPublish,
   AddNewComment,
@@ -113,7 +114,7 @@ const MorePosts = (props) => {
           <ContainerDescription>
             <div>
               <DescriptionPost>{discription}</DescriptionPost>
-              <DescriptionPost>{tags}</DescriptionPost>
+              <TextHashtag>{tags}</TextHashtag>
             </div>
           </ContainerDescription>
           <ContainerComents>

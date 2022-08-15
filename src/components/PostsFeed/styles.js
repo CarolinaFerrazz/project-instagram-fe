@@ -15,14 +15,14 @@ export const Container = styled.div`
   border-radius: 16px;
 `;
 
-export const ContainerNameUser = styled.div``;
+export const ContainerNameUser = styled.div`
+`;
 
 export const NameUser = styled.p`
   font-size: 24px;
   color: #74b3ce;
-  border-bottom: solid 1px #74b3ce;
-  margin: 0;
-  margin-top: 16px;
+  margin-top: 8px;
+  margin-bottom: 4px;
   padding-left: 20px;
   font-weight: 700;
 `;
@@ -31,6 +31,8 @@ export const ImagePost = styled.img`
   max-width: 500px;
   margin-top: 4px;
   flex-wrap: wrap;
+  border-top: solid 2px #74b3ce;
+  border-bottom: solid 2px #74b3ce;
 `;
 
 export const ContainerIconsPost = styled.div`
@@ -38,7 +40,6 @@ export const ContainerIconsPost = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
-  border-top: solid 1px #74b3ce;
   margin-bottom: 4px;
 `;
 
