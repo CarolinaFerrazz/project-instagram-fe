@@ -142,6 +142,7 @@ export const ContainerNewCommentAndPublish = styled.div`
   justify-content: space-between;
   align-items: center;
   border-top: solid 1px #74b3ce;
+  max-height: 20%;
 `;
 
 export const AddNewComment = styled.textarea`
