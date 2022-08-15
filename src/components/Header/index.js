@@ -28,7 +28,7 @@ const Header = () => {
           <LinksHeader title="Feed" href="/feed">
             <FeedIcon src={IconFeed} alt="Feed icon"></FeedIcon>
           </LinksHeader>
-          <LinksHeader title="Messages" href="/direct">
+          <LinksHeader title="Messages" href="/feed">
             <DirectIcon src={IconDirect} alt="Messages icon"></DirectIcon>
           </LinksHeader>
           <DropdownProfile />

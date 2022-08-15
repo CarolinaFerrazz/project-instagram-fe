@@ -5,6 +5,7 @@ export const AllAlignCenter = styled.div`
   justify-content: center;
   align-items: center;
   margin: 40px 0%;
+  flex-wrap: wrap;
 `;
 
 export const Container = styled.div`
@@ -25,8 +26,8 @@ export const ContainerPictureAndName = styled.div`
 
 export const ProfilePicture = styled.img`
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  min-width: 120px;
+  height: 120px;
 `;
 
 export const ContainerTextUserAndPicture = styled.div`
@@ -34,19 +35,20 @@ export const ContainerTextUserAndPicture = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-left: 20px;
+  width: 100%;
 `;
 
 export const TextUserName = styled.p`
   color: #74b3ce;
   font-size: 24px;
   font-weight: 700px;
-
   margin-bottom: 0;
 `;
 
 export const TextChangePicture = styled.p`
   margin: 0;
   margin-bottom: 8px;
+  font-size: 12px;
 `;
 
 export const InputChangePicture = styled.input`
@@ -55,10 +57,11 @@ export const InputChangePicture = styled.input`
   margin-bottom: 10px;
   outline: none;
   box-sizing: border-box;
-  font-size: 18px;
   padding: 8px 16px;
   color: #8d8d8d;
   background: #363636;
+  font-size: 16px;
+  min-width: 80%;
 
   &::placeholder {
     color: #8d8d8d;
