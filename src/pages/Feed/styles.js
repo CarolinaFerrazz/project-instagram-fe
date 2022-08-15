@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+export const Container = styled.div`
+  margin-top: 40px;
+`;
+
 export const ContainerIcon = styled.div`
   display: flex;
   flex-wrap: wrap;

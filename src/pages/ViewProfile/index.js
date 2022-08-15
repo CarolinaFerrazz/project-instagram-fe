@@ -1,8 +1,4 @@
-import {
-  AlignAllCenter,
-  Container,
-} from "./styles";
-
+import { AlignAllCenter, Container } from "./styles";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import GetUserById from "../../services/GetUserById";
@@ -39,7 +35,7 @@ const ViewProfile = () => {
   }
 
   useEffect(() => {
-    console.log(location.state.id)
+    console.log(location.state.id);
     async function get() {
       const data = await GetUserById(location.state.id, auth.token);
       const user = data.data;
@@ -55,33 +51,24 @@ const ViewProfile = () => {
       setPostList(user.postList);
       setFollowers(user.followers);
       setFollowing(user.following);
-
-
     }
-    get()
-  }, [likeClicked])
-
-
-
-
-
+    get();
+  }, [likeClicked]);
 
   return (
     <>
       <Header />
-      {showMore
-        ?
+      {showMore ? (
         <MorePosts
           postId={postId}
           showMoreHandler={showMoreHandler}
           handleLikeClicked={handleLikeClicked}
         />
-        : null}
+      ) : null}
       <AlignAllCenter>
-
         <Container>
-          {!showMore
-            ? <ViewProfileDiv
+          {!showMore ? (
+            <ViewProfileDiv
               userData={userData}
               email={userData.email}
               avatar={userData.avatar}
@@ -90,20 +77,20 @@ const ViewProfile = () => {
               description={userData.description}
               postList={list}
               followers={followers}
-              following={following} />
-            : null}
+              following={following}
+            />
+          ) : null}
         </Container>
-
       </AlignAllCenter>
-      {!showMore
-        ?
-        list.length === 0
-          ? null
-          : <PostsProfile
+      {!showMore ? (
+        list.length === 0 ? null : (
+          <PostsProfile
             list={list}
             showMoreHandler={showMoreHandler}
-            handleLikeClicked={handleLikeClicked} />
-        : null}
+            handleLikeClicked={handleLikeClicked}
+          />
+        )
+      ) : null}
     </>
   );
 };
