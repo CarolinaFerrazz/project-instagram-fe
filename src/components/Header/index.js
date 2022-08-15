@@ -13,6 +13,7 @@ import {
 import IconDirect from "../../assets/direct.svg";
 import IconFeed from "../../assets/feed.svg";
 import Icon from "../../assets/icon.svg";
+import SearchBar from "../SearchBar";
 
 const Header = () => {
   return (
@@ -25,6 +26,7 @@ const Header = () => {
           </LinkHome>
         </ContainerHome>
         <ContainerIcons>
+          <SearchBar />
           <LinksHeader title="Feed" href="/feed">
             <FeedIcon src={IconFeed} alt="Feed icon"></FeedIcon>
           </LinksHeader>
