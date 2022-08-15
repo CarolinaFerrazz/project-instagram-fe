@@ -1,5 +1,5 @@
 import axios from "axios";
-import LINK from "./link";
+import LINK from "./Link";
 
 export default async function UpdateProfile(updateBody, token) {
     const headers = {
