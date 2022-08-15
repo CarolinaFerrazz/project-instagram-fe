@@ -14,6 +14,8 @@ import PersistLogin from "./components/PersistLogin";
 import InfoPost from "./pages/InfoPost";
 import CreatePost from "./pages/CreatePost";
 import ViewProfile from "./pages/ViewProfile";
+import ViewFollowing from "./pages/ViewFollowing";
+import ViewFollowers from "./pages/ViewFollowers";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
               <Route path="infopost" element={<InfoPost />} />
               <Route path="createpost" element={<CreatePost />} />
               <Route path="viewprofile" element={<ViewProfile />} />
+              <Route path="viewfollowing" element={<ViewFollowing />} />
+              <Route path="viewfollowers" element={<ViewFollowers />} />
             </Route>
           </Route>
         </Route>
