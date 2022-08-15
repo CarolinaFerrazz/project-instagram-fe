@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const AlignAllCenter = styled.div`
   display: flex;
@@ -19,6 +20,15 @@ export const ContainerNameUser = styled.div`
   align-items: center;
   padding-left: 4px;
 `;
+
+export const ButtonUser = styled.button`
+  background: none;
+  border: none;
+`;
+
+export const LinkProfileUser = styled(Link)`
+
+`
 
 export const ImageUser = styled.img`
   width: 50px;

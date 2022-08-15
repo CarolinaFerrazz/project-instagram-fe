@@ -14,11 +14,12 @@ import {
   ButtonFollow,
 } from "./styles";
 import ProfileCR7 from "../../assets/profile.jpg";
-// import Follow from "../../assets/follow.svg";
+import Header from "../../components/Header";
 
 const ViewProfile = () => {
   return (
     <>
+      <Header />
       <AlignAllCenter>
         <Container>
           <UserName>UserName</UserName>

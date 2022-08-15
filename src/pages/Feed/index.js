@@ -1,7 +1,6 @@
 import { ContainerIcon, ButtonAddPost, LinkAddPost, IconAdd } from "./styles";
 import Header from "../../components/Header";
 import PostsFeed from "../../components/PostsFeed";
-import Footer from "../../components/Footer";
 import { useEffect, useState } from "react";
 import GetPostFromUserIsFollowing from "../../services/GetPostFromUserIsFollowing";
 import useAuth from "../../hooks/useAuth";
@@ -90,7 +89,6 @@ const Feed = () => {
             );
           })
       )}
-      <Footer />
     </>
   );
 };

@@ -6,7 +6,7 @@ export const ContainerIcon = styled.div`
   flex-wrap: wrap;
   align-items: center;
   margin-left: 80px;
-  bottom: 0;
+  bottom: 8px;
   position: fixed;
 `;
 
@@ -27,3 +27,4 @@ export const IconAdd = styled.img`
 export const LinkAddPost = styled(Link)`
 
 `;
+

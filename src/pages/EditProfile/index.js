@@ -1,5 +1,4 @@
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import {
   AllAlignCenter,
   Container,
@@ -102,7 +101,6 @@ const EditProfile = () => {
           </ContainerButtonConfirm>
         </Container>
       </AllAlignCenter>
-      <Footer />
     </>
   );
 };

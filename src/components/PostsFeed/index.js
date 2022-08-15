@@ -3,6 +3,8 @@ import {
   Container,
   ContainerNameUser,
   NameUser,
+  ButtonUser,
+  LinkProfileUser,
   ImageUser,
   ImagePost,
   IconLike,
@@ -64,7 +66,10 @@ const PostsFeed = (props) => {
       <AlignAllCenter>
         <Container>
           <ContainerNameUser>
-            <ImageUser src={CR7} />
+            <ButtonUser>
+              <LinkProfileUser to="/viewprofile">  <ImageUser src={CR7} /></LinkProfileUser>
+            
+            </ButtonUser>
             <NameUser>{name}</NameUser>
           </ContainerNameUser>
           <ImagePost

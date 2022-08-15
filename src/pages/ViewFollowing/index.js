@@ -11,7 +11,6 @@ import {
 } from "./styles";
 import CR7 from "../../assets/profile.jpg";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 
 const ViewFollowing = () => {
   return (
@@ -39,7 +38,6 @@ const ViewFollowing = () => {
           </ImageAndNames>
         </Container>
       </AllAlignCenter>
-      <Footer />
     </>
   );
 };

@@ -8,10 +8,7 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import EditProfile from "./pages/EditProfile";
 import Feed from "./pages/Feed";
-import Saves from "./pages/Saves";
-import Direct from "./pages/Direct";
 import PersistLogin from "./components/PersistLogin";
-import InfoPost from "./pages/InfoPost";
 import CreatePost from "./pages/CreatePost";
 import ViewProfile from "./pages/ViewProfile";
 import ViewFollowing from "./pages/ViewFollowing";
@@ -32,9 +29,6 @@ function App() {
               <Route path="settings" element={<Settings />} />
               <Route path="editprofile" element={<EditProfile />} />
               <Route path="feed" element={<Feed />} />
-              <Route path="saves" element={<Saves />} />
-              <Route path="direct" element={<Direct />} />
-              <Route path="infopost" element={<InfoPost />} />
               <Route path="createpost" element={<CreatePost />} />
               <Route path="viewprofile" element={<ViewProfile />} />
               <Route path="viewfollowing" element={<ViewFollowing />} />

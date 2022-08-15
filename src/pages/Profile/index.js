@@ -1,7 +1,6 @@
 import { Container } from "./styles";
 import Header from "../../components/Header";
 import ProfileDiv from "../../components/ProfileDiv";
-import Footer from "../../components/Footer";
 import { useEffect, useState } from "react";
 import GetUser from "../../services/GetUser";
 import PostsProfile from "../../components/PostsProfile";
@@ -91,7 +90,6 @@ const Profile = () => {
             showMoreHandler={showMoreHandler}
             handleLikeClicked={handleLikeClicked} />
         : null}
-      <Footer />
     </>
   );
 };

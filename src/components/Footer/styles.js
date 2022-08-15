@@ -7,14 +7,12 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #202020;
-  padding: 8px 0;
-  border-top: solid 1px #404040;
-  border-bottom: solid 1px #404040;
   bottom: 0;
-
+  margin-bottom: 0;
 `;
 
 export const TextFooter = styled.p`
   color: #d1d1d1;
-  font-size: 20px;
+  font-size: 14px;
+  margin-bottom: 8px;
 `;
