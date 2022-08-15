@@ -30,7 +30,7 @@ import {
 import IconLikeDisabled from "../../assets/likeDisabled.svg";
 import IconComment from "../../assets/comment.svg";
 import ImageFeed from "../../assets/profile.jpg";
-import ImageProfileCR7 from "../../assets/profile.jpg"
+import ImageProfileCR7 from "../../assets/profile.jpg";
 
 const MorePosts = () => {
   return (
@@ -41,7 +41,7 @@ const MorePosts = () => {
         </ContainerImagePost>
         <ContainerInfoPost>
           <ContainerNameAndImageUser>
-            <ImageProfileUser src={ImageProfileCR7}/>
+            <ImageProfileUser src={ImageProfileCR7} />
             <NameUser>NAME</NameUser>
           </ContainerNameAndImageUser>
           <ContainerDescription>

@@ -11,23 +11,22 @@ import {
   NameProfile,
   DescriptionProfile,
   ContainerButtonsProfile,
-  ButtonEditProfile,
-  LinksPages,
-  LinkEditProfile,
+  ButtonFollow,
 } from "./styles";
+import ProfileCR7 from "../../assets/profile.jpg";
+// import Follow from "../../assets/follow.svg";
 
-const ProfileDiv = (props) => {
-  const { userData, name, userName, avatar, description, postList } = props;
+const ViewProfile = () => {
   return (
     <>
       <AlignAllCenter>
         <Container>
-          <UserName>{userName}</UserName>
+          <UserName>UserName</UserName>
           <ContainerImageAndNumbers>
-            <ImageProfile src={avatar}></ImageProfile>
+            <ImageProfile src={ProfileCR7}></ImageProfile>
             <ContainerInfoNumbers>
               <ContainerNumberAndTitle>
-                <NumberInfoNumbers>{postList.length} </NumberInfoNumbers>
+                <NumberInfoNumbers>0 </NumberInfoNumbers>
                 <TitleInfoNumbers>Posts</TitleInfoNumbers>
               </ContainerNumberAndTitle>
               <ContainerNumberAndTitle>
@@ -40,16 +39,14 @@ const ProfileDiv = (props) => {
               </ContainerNumberAndTitle>
             </ContainerInfoNumbers>
           </ContainerImageAndNumbers>
-          <NameProfile>{name}</NameProfile>
-          <DescriptionProfile>
-            {description ? description : "Say whats on your mind"}
-          </DescriptionProfile>
+          <NameProfile>Name</NameProfile>
+          <DescriptionProfile>descricao</DescriptionProfile>
           <ContainerButtonsProfile>
-            <LinksPages href="/saves" title="Saves">
-            </LinksPages>
-            <ButtonEditProfile>
-              <LinkEditProfile title="Edit" className="ok" to="/editprofile" state={{ userData }}>Edit Profile</LinkEditProfile>
-            </ButtonEditProfile>
+            {/* SE CARREGAR NO BOTAO O TEXTO PASSA PARA O ICON que esta comentado na linha de baixo e o seu IMPORT la em cima */}
+            <ButtonFollow>
+              Follow
+              {/* <img alt="icon" src={Follow} /> */}
+            </ButtonFollow>
           </ContainerButtonsProfile>
         </Container>
       </AlignAllCenter>
@@ -57,4 +54,4 @@ const ProfileDiv = (props) => {
   );
 };
 
-export default ProfileDiv;
+export default ViewProfile;
