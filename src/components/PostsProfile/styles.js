@@ -12,6 +12,13 @@ export const AlignAllCenter = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px 40px;
+  grid-template-areas:
+    ". . . "
+    ". . . ";
 `;
 
 export const ContainerPost = styled.img`

@@ -26,9 +26,7 @@ export const ButtonUser = styled.button`
   border: none;
 `;
 
-export const LinkProfileUser = styled(Link)`
-
-`
+export const LinkProfileUser = styled(Link)``;
 
 export const ImageUser = styled.img`
   width: 50px;
