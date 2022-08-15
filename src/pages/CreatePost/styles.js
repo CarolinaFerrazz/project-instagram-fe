@@ -110,4 +110,3 @@ export const ButtonPost = styled.button`
     font-weight: 700;
   }
 `;
-

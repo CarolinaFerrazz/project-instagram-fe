@@ -18,7 +18,9 @@ const NoPostsYet = () => {
           </LinkButton>
         </ButtonAddPost>
         <TitleNoPosts>No posts yet</TitleNoPosts>
-        <TextCreatePost>Add a post by loading on top of the image</TextCreatePost>
+        <TextCreatePost>
+          Add a post by loading on top of the image
+        </TextCreatePost>
       </Container>
     </>
   );

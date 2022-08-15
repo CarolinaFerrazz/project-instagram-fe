@@ -46,7 +46,7 @@ export const ContainerButtons = styled.div`
 export const ButtonLogin = styled.button`
   margin-right: 20px;
   font-size: 18px;
-  background: #74B3CE;
+  background: #74b3ce;
   border-radius: 16px;
   padding: 8px 40px;
   border: none;

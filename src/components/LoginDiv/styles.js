@@ -22,4 +22,3 @@ export const LinkHome = styled(Link)`
     transform: scale(1.1);
   }
 `;
-

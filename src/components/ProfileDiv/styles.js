@@ -90,7 +90,7 @@ export const ButtonEditProfile = styled.button`
 
   &:hover {
     color: #fff;
-    background: #85CDEC;
+    background: #85cdec;
   }
 `;
 

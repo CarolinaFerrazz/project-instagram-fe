@@ -4,20 +4,21 @@ import useAuth from "../../hooks/useAuth.js";
 
 const PostsProfile = (props) => {
   const { list, showMoreHandler, handleLikeClicked } = props;
-  console.log(list)
+  console.log(list);
 
   return (
     <>
       <AlignAllCenter>
         <Container>
-          {list.sort((a, b) => b.id - a.id).map(post =>
-            <ContainerPost
-              onClick={() =>
-                showMoreHandler(
-                  post.id
-                )}
-              src={post.photo}
-              key={post.id} />)}
+          {list
+            .sort((a, b) => b.id - a.id)
+            .map((post) => (
+              <ContainerPost
+                onClick={() => showMoreHandler(post.id)}
+                src={post.photo}
+                key={post.id}
+              />
+            ))}
         </Container>
       </AlignAllCenter>
     </>

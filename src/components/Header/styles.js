@@ -42,6 +42,16 @@ export const ContainerIcons = styled.div`
   margin: 20px 40px;
 `;
 
+export const IconSearchBar = styled.img`
+  width: 25px;
+  margin-right: 30px;
+
+  &:hover {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.3);
+  }
+`;
+
 export const DirectIcon = styled.img`
   margin-right: 30px;
 

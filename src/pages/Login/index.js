@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginDiv from "../../components/LoginDiv"
+import LoginDiv from "../../components/LoginDiv";
 import Footer from "../../components/Footer";
 //import AuthContext from "../../context/Auth";
 import useAuth from "../../hooks/useAuth";
@@ -22,7 +22,6 @@ import {
 } from "./styles";
 import GetUser from "../../services/GetUser";
 
-
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -32,8 +31,8 @@ const Login = () => {
   async function handleClick() {
     const credentials = {
       email: email,
-      password: password
-    }
+      password: password,
+    };
     const token = await LoginUser(credentials);
     if (token !== null) {
       const user = await GetUser(token);
@@ -42,7 +41,7 @@ const Login = () => {
       setEmail("");
       setPassword("");
       alert("ok");
-      navigate("/home")
+      navigate("/home");
     } else {
       alert("fail");
       setAuth({});

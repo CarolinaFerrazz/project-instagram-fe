@@ -1,19 +1,17 @@
 import React from "react";
-import { Container, Input, LinkSearch, IconSearchBar } from "./styles";
-import IncoSearch from "../../assets/search.svg";
+import { Container, Input, Icon } from "./styles";
+import IconSearch from "../../assets/searchGo.svg"
 
 const SearchBar = () => (
   <>
     <Container>
-        <LinkSearch to="search">
-      <IconSearchBar alt="icon" src={IncoSearch}></IconSearchBar>
-      </LinkSearch>
-      <form action="/" method="get">
+      <Icon alt="Search" src={IconSearch}/>
+    <form action="/" method="get">
         <Input
           type="text"
           id="header-search"
           placeholder="Search a product"
-          name="product"
+          name="search"
           onChange={(e) => console.log(e.target.value)}
         />
       </form>

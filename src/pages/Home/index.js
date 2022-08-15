@@ -15,9 +15,10 @@ const Home = () => {
   const { auth } = useAuth();
   return (
     <>
-      {auth?.email
-        ? <Header />
-        : <ContainerHeader>
+      {auth?.email ? (
+        <Header />
+      ) : (
+        <ContainerHeader>
           <LinkHome title="Home Page" to="/">
             Fake Instagram
           </LinkHome>
@@ -30,7 +31,7 @@ const Home = () => {
             </LinksHeader>
           </ContainerButtons>
         </ContainerHeader>
-      }
+      )}
       <Container>
         <TitleWelcome>Welcome to Fake Instagram</TitleWelcome>
       </Container>

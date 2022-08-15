@@ -18,13 +18,19 @@ import {
 } from "./styles";
 
 const ProfileDiv = (props) => {
-  const { userData, name, userName, avatar,
-    description, postList, followers, following } = props;
+  const {
+    userData,
+    name,
+    userName,
+    avatar,
+    description,
+    postList,
+    followers,
+    following,
+  } = props;
   const navigate = useNavigate();
 
-
-  console.log(userData)
-
+  console.log(userData);
 
   return (
     <>
@@ -40,11 +46,15 @@ const ProfileDiv = (props) => {
               </ContainerNumberAndTitle>
               <ContainerNumberAndTitle>
                 <NumberInfoNumbers>{followers.length}</NumberInfoNumbers>
-                <TitleInfoNumbers >followers</TitleInfoNumbers>
+                <TitleInfoNumbers>followers</TitleInfoNumbers>
               </ContainerNumberAndTitle>
-              <ContainerNumberAndTitle onClick={() => navigate("/viewfollowing", { state: { id: userData.id } })}>
+              <ContainerNumberAndTitle
+                onClick={() =>
+                  navigate("/viewfollowing", { state: { id: userData.id } })
+                }
+              >
                 <NumberInfoNumbers>{following.length}</NumberInfoNumbers>
-                <TitleInfoNumbers >Following</TitleInfoNumbers>
+                <TitleInfoNumbers>Following</TitleInfoNumbers>
               </ContainerNumberAndTitle>
             </ContainerInfoNumbers>
           </ContainerImageAndNumbers>
@@ -53,10 +63,16 @@ const ProfileDiv = (props) => {
             {description ? description : "Say whats on your mind"}
           </DescriptionProfile>
           <ContainerButtonsProfile>
-            <LinksPages href="/saves" title="Saves">
-            </LinksPages>
+            <LinksPages href="/saves" title="Saves"></LinksPages>
             <ButtonEditProfile>
-              <LinkEditProfile title="Edit" className="ok" to="/editprofile" state={{ userData }}>Edit Profile</LinkEditProfile>
+              <LinkEditProfile
+                title="Edit"
+                className="ok"
+                to="/editprofile"
+                state={{ userData }}
+              >
+                Edit Profile
+              </LinkEditProfile>
             </ButtonEditProfile>
           </ContainerButtonsProfile>
         </Container>

@@ -67,8 +67,9 @@ const PostsFeed = (props) => {
         <Container>
           <ContainerNameUser>
             <ButtonUser>
-              <LinkProfileUser to="/viewprofile">  <ImageUser src={CR7} /></LinkProfileUser>
-            
+              <LinkProfileUser to="/viewprofile">
+                <ImageUser src={CR7} />
+              </LinkProfileUser>
             </ButtonUser>
             <NameUser>{name}</NameUser>
           </ContainerNameUser>

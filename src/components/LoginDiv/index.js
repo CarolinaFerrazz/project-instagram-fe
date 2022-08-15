@@ -1,7 +1,4 @@
-import {
-  Container,
-  LinkHome,
-} from "./styles";
+import { Container, LinkHome } from "./styles";
 
 const LoginDiv = () => {
   return (

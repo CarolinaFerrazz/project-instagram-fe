@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const AlignAllCenter = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Container = styled.div`
@@ -17,8 +17,8 @@ export const Container = styled.div`
 `;
 
 export const IconNoPosts = styled.img`
-    max-width: 80px;
-    margin-top: 16px;
+  max-width: 80px;
+  margin-top: 16px;
 `;
 
 export const TitleNoPosts = styled.p`
