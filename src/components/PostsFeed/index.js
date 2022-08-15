@@ -27,6 +27,7 @@ import { useEffect, useState } from "react";
 import RemoveLike from "../../services/RemoveLike";
 import useAuth from "../../hooks/useAuth";
 import AddLike from "../../services/AddLike";
+import MorePosts from "../MorePosts";
 
 const PostsFeed = (props) => {
   const { auth } = useAuth();
@@ -40,6 +41,8 @@ const PostsFeed = (props) => {
     numLikes,
     tagList,
     like,
+    showMoreHandler,
+    handleLikeClicked
   } = props;
   const [isLiked, setIsLiked] = useState(like);
   const [numOfLikes, setNumOfLikes] = useState("");
@@ -52,15 +55,16 @@ const PostsFeed = (props) => {
     const body = {
       postId: postId,
     };
-    console.log(body);
     if (isLiked) {
       await RemoveLike(body, auth.token);
       setIsLiked(!isLiked);
       setNumOfLikes(numOfLikes - 1);
+      handleLikeClicked()
     } else {
       await AddLike(body, auth.token);
       setIsLiked(!isLiked);
       setNumOfLikes(numOfLikes + 1);
+      handleLikeClicked()
     }
   }
 
@@ -97,7 +101,9 @@ const PostsFeed = (props) => {
           <HrComment />
           <ContainerNewCommentAndPublish>
             {/* LINK PARA VER INFORMACOES DO POST */}
-            <ViewMoreInformation to="/">more</ViewMoreInformation>
+
+            <div onClick={() => showMoreHandler(postId, numLikes)}>more</div>
+            {/* <ViewMoreInformation onClick={() => setShowMore(!showMore)}>more</ViewMoreInformation> */}
           </ContainerNewCommentAndPublish>
         </Container>
       </AlignAllCenter>

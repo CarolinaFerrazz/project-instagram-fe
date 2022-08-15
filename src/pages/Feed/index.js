@@ -6,10 +6,21 @@ import { useEffect, useState } from "react";
 import GetPostFromUserIsFollowing from "../../services/GetPostFromUserIsFollowing";
 import useAuth from "../../hooks/useAuth";
 import IconAddPost from "../../assets/addImage.svg";
+import MorePosts from "../../components/MorePosts";
 
 const Feed = () => {
   const { auth } = useAuth();
   const [posts, setPosts] = useState([]);
+  const [showMore, setShowMore] = useState(false);
+  const [postId, setPostId] = useState("");
+  const [numLikes, setNumLikes] = useState("");
+  const [likeClicked, setLikeClicked] = useState(false);
+
+  function handleLikeClicked() {
+    setLikeClicked(!likeClicked);
+  }
+
+
   useEffect(() => {
     async function getPosts() {
       const data = await GetPostFromUserIsFollowing(auth.token);
@@ -18,8 +29,29 @@ const Feed = () => {
       console.log(data.data);
     }
     getPosts();
-    // eslint-disable-next-linve
-  }, []);
+  }, [likeClicked]);
+
+
+
+
+
+
+
+
+
+
+  function showMoreHandler(id, numLikes) {
+    if (!showMore) {
+      setPostId(id);
+      setNumLikes(numLikes)
+      setShowMore(!showMore);
+    } else {
+      setPostId("");
+      setShowMore(!showMore);
+      setNumLikes("");
+    }
+  }
+
 
   console.log(auth);
   return (
@@ -27,23 +59,26 @@ const Feed = () => {
       <Header />
       <ContainerIcon>
         {/* BOTAO PARA AIDIONAR POSTS  */}
-        <IconAdd src={IconAddPost} />
-      </ContainerIcon>
 
-      {posts.map((post) => (
-        <PostsFeed
-          postId={post.id}
-          photo={post.photo}
-          commentList={post.commentList}
-          description={post.description}
-          creationDate={post.creationDate}
-          numLikes={post?.postUserLikeList.length}
-          tagList={post?.tagList}
-          name={post?.userId?.name}
-          like={post?.postUserLikeList.some((like) => like.userId === auth.id)}
-          key={post.id}
-        />
-      ))}
+      </ContainerIcon>
+      {!showMore ? <IconAdd src={IconAddPost} /> : null}
+      {showMore ? <MorePosts postId={postId} showMoreHandler={showMoreHandler} likes={numLikes} /> :
+        posts.map((post) => {
+          return <PostsFeed
+            postId={post.id}
+            photo={post.photo}
+            commentList={post.commentList}
+            description={post.description}
+            creationDate={post.creationDate}
+            numLikes={post?.postUserLikeList.length}
+            tagList={post?.tagList}
+            name={post?.userId?.name}
+            like={post?.postUserLikeList.some((like) => like.userId === auth.id)}
+            key={post.id}
+            showMoreHandler={showMoreHandler}
+            handleLikeClicked={handleLikeClicked}
+          />
+        })}
       <Footer />
     </>
   );
