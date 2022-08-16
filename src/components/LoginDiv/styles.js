@@ -10,6 +10,11 @@ export const Container = styled.nav`
   border-bottom: solid 1px #404040;
 `;
 
+export const IconHome = styled.img`
+  margin-right: 8px;
+  width: 28px;
+`;
+
 export const LinkHome = styled(Link)`
   padding: 8px 40px;
   margin: 8px;

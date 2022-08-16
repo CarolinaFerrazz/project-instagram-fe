@@ -13,9 +13,13 @@ export const Input = styled.input`
   padding: 4px 0;
   outline: none;
   width: 90%;
-  color: #fff;
+  color: #74b3ce;
   font-size: 16px;
   background: none;
+
+  &::placeholder {
+    color: #74b3ce;
+  }
 `;
 
 export const Icon = styled.img`

@@ -1,4 +1,3 @@
-import {} from "./styles";
 import SearchProfile from "../../components/SearchProfile";
 import SearchTag from "../../components/SearchTag";
 import Header from "../../components/Header";
