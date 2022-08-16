@@ -2,6 +2,7 @@ import Header from "../../components/Header";
 import useAuth from "../../hooks/useAuth";
 import {
   Container,
+  IconHome,
   TitleWelcome,
   ContainerHeader,
   LinkHome,
@@ -10,6 +11,7 @@ import {
   ButtonLogin,
   ButtonRegister,
 } from "./styles";
+import Icon from "../../assets/icon.svg";
 
 const Home = () => {
   const { auth } = useAuth();
@@ -20,6 +22,7 @@ const Home = () => {
       ) : (
         <ContainerHeader>
           <LinkHome title="Home Page" to="/">
+            <IconHome alt="icon" src={Icon} />
             Fake Instagram
           </LinkHome>
           <ContainerButtons>

@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const TitleWelcome = styled.p`
   font-size: 60px;
+  color: #74b3ce;
 `;
 
 export const ContainerHeader = styled.nav`
@@ -20,6 +21,11 @@ export const ContainerHeader = styled.nav`
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px #404040;
+`;
+
+export const IconHome = styled.img`
+  margin-right: 8px;
+  width: 28px;
 `;
 
 export const LinkHome = styled(Link)`
