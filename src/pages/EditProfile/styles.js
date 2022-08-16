@@ -22,6 +22,7 @@ export const Container = styled.div`
 
 export const ContainerPictureAndName = styled.div`
   display: flex;
+  margin-left: 20px;
 `;
 
 export const ProfilePicture = styled.img`
