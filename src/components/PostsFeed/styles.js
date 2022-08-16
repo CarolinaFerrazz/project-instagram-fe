@@ -51,8 +51,8 @@ export const ImagePost = styled.img`
   max-height: 500px;
   margin-top: 4px;
   flex-wrap: wrap;
-  border-top: solid 2px #8FB0BE;
-  border-bottom: solid 2px #8FB0BE;
+  border-top: solid 1px #8FB0BE;
+  border-bottom: solid 1px #8FB0BE;
   object-fit: cover;
 `;
 
