@@ -9,7 +9,7 @@ export const AlignAllCenter = styled.div`
 
 export const Container = styled.div`
   margin: 20px 8px;
-  border: solid 1px #74b3ce;
+  border: solid 1px #8FB0BE;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -51,8 +51,8 @@ export const ImagePost = styled.img`
   max-height: 500px;
   margin-top: 4px;
   flex-wrap: wrap;
-  border-top: solid 2px #74b3ce;
-  border-bottom: solid 2px #74b3ce;
+  border-top: solid 2px #8FB0BE;
+  border-bottom: solid 2px #8FB0BE;
   object-fit: cover;
 `;
 

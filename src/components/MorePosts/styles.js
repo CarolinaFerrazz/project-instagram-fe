@@ -32,14 +32,14 @@ export const ContainerImagePost = styled.div`
 export const ContainerInfoPost = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid #74b3ce;
+  border: 1px solid #8FB0BE;
   width: 40%;
   max-height: 600px;
 `;
 
 export const ContainerNameAndImageUser = styled.div`
   display: flex;
-  border-bottom: solid 1px #74b3ce;
+  border-bottom: solid 1px #8FB0BE;
   padding: 8px 20px;
 `;
 
@@ -69,7 +69,7 @@ export const ImagePost = styled.img`
   min-width: 600px;
   flex-wrap: wrap;
   object-fit: cover;
-  border: solid 1px #74b3ce;
+  border: solid 1px #8FB0BE;
 `;
 
 export const ContainerLike = styled.div`
@@ -118,7 +118,7 @@ export const TextLikes = styled.p`
 export const ContainerDescription = styled.div`
   display: flex;
   padding: 0 20px;
-  border-bottom: solid 1px #74b3ce;
+  border-bottom: solid 1px #8FB0BE;
 `;
 
 export const DescriptionPost = styled.p`
@@ -143,7 +143,7 @@ export const ContainerNewCommentAndPublish = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: solid 1px #74b3ce;
+  border-top: solid 1px #8FB0BE;
   max-height: 20%;
   bottom: 0;
 `;

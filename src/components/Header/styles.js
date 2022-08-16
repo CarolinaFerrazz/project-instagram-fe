@@ -27,6 +27,8 @@ export const LinkHome = styled(Link)`
   text-decoration: none;
   font-size: 28px;
   text-align: center;
+  display: flex;
+  align-items: center;
 
   &:hover {
     -webkit-transform: scale(1.2);
