@@ -85,9 +85,14 @@ export const ButtonFollow = styled.button`
   border-radius: 16px;
   color: #fff;
   border: none;
+  font-size: 20px;
 
   &:hover {
-    color: #fff;
+    font-weight: 700;
     background: #85cdec;
   }
+`;
+
+export const IconFollow = styled.img`
+  width: 26px;
 `;

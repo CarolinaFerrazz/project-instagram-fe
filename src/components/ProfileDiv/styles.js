@@ -114,6 +114,7 @@ export const LinkEditProfile = styled(Link)`
   align-items: center;
   color: #fff;
   text-decoration: none;
+  font-size: 20px;
 
   &:hover {
     font-weight: 700;
