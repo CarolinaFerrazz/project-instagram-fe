@@ -43,6 +43,7 @@ export const TimeComment = styled.p`
   margin-top: 0;
   display: flex;
   flex: 3;
+  font-size: 10px;
 `;
 
 export const LikeComment = styled.img`

@@ -51,7 +51,7 @@ export const TextUserName = styled.p`
 export const TextChangePicture = styled.p`
   margin: 0;
   margin-bottom: 8px;
-  font-size: 12px;
+  font-size: 16px;
 `;
 
 export const InputChangePicture = styled.input`
@@ -81,12 +81,12 @@ export const ContainerFormEditProfile = styled.div`
 
 export const LabelChangeName = styled.label`
   color: #d1d1d1;
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 export const LabelChangeBio = styled.label`
   color: #d1d1d1;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 8px;
 `;
 
@@ -96,11 +96,10 @@ export const InputChangeName = styled.input`
   margin-bottom: 10px;
   outline: none;
   box-sizing: border-box;
-  font-size: 18px;
-  padding: 8px 16px;
+  font-size: 16px;
+  padding: 8px 8px;
   color: #8d8d8d;
   background: #363636;
-  margin-left: 8px;
   min-width: 86%;
 
   &::placeholder {
@@ -115,8 +114,8 @@ export const InputChangeBio = styled.textarea`
   margin-bottom: 10px;
   outline: none;
   box-sizing: border-box;
-  font-size: 18px;
-  padding: 8px 16px;
+  font-size: 16px;
+  padding: 8px 8px;
   color: #8d8d8d;
   background: #363636;
   min-height: 120px;
