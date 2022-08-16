@@ -30,8 +30,6 @@ const ProfileDiv = (props) => {
   } = props;
   const navigate = useNavigate();
 
-  console.log(userData);
-
   return (
     <>
       <AlignAllCenter>
@@ -44,7 +42,9 @@ const ProfileDiv = (props) => {
                 <NumberInfoNumbers>{postList.length} </NumberInfoNumbers>
                 <TitleInfoNumbers>Posts</TitleInfoNumbers>
               </ContainerNumberAndTitle>
-              <ContainerNumberAndTitle>
+              <ContainerNumberAndTitle onClick={() =>
+                navigate("/viewfollowers", { state: { id: userData.id } })
+              }>
                 <NumberInfoNumbers>{followers.length}</NumberInfoNumbers>
                 <TitleInfoNumbers>followers</TitleInfoNumbers>
               </ContainerNumberAndTitle>

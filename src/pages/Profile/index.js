@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import GetUser from "../../services/GetUser";
 import PostsProfile from "../../components/PostsProfile";
 import MorePosts from "../../components/MorePosts";
+import NoPostsYet from "../../components/NoPostYet";
 
 const Profile = () => {
   const token = localStorage.getItem("token");
@@ -42,7 +43,6 @@ const Profile = () => {
         userName: user.username,
         description: user.description,
       };
-      console.log(user)
       setUserData(userInfo);
       setPostList(user.postList);
       setFollowers(user.followers);
@@ -83,7 +83,7 @@ const Profile = () => {
       {!showMore
         ?
         list.length === 0
-          ? null
+          ? <NoPostsYet />
           : <PostsProfile
             list={list}
             showMoreHandler={showMoreHandler}

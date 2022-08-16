@@ -4,7 +4,6 @@ import {
   ContainerNameUser,
   NameUser,
   ButtonUser,
-  LinkProfileUser,
   ImageUser,
   ImagePost,
   IconLike,
@@ -20,28 +19,27 @@ import { useEffect, useState } from "react";
 import RemoveLike from "../../services/RemoveLike";
 import useAuth from "../../hooks/useAuth";
 import AddLike from "../../services/AddLike";
-import CR7 from "../../assets/profile.jpg";
-
+import { useNavigate } from "react-router-dom";
 const PostsFeed = (props) => {
   const { auth } = useAuth();
   const {
     postId,
     photo,
     name,
-    commentList,
     description,
     creationDate,
     numLikes,
-    tagList,
     like,
     showMoreHandler,
     handleLikeClicked,
+    user,
   } = props;
   const [isLiked, setIsLiked] = useState(like);
   const [numOfLikes, setNumOfLikes] = useState("");
-
+  const navigate = useNavigate();
   useEffect(() => {
     setNumOfLikes(numLikes);
+    // eslint-disable-next-line
   }, []);
 
   async function handleLikes() {
@@ -67,9 +65,9 @@ const PostsFeed = (props) => {
         <Container>
           <ContainerNameUser>
             <ButtonUser>
-              <LinkProfileUser to="/viewprofile">
-                <ImageUser src={CR7} />
-              </LinkProfileUser>
+
+              <ImageUser onClick={() => navigate("/viewprofile", { state: { id: user.id } })} src={user.profilePhoto} />
+
             </ButtonUser>
             <NameUser>{name}</NameUser>
           </ContainerNameUser>

@@ -7,6 +7,7 @@ import ViewProfileDiv from "../../components/ViewProfileDiv";
 import MorePosts from "../../components/MorePosts";
 import Header from "../../components/Header";
 import PostsProfile from "../../components/PostsProfile";
+import GetFollowing from "../../services/GetFollowing";
 // import Follow from "../../assets/follow.svg";
 
 const ViewProfile = () => {
@@ -19,7 +20,7 @@ const ViewProfile = () => {
   const [showMore, setShowMore] = useState(false);
   const [followers, setFollowers] = useState([]);
   const [following, setFollowing] = useState([]);
-
+  const [isFollowing, setIsFollowing] = useState(location.state.isFollowing);
   function showMoreHandler(id) {
     if (!showMore) {
       setPostId(id);
@@ -29,13 +30,15 @@ const ViewProfile = () => {
       setShowMore(!showMore);
     }
   }
+  function handleFollowClicked() {
+    setIsFollowing(!isFollowing)
+  }
 
   function handleLikeClicked() {
     setLikeClicked(!likeClicked);
   }
 
   useEffect(() => {
-    console.log(location.state.id);
     async function get() {
       const data = await GetUserById(location.state.id, auth.token);
       const user = data.data;
@@ -47,13 +50,18 @@ const ViewProfile = () => {
         userName: user.username,
         description: user.description,
       };
+
       setUserData(userInfo);
       setPostList(user.postList);
       setFollowers(user.followers);
       setFollowing(user.following);
+      const following = await GetFollowing(auth.id, auth.token);
+      setIsFollowing(following.some(x => x.id === location.state.id))
     }
+
     get();
-  }, [likeClicked]);
+    // eslint-disable-next-line
+  }, [likeClicked, isFollowing]);
 
   return (
     <>
@@ -78,6 +86,8 @@ const ViewProfile = () => {
               postList={list}
               followers={followers}
               following={following}
+              isFollowing={isFollowing}
+              handleFollowClicked={handleFollowClicked}
             />
           ) : null}
         </Container>

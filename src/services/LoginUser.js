@@ -1,5 +1,4 @@
 import axios from "axios";
-import LINK from "./Link";
 
 export default async function LoginUser(credentials) {
     try {
@@ -8,6 +7,6 @@ export default async function LoginUser(credentials) {
         localStorage.setItem('token', token);
         return token;
     } catch (error) {
-        return null;
+        return error;
     }
 }

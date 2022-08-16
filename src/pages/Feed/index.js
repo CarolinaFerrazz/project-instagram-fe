@@ -12,15 +12,17 @@ import GetPostFromUserIsFollowing from "../../services/GetPostFromUserIsFollowin
 import useAuth from "../../hooks/useAuth";
 import IconAddPost from "../../assets/addImage.svg";
 import MorePosts from "../../components/MorePosts";
-// import Messages from "../../components/Messages";
+import NoPosts from "../../components/NotPosts";
 
 const Feed = () => {
   const { auth } = useAuth();
   const [posts, setPosts] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const [postId, setPostId] = useState("");
+  // eslint-disable-next-line
   const [numLikes, setNumLikes] = useState("");
   const [likeClicked, setLikeClicked] = useState(false);
+  // eslint-disable-next-line
   const [isLiked, setIsLiked] = useState(false);
 
   function handleLikeClicked() {
@@ -30,11 +32,10 @@ const Feed = () => {
   useEffect(() => {
     async function getPosts() {
       const data = await GetPostFromUserIsFollowing(auth.token);
-
       setPosts(data.data);
-      console.log(data.data);
     }
     getPosts();
+    // eslint-disable-next-line
   }, [likeClicked]);
 
   function showMoreHandler(id, numLikes, isLiked) {
@@ -51,7 +52,6 @@ const Feed = () => {
     }
   }
 
-  console.log(auth);
   return (
     <>
       <Header />
@@ -63,8 +63,7 @@ const Feed = () => {
             </LinkAddPost>
           </ButtonAddPost>
         </ContainerIcon>
-
-        {/* <Messages mesgError="Error" /> */}
+        {posts.length === 0 ? <NoPosts /> : null}
         {showMore ? (
           <MorePosts
             postId={postId}
@@ -77,6 +76,7 @@ const Feed = () => {
             .map((post) => {
               return (
                 <PostsFeed
+                  user={post?.userId}
                   postId={post.id}
                   photo={post.photo}
                   commentList={post.commentList}

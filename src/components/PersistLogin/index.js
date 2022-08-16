@@ -16,7 +16,7 @@ export default function PersistLogin() {
           setAuth({ email: user?.data?.email, token, id: user?.data?.id });
       }
       setIsLoading(false);
-    } 
+    }
     log();
     // eslint-disable-next-line
   }, []);

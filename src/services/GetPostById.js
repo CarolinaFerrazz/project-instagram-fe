@@ -10,7 +10,6 @@ export default async function GetPostById(id, token) {
         });
         return post;
     } catch (error) {
-        console.log(error.message);
         return null;
     }
 }

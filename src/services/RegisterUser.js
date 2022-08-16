@@ -5,6 +5,6 @@ export default async function RegisterUser(userToRegister) {
         const response = await axios.post(LINK + "/api/v1/user", userToRegister);
         return response;
     } catch (error) {
-        return null;
+        return error;
     }
 }

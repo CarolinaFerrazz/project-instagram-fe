@@ -1,14 +1,14 @@
 import axios from "axios";
 import LINK from "./Link";
 
-export default async function GetPostById(id, token) {
+export default async function GetFollowers(id, token) {
     try {
-        const post = await axios.get(LINK + `/api/v1/post/user`, {
+        const users = await axios.get(LINK + `/api/v1/follower/followers/${id}`, {
             headers: {
                 Authorization: token
             }
         });
-        return post;
+        return users.data;
     } catch (error) {
         return null;
     }

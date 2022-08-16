@@ -19,6 +19,7 @@ import {
   ButtonLogin,
   LinkLogin,
 } from "./styles";
+import Messages from "../../components/Messages";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -26,10 +27,11 @@ const Register = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
-  const [fail, setFail] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   async function registerUser() {
-    if (email === "" || userName === "" || password === "" || fullName === "") {
-      setFail(true);
+    if (!email || !userName || !password || !fullName) {
+      setErrorMessage("All fields must be full");
       return;
     }
     const userToRegister = {
@@ -40,23 +42,24 @@ const Register = () => {
     }
 
     const user = await RegisterUser(userToRegister);
-    if (user === null) {
-      setFail(true);
-      alert("fail");
-      console.log("fail")
+    if (user?.code) {
+      setErrorMessage(user.message);
+      setSuccessMessage("");
     } else {
-      setFail(false);
-      alert("ok");
-      console.log("ok")
-      navigate("/login");
+      setSuccessMessage("success!");
+      setErrorMessage("");
+      setTimeout(() => {
+        navigate("/login");
+      }, 1000);
     }
-
   }
 
 
   return (
     <>
       <LoginDiv />
+      {errorMessage ? <Messages mesgError={errorMessage} /> : null}
+      {successMessage ? <Messages mesgSuccess={successMessage} /> : null}
       <ContainerRegister>
         <Container>
           <TitleRegister>Fake Instagram</TitleRegister>

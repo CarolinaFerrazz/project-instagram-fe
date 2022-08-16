@@ -1,8 +1,6 @@
 import axios from "axios";
 import LINK from "./Link";
 export default async function GetPostFromUserIsFollowing(token) {
-
-
     try {
         const response = await axios.get(LINK + "/api/v1/post/following", {
             headers: {

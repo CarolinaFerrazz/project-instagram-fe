@@ -5,7 +5,6 @@ import {
   TextNumberFollowers,
 } from "./styles";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import useAuth from "../../hooks/useAuth";
 import { useEffect, useState } from "react";
 import GetFollowing from "../../services/GetFollowing";
@@ -17,23 +16,21 @@ const ViewFollowing = () => {
   const [usersList, setUsersList] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
+  // eslint-disable-next-line
+  const [isFollowing, setIsFollowing] = useState(true);
 
   function handle(id) {
-    navigate("/viewprofile", { state: { id: id } })
+    navigate("/viewprofile", { state: { id: id, isFollowing: isFollowing } })
   }
 
   useEffect(() => {
-    console.log(location.state.id)
-    console.log(auth.token)
     async function get() {
       const users = await GetFollowing(location.state.id, auth.token);
-      console.log(users);
       setUsersList(users)
     }
     get();
+    // eslint-disable-next-line
   }, [])
-
-
 
   return (
     <>

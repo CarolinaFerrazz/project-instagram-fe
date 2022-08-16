@@ -3,39 +3,49 @@ import {
   Container,
   TitleFollowers,
   TextNumberFollowers,
-  ImageAndNames,
-  ProfileImage,
-  ContainerNames,
-  NameProfile,
-  UserName,
 } from "./styles";
-import CR7 from "../../assets/profile.jpg";
 import Header from "../../components/Header";
+import useAuth from "../../hooks/useAuth";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import GetFollowers from "../../services/GetFollowers";
+import LessInfoUser from "../../components/LessInfoUser";
 
 const ViewFollowers = () => {
+  const { auth } = useAuth();
+  const [usersList, setUsersList] = useState([]);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  function handle(id) {
+    navigate("/viewprofile", { state: { id: id } })
+  }
+
+  useEffect(() => {
+    async function get() {
+      const users = await GetFollowers(location.state.id, auth.token);
+      setUsersList(users)
+    }
+    get();
+    // eslint-disable-next-line
+  }, [])
   return (
     <>
       <Header />
       <AllAlignCenter>
         <Container>
           <TitleFollowers>Followers</TitleFollowers>
-          <TextNumberFollowers>0</TextNumberFollowers>
-          {/* BLOCO DE CODIGO COM INFO DOS USERS */}
-          <ImageAndNames>
-            <ProfileImage src={CR7} />
-            <ContainerNames>
-              <UserName>o @ do User</UserName>
-              <NameProfile>Name user</NameProfile>
-            </ContainerNames>
-          </ImageAndNames>
-
-          <ImageAndNames>
-            <ProfileImage src={CR7} />
-            <ContainerNames>
-              <UserName>o @ do User</UserName>
-              <NameProfile>Name user</NameProfile>
-            </ContainerNames>
-          </ImageAndNames>
+          <TextNumberFollowers>{usersList.length}</TextNumberFollowers>
+          {usersList.map(user =>
+            <LessInfoUser
+              profilePhoto={user.profilePhoto}
+              name={user.name}
+              username={user.username}
+              id={user.id}
+              handle={handle}
+              key={user.id}
+            />)}
         </Container>
       </AllAlignCenter>
     </>

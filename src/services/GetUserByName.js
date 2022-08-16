@@ -1,7 +1,9 @@
 import axios from "axios";
-export default async function GetUser(token) {
+import LINK from "./Link";
+
+export default async function GetUserByName(name, token) {
     try {
-        const response = await axios.get("/api/v1/user", {
+        const response = await axios.get(LINK + `/api/v1/user/search?username=${name}`, {
             headers: {
                 Authorization: token
             }

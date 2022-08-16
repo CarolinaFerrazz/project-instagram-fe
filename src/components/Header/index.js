@@ -1,4 +1,3 @@
-// import { useNavigate } from "react-router-dom";
 import DropdownProfile from "../DropdownProfile";
 import {
   Container,
@@ -27,7 +26,7 @@ const Header = () => {
           </LinkHome>
         </ContainerHome>
         <ContainerIcons>
-          <LinksHeader title="Search" href="search">
+          <LinksHeader title="Search" href="/search">
             <IconSearchBar alt="icon" src={IncoSearch}></IconSearchBar>
           </LinksHeader>
           <LinksHeader title="Feed" href="/feed">

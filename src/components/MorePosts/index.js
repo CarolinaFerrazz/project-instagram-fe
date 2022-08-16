@@ -47,6 +47,8 @@ const MorePosts = (props) => {
   const [postUserAvatar, setPostUserAvatar] = useState("");
   const [numOfLikes, setNumOfLikes] = useState("");
   const [isLiked, setIsLiked] = useState(false);
+  const [commentLikeClickedV, setCommentLikeClicked] = useState(false);
+
 
   async function handleLikes() {
     const body = {
@@ -64,6 +66,12 @@ const MorePosts = (props) => {
       handleLikeClicked();
     }
   }
+
+  function commentLikeClicked() {
+    setCommentLikeClicked(!commentLikeClickedV)
+  }
+
+
 
   async function handleCommentPost() {
     const body = {
@@ -96,10 +104,10 @@ const MorePosts = (props) => {
       setPostUserAvatar(userId.profilePhoto);
       setNumOfLikes(postUserLikeList.length);
       setIsLiked(postUserLikeList.some((like) => like.userId === auth.id));
-      console.log();
     }
     get();
-  }, [commentAdded]);
+    // eslint-disable-next-line
+  }, [commentAdded, commentLikeClickedV]);
 
   return (
     <>
@@ -138,6 +146,8 @@ const MorePosts = (props) => {
                   id={id}
                   user={userId.name}
                   likes={commentUserLikeList.length}
+                  isLiked={commentUserLikeList.some(like => like.userId === auth.id)}
+                  commentLikeClicked={commentLikeClicked}
                   key={id}
                 />
               )

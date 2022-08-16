@@ -11,8 +11,11 @@ import {
   TitleInfoNumbers,
   UserName,
 } from "./styles";
-import ProfileCR7 from "../../assets/profile.jpg";
+import Follow from "../../assets/follow.svg";
 import { useNavigate } from "react-router-dom";
+import RemoveFollowing from "../../services/RemoveFollowing";
+import useAuth from "../../hooks/useAuth";
+import AddFollowing from "../../services/AddFollowing";
 
 export default function ViewProfileDiv(props) {
   const {
@@ -24,8 +27,37 @@ export default function ViewProfileDiv(props) {
     postList,
     followers,
     following,
+    isFollowing,
+    handleFollowClicked,
   } = props;
   const navigate = useNavigate();
+  const { auth } = useAuth();
+
+  async function handleFollow() {
+
+
+    if (isFollowing) {
+      const body = {
+        toUnfollowUserId: userData.id
+      }
+      await RemoveFollowing(body, auth.token)
+      handleFollowClicked();
+    } else {
+      const body = {
+        toFollowUserId: userData.id
+      }
+      await AddFollowing(body, auth.token)
+      handleFollowClicked();
+    }
+
+
+
+
+  }
+
+
+
+
   console.log(userData.id);
 
   return (
@@ -38,7 +70,9 @@ export default function ViewProfileDiv(props) {
             <NumberInfoNumbers>{postList.length}</NumberInfoNumbers>
             <TitleInfoNumbers>Posts</TitleInfoNumbers>
           </ContainerNumberAndTitle>
-          <ContainerNumberAndTitle>
+          <ContainerNumberAndTitle onClick={() =>
+            navigate("/viewfollowers", { state: { id: userData.id } })
+          }>
             <NumberInfoNumbers>{followers.length}</NumberInfoNumbers>
             <TitleInfoNumbers>Followers</TitleInfoNumbers>
           </ContainerNumberAndTitle>
@@ -58,10 +92,15 @@ export default function ViewProfileDiv(props) {
       </DescriptionProfile>
       <ContainerButtonsProfile>
         {/* SE CARREGAR NO BOTAO O TEXTO PASSA PARA O ICON que esta comentado na linha de baixo e o seu IMPORT la em cima */}
-        <ButtonFollow>
-          Follow
-          {/* <img alt="icon" src={Follow} /> */}
-        </ButtonFollow>
+        {userData.id === auth.id
+          ? null
+          :
+          <ButtonFollow onClick={handleFollow}>
+            {isFollowing ? <img alt="icon" src={Follow} /> : "Follow"}
+          </ButtonFollow>
+
+        }
+
       </ContainerButtonsProfile>
     </>
   );

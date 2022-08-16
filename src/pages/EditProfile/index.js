@@ -17,10 +17,11 @@ import {
   ContainerButtonConfirm,
   ButtonConfirm,
 } from "./styles.js";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import UpdateProfile from "../../services/UpdateProfile";
+import Messages from "../../components/Messages";
 
 const EditProfile = () => {
   const { auth } = useAuth();
@@ -30,8 +31,9 @@ const EditProfile = () => {
   const [avatar, setAvatar] = useState("");
   const [name, setName] = useState("");
   const [bio, setBio] = useState("");
-  const [failToUpdate, setFailToUpdate] = useState(false);
-
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const navigate = useNavigate();
   async function update() {
     const update = {
       name: name,
@@ -40,8 +42,10 @@ const EditProfile = () => {
     };
     const updatedUser = await UpdateProfile(update, auth.token);
 
-    if (updatedUser === null) {
-      setFailToUpdate(true);
+    if (updatedUser?.code) {
+
+      setErrorMessage(updatedUser.message)
+      setSuccessMessage("");
     } else {
       const user = {
         avatar: updatedUser.profilePhoto,
@@ -51,7 +55,11 @@ const EditProfile = () => {
       setName(updatedUser.name);
       setBio(updatedUser.description);
       setAvatar(updatedUser.profilePhoto);
-      setFailToUpdate(false);
+      setSuccessMessage("success!");
+      setErrorMessage("");
+      setTimeout(() => {
+        navigate("/profile");
+      }, 1000);
     }
   }
 
@@ -66,7 +74,10 @@ const EditProfile = () => {
   return (
     <>
       <Header />
+      {errorMessage ? <Messages mesgError={errorMessage} /> : null}
+      {successMessage ? <Messages mesgSuccess={successMessage} /> : null}
       <AllAlignCenter>
+
         <Container>
           <ContainerPictureAndName>
             <ProfilePicture src={user.avatar} />

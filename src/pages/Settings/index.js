@@ -12,12 +12,16 @@ import {
 import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import UpdateProfile from "../../services/UpdateProfile";
+import Messages from "../../components/Messages";
 
 const Settings = () => {
   const { auth } = useAuth();
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
 
   function update() {
     const updateUser = {};
@@ -26,21 +30,26 @@ const Settings = () => {
     if (userName.replace(/\s/g, "").length !== 0)
       updateUser.username = userName;
     if (email.replace(/\s/g, "").length !== 0) updateUser.email = email;
-    const user = UpdateProfile(updateUser, auth.token);
-
-    if (user === null) {
-      alert("fail");
-    } else {
-      alert("ok");
-      setPassword("");
-      setUserName("");
-      setEmail("");
-    }
+    UpdateProfile(updateUser, auth.token)
+      .then(user => {
+        if (user?.code) {
+          setErrorMessage(user.message);
+          setSuccessMessage("");
+        } else {
+          setErrorMessage("");
+          setSuccessMessage("success!");
+          setPassword("");
+          setUserName("");
+          setEmail("");
+        }
+      });
   }
 
   return (
     <>
       <Header />
+      {errorMessage ? <Messages mesgError={errorMessage} /> : null}
+      {successMessage ? <Messages mesgSuccess={successMessage} /> : null}
       <AllAlignCenter>
         <Container>
           <TitleSettings>Settings</TitleSettings>

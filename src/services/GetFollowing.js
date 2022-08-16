@@ -10,7 +10,6 @@ export default async function GetFollowing(id, token) {
         });
         return users.data;
     } catch (error) {
-        console.log(error.message);
         return null;
     }
 }

@@ -1,37 +1,32 @@
 import {
   AllAlignCenter,
   Container,
-  TitleUser,
-  ImageAndNames,
-  ProfileImage,
-  ContainerNames,
-  NameProfile,
-  UserName,
 } from "./styles";
-import CR7 from "../../assets/profile.jpg";
+import LessInfoUser from "../LessInfoUser";
+import { useNavigate } from "react-router-dom";
 
-const SearchProfile = () => {
+const SearchProfile = (props) => {
+  const { userList } = props
+  const navigate = useNavigate();
+
+  function handle(id) {
+    navigate("/viewprofile", { state: { id: id } })
+  }
+
   return (
     <>
       <AllAlignCenter>
         <Container>
-          <TitleUser>NAME USER PROCURADO</TitleUser>
-          {/* BLOCO DE CODIGO COM INFO DOS USERS */}
-          <ImageAndNames>
-            <ProfileImage src={CR7} />
-            <ContainerNames>
-              <UserName>o @ do User</UserName>
-              <NameProfile>Name user</NameProfile>
-            </ContainerNames>
-          </ImageAndNames>
 
-          <ImageAndNames>
-            <ProfileImage src={CR7} />
-            <ContainerNames>
-              <UserName>o @ do User</UserName>
-              <NameProfile>Name user</NameProfile>
-            </ContainerNames>
-          </ImageAndNames>
+          {userList.map(user =>
+            <LessInfoUser
+              profilePhoto={user.profilePhoto}
+              name={user.name}
+              username={user.username}
+              id={user.id}
+              handle={handle}
+              key={user.id} />)}
+
         </Container>
       </AllAlignCenter>
     </>

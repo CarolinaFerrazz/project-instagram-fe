@@ -1,9 +1,9 @@
 import axios from "axios";
 import LINK from "./Link";
 
-export default async function GetPostById(id, token) {
+export default async function GetPostsByTag(tag, token) {
     try {
-        const post = await axios.get(LINK + `/api/v1/post/user`, {
+        const post = await axios.get(LINK + `/api/v1/post/search/tag?tag=%23${tag}`, {
             headers: {
                 Authorization: token
             }

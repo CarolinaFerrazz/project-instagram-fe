@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Input, Icon } from "./styles";
 import IconSearch from "../../assets/searchGo.svg"
 
-const SearchBar = () => (
-  <>
+const SearchBar = (props) => {
+  const { handleSearchSubmit } = props
+  const [search, setSearch] = useState("");
+
+  return (<>
     <Container>
-      <Icon alt="Search" src={IconSearch}/>
-    <form action="/" method="get">
+      <Icon alt="Search" src={IconSearch} onClick={() => handleSearchSubmit(search)} />
+      <form action="/" method="get">
         <Input
           type="text"
           id="header-search"
           placeholder="Search a product"
           name="search"
-          onChange={(e) => console.log(e.target.value)}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </form>
     </Container>
   </>
-);
-
+  );
+}
 export default SearchBar;
