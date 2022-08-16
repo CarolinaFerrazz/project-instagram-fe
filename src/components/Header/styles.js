@@ -8,6 +8,7 @@ export const Container = styled.nav`
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px #404040;
+  flex-wrap: wrap;
 `;
 
 export const ContainerHome = styled.div`
