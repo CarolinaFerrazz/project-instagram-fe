@@ -6,7 +6,7 @@ import { useState } from "react";
 import GetUserByName from "../../services/GetUserByName";
 import useAuth from "../../hooks/useAuth";
 import GetPostsByTag from "../../services/GetPostsByTag";
-import NoPosts from "../../components/NotPosts";
+import NoPostsYet from "../../components/NoPostYet";
 
 const Search = () => {
 	const { auth } = useAuth();
@@ -40,7 +40,7 @@ const Search = () => {
 		<>
 			<Header />
 			<SearchBar handleSearchSubmit={handleSearchSubmit} />
-			{userList.length === 0 && postList.length === 0 ? <NoPosts /> : null}
+			{userList.length === 0 && postList.length === 0 ? <NoPostsYet /> : null}
 			{userList.length !== 0 ? <SearchProfile userList={userList} /> : null}
 			{postList.length !== 0 ? (
 				<SearchTag postList={postList} handleLikeClicked={handleLikeClicked} />

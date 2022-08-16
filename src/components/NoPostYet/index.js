@@ -1,11 +1,4 @@
-import {
-	Container,
-	ButtonAddPost,
-	IconNoPosts,
-	TitleNoPosts,
-	LinkButton,
-	TextCreatePost,
-} from "./styles";
+import { Container, ButtonAddPost, IconNoPosts, TitleNoPosts } from "./styles";
 import NoPost from "../../assets/noPostsYet.svg";
 
 const NoPostsYet = () => {
@@ -13,14 +6,9 @@ const NoPostsYet = () => {
 		<>
 			<Container>
 				<ButtonAddPost>
-					<LinkButton to="/createpost">
-						<IconNoPosts src={NoPost} alt="icon"></IconNoPosts>
-					</LinkButton>
+					<IconNoPosts src={NoPost} alt="icon"></IconNoPosts>
 				</ButtonAddPost>
 				<TitleNoPosts>No posts yet</TitleNoPosts>
-				<TextCreatePost>
-					Add a post by loading on top of the image
-				</TextCreatePost>
 			</Container>
 		</>
 	);
