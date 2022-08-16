@@ -41,7 +41,7 @@ export const ContainerInfoPost = styled.div`
 export const ContainerNameAndImageUser = styled.div`
   display: flex;
   border-bottom: solid 1px #404040;
-  padding: 8px 20px;
+  padding: 8px 16px;
 `;
 
 export const ImageProfileUser = styled.img`
