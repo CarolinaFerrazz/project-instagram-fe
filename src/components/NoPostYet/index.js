@@ -8,7 +8,7 @@ const NoPostsYet = () => {
 				<ButtonAddPost>
 					<IconNoPosts src={NoPost} alt="icon"></IconNoPosts>
 				</ButtonAddPost>
-				<TitleNoPosts>No posts yet</TitleNoPosts>
+				<TitleNoPosts>No posts</TitleNoPosts>
 			</Container>
 		</>
 	);
