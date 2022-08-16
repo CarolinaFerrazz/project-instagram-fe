@@ -4,19 +4,16 @@ export const ContainerAllComents = styled.div`
   margin: 0px 20px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
 `;
 
 export const ContainerTimeAndLike = styled.div`
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 `;
 
 export const ContainerUserNameAndComment = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 `;
 
 export const ContainerComment = styled.div`
@@ -25,9 +22,7 @@ export const ContainerComment = styled.div`
   word-wrap: break-word;
   word-break: break-word;
   display: flex;
-  flex-wrap: wrap;
 `;
-
 export const UserNameComment = styled.p`
   color: #74b3ce;
   margin-bottom: 0;

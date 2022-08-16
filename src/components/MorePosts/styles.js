@@ -141,7 +141,6 @@ export const ContainerNewCommentAndPublish = styled.div`
   border-top: solid 1px #404040;
   max-height: 20%;
   bottom: 0;
-  flex-wrap: wrap;
 `;
 
 export const AddNewComment = styled.textarea`
