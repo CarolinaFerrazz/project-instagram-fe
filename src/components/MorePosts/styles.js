@@ -46,19 +46,18 @@ export const ContainerNameAndImageUser = styled.div`
 
 export const ImageProfileUser = styled.img`
   border-radius: 50%;
-  max-width: 50px;
-  min-width: 50px;
-  max-height: 50px;
-  min-height: 50px;
+  max-width: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  min-height: 40px;
   object-fit: cover;
 `;
 
 export const NameUser = styled.p`
-  font-size: 24px;
+  font-size: 20px;
   color: #74b3ce;
   margin: 4px 0;
-  padding-left: 20px;
-  font-weight: 700;
+  padding-left: 8px;
   display: flex;
   align-items: center;
 `;
@@ -77,11 +76,12 @@ export const ImagePost = styled.img`
 export const ContainerLike = styled.div`
   margin: 20px 16px;
   display: flex;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   align-items: center;
 `;
 
 export const IconLike = styled.img`
+  width: 24px;
   &:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.1);
@@ -99,22 +99,16 @@ export const IconComments = styled.img`
 
 export const NumberOfLikes = styled.p`
   color: #fff;
-  font-size: 18px;
-  margin-top: 0;
+  font-size: 14px;
   font-weight: 700;
-  margin-bottom: 8px;
   margin-left: 8px;
-  text-align: center;
 `;
 
 export const TextLikes = styled.p`
   color: #fff;
-  font-size: 18px;
-  margin-top: 0;
-  margin-bottom: 8px;
+  font-size: 14px;
   margin-left: 4px;
   font-weight: 700;
-  text-align: center;
 `;
 
 export const ContainerDescription = styled.div`
@@ -126,7 +120,6 @@ export const ContainerDescription = styled.div`
 export const DescriptionPost = styled.p`
   color: #c9c9c9;
   font-size: 16px;
-  margin-bottom: 0;
 `;
 
 export const TextHashtag = styled.p`

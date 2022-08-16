@@ -7,7 +7,7 @@ const LoginDiv = () => {
       <Container>
         <LinkHome title="Home Page" to="/">
           <IconHome alt="Icon" src={Icon} />
-          Fake Instagram
+          Fakestagram
         </LinkHome>
       </Container>
     </>

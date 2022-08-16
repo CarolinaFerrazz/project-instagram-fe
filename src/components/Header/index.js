@@ -22,7 +22,7 @@ const Header = () => {
         <ContainerHome>
           <LinkHome title="Home Page" to="/feed">
             <IconHome alt="icon" src={Icon} />
-            Fake Instagram
+            Fakestagram
           </LinkHome>
         </ContainerHome>
         <ContainerIcons>

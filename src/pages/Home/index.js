@@ -3,6 +3,8 @@ import useAuth from "../../hooks/useAuth";
 import {
   Container,
   IconHome,
+  ContainerIconWelcome,
+  IconWelcome,
   TitleWelcome,
   ContainerHeader,
   LinkHome,
@@ -22,8 +24,8 @@ const Home = () => {
       ) : (
         <ContainerHeader>
           <LinkHome title="Home Page" to="/">
-            <IconHome alt="icon" src={Icon} />
-            Fake Instagram
+            <IconHome alt="Icon" src={Icon} />
+            Fakestagram
           </LinkHome>
           <ContainerButtons>
             <LinksHeader title="Login" href="/login">
@@ -36,7 +38,10 @@ const Home = () => {
         </ContainerHeader>
       )}
       <Container>
-        <TitleWelcome>Welcome to Fake Instagram</TitleWelcome>
+        <ContainerIconWelcome>
+          <IconWelcome alt="Icon" src={Icon} />
+        </ContainerIconWelcome>
+        <TitleWelcome>Welcome to Fakestagram</TitleWelcome>
       </Container>
     </>
   );

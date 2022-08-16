@@ -5,13 +5,24 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 219px;
+  padding: 160px;
   text-align: center;
+  flex-direction: column;
 `;
 
 export const TitleWelcome = styled.p`
-  font-size: 60px;
-  color: #74b3ce;
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 16px;
+`;
+
+export const ContainerIconWelcome = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const IconWelcome = styled.img`
+  width: 160px;
 `;
 
 export const ContainerHeader = styled.nav`
