@@ -1,6 +1,5 @@
 import { AlignAllCenter, Container, ContainerPost } from "./styles.js";
 
-
 const PostsProfile = (props) => {
   const { list, showMoreHandler } = props;
   return (

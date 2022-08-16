@@ -1,4 +1,10 @@
-import { Container } from "./styles";
+import {
+  Container,
+  ContainerIcon,
+  ButtonAddPost,
+  LinkAddPost,
+  IconAdd,
+} from "./styles";
 import Header from "../../components/Header";
 import ProfileDiv from "../../components/ProfileDiv";
 import { useEffect, useState } from "react";
@@ -6,6 +12,7 @@ import GetUser from "../../services/GetUser";
 import PostsProfile from "../../components/PostsProfile";
 import MorePosts from "../../components/MorePosts";
 import NoPostsYet from "../../components/NoPostYet";
+import IconAddPost from "../../assets/addImage.svg";
 
 const Profile = () => {
   const token = localStorage.getItem("token");
@@ -29,7 +36,6 @@ const Profile = () => {
       setShowMore(!showMore);
     }
   }
-
 
   useEffect(() => {
     async function getProfileInfo() {
@@ -55,18 +61,22 @@ const Profile = () => {
   return (
     <>
       <Header />
-      {showMore
-        ?
+      {showMore ? (
         <MorePosts
           postId={postId}
           showMoreHandler={showMoreHandler}
           handleLikeClicked={handleLikeClicked}
         />
-
-        : null}
+      ) : null}
       <Container>
-        {!showMore
-          ?
+        <ContainerIcon>
+          <ButtonAddPost>
+            <LinkAddPost to="/createpost">
+              {!showMore ? <IconAdd src={IconAddPost} /> : null}
+            </LinkAddPost>
+          </ButtonAddPost>
+        </ContainerIcon>
+        {!showMore ? (
           <ProfileDiv
             userData={userData}
             email={userData.email}
@@ -78,17 +88,19 @@ const Profile = () => {
             followers={followers}
             following={following}
           />
-          : null}
+        ) : null}
       </Container>
-      {!showMore
-        ?
-        list.length === 0
-          ? <NoPostsYet />
-          : <PostsProfile
+      {!showMore ? (
+        list.length === 0 ? (
+          <NoPostsYet />
+        ) : (
+          <PostsProfile
             list={list}
             showMoreHandler={showMoreHandler}
-            handleLikeClicked={handleLikeClicked} />
-        : null}
+            handleLikeClicked={handleLikeClicked}
+          />
+        )
+      ) : null}
     </>
   );
 };

@@ -4,7 +4,6 @@ export const AlignAllCenter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   margin-bottom: 60px;
   margin-top: 20px;
 `;
@@ -26,4 +25,6 @@ export const ContainerPost = styled.img`
   min-height: 250px;
   margin-left: 12px;
   object-fit: cover;
+  display: flex;
+  flex-wrap: wrap;
 `;
