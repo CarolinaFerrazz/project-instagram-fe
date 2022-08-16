@@ -10,12 +10,14 @@ export const Container = styled.div`
   margin: 20px 8px;
   border: solid 1px #404040;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   border-radius: 16px;
 `;
 
 export const ContainerNameUser = styled.div`
   display: flex;
+  flex-wrap: wrap;
   padding-left: 4px;
 `;
 
@@ -45,15 +47,17 @@ export const ImagePost = styled.img`
   min-width: 500px;
   min-height: 500px;
   max-height: 500px;
-  flex-wrap: wrap;
   border-top: solid 1px #404040;
   border-bottom: solid 1px #404040;
   object-fit: cover;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const ContainerLikes = styled.div`
   padding: 0 16px;
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 16px;
   margin-bottom: 0;
   align-items: center;

@@ -16,8 +16,8 @@ export const ButtonBack = styled.button`
 
 export const AlignAllCenter = styled.div`
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   flex-direction: row;
   margin: 40px 0;
 `;
@@ -31,6 +31,7 @@ export const ContainerImagePost = styled.div`
 
 export const ContainerInfoPost = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   border: 1px solid #404040;
   width: 40%;
@@ -67,9 +68,10 @@ export const ImagePost = styled.img`
   min-height: 600px;
   max-width: 600px;
   min-width: 600px;
-  flex-wrap: wrap;
   object-fit: cover;
   border: solid 1px #404040;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const ContainerLike = styled.div`
@@ -146,6 +148,7 @@ export const ContainerNewCommentAndPublish = styled.div`
   border-top: solid 1px #404040;
   max-height: 20%;
   bottom: 0;
+  flex-wrap: wrap;
 `;
 
 export const AddNewComment = styled.textarea`
@@ -173,6 +176,8 @@ export const ContainerComents = styled.div`
   min-height: 45%;
   max-height: 45%;
   max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 
   ::-webkit-scrollbar {
     width: 10px;
