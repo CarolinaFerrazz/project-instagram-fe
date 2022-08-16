@@ -14,7 +14,7 @@ export const Input = styled.input`
   outline: none;
   width: 90%;
   color: #74b3ce;
-  font-size: 16px;
+  font-size: 20px;
   background: none;
 
   &::placeholder {
@@ -23,7 +23,7 @@ export const Input = styled.input`
 `;
 
 export const Icon = styled.img`
-  width: 20px;
+  width: 26px;
   margin-right: 8px;
   &:hover {
     -webkit-transform: scale(1.4);
