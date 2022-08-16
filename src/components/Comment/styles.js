@@ -39,7 +39,7 @@ export const TextComment = styled.p`
 
 export const TimeComment = styled.p`
   color: #b0b0b0;
-  margin-top: 4px;
+  margin-top: 0;
   display: flex;
   flex: 3;
 `;
