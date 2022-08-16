@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const AlignAllCenter = styled.div`
   display: flex;
@@ -9,7 +8,7 @@ export const AlignAllCenter = styled.div`
 
 export const Container = styled.div`
   margin: 20px 8px;
-  border: solid 1px #8FB0BE;
+  border: solid 1px #404040;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -17,7 +16,6 @@ export const Container = styled.div`
 
 export const ContainerNameUser = styled.div`
   display: flex;
-  align-items: center;
   padding-left: 4px;
 `;
 
@@ -25,8 +23,6 @@ export const ButtonUser = styled.button`
   background: none;
   border: none;
 `;
-
-export const LinkProfileUser = styled(Link)``;
 
 export const ImageUser = styled.img`
   max-width: 50px;
@@ -49,10 +45,9 @@ export const ImagePost = styled.img`
   min-width: 500px;
   min-height: 500px;
   max-height: 500px;
-  margin-top: 4px;
   flex-wrap: wrap;
-  border-top: solid 1px #8FB0BE;
-  border-bottom: solid 1px #8FB0BE;
+  border-top: solid 1px #404040;
+  border-bottom: solid 1px #404040;
   object-fit: cover;
 `;
 

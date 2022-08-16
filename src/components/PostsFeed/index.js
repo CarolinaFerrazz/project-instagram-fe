@@ -65,9 +65,12 @@ const PostsFeed = (props) => {
         <Container>
           <ContainerNameUser>
             <ButtonUser>
-
-              <ImageUser onClick={() => navigate("/viewprofile", { state: { id: user.id } })} src={user.profilePhoto} />
-
+              <ImageUser
+                onClick={() =>
+                  navigate("/viewprofile", { state: { id: user.id } })
+                }
+                src={user.profilePhoto}
+              />
             </ButtonUser>
             <NameUser>{name}</NameUser>
           </ContainerNameUser>
