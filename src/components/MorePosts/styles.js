@@ -157,6 +157,7 @@ export const AddNewComment = styled.textarea`
   background: none;
   border: none;
   resize: none;
+  outline: none;
 `;
 
 export const ButtonPublish = styled.button`
