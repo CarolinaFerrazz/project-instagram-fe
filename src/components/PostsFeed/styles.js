@@ -13,6 +13,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   border-radius: 16px;
+  background-color: #303030;
 `;
 
 export const ContainerNameUser = styled.div`
@@ -27,19 +28,18 @@ export const ButtonUser = styled.button`
 `;
 
 export const ImageUser = styled.img`
-  max-width: 50px;
-  min-width: 50px;
-  max-height: 50px;
-  min-height: 50px;
+  max-width: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  min-height: 40px;
   border-radius: 50%;
   object-fit: cover;
 `;
 
 export const NameUser = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   color: #74b3ce;
   padding-left: 8px;
-  font-weight: 700;
 `;
 
 export const ImagePost = styled.img`
@@ -64,6 +64,9 @@ export const ContainerLikes = styled.div`
 `;
 
 export const IconLike = styled.img`
+  width: 24px;
+  display: flex;
+  align-items: center;
   &:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.1);
@@ -72,7 +75,7 @@ export const IconLike = styled.img`
 
 export const NumberOfLikes = styled.p`
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   margin: 0;
   font-weight: 700;
   margin-left: 8px;
@@ -80,7 +83,7 @@ export const NumberOfLikes = styled.p`
 
 export const TextLikes = styled.p`
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   margin-left: 4px;
   font-weight: 700;
 `;
