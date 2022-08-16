@@ -55,7 +55,7 @@ export const TextChangePicture = styled.p`
 `;
 
 export const InputChangePicture = styled.input`
-  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.3));
   border: none;
   margin-bottom: 10px;
   outline: none;
