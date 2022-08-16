@@ -82,12 +82,14 @@ export const ContainerFormEditProfile = styled.div`
 export const LabelChangeName = styled.label`
   color: #d1d1d1;
   font-size: 18px;
+  margin-bottom: 4px;
 `;
 
 export const LabelChangeBio = styled.label`
   color: #d1d1d1;
   font-size: 18px;
   margin-top: 8px;
+  margin-bottom: 4px;
 `;
 
 export const InputChangeName = styled.input`

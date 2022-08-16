@@ -37,9 +37,9 @@ export const InputSettings = styled.input`
   margin-bottom: 10px;
   outline: none;
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 16px;
   padding: 8px 16px;
-  color: #8d8d8d;
+  color: #fff;
   background: #363636;
   border-radius: 16px;
 
@@ -52,7 +52,8 @@ export const InputSettings = styled.input`
 export const ContainerButtonConfirm = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+  margin-top: 20px;
 `;
 
 export const ButtonConfirm = styled.button`

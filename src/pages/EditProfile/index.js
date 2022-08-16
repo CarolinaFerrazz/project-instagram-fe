@@ -104,9 +104,6 @@ const EditProfile = () => {
               Help people find your account using the name they call you: your
               full name, your nickname or your business name.
             </TextAboutChangeName>
-            <TextAboutChangeName>
-              You can only change your name twice every 14 days.
-            </TextAboutChangeName>
             <LabelChangeBio>Bio</LabelChangeBio>
             <InputChangeBio
               name="bio"
