@@ -7,6 +7,11 @@ export const Container = styled.div`
   margin-top: 20px;
 `;
 
+export const FormSearch = styled.form`
+  position: relative;
+  width: fit-content;
+`;
+
 export const Input = styled.input`
   border: none;
   border-bottom: 1px #404040 solid;
@@ -23,8 +28,11 @@ export const Input = styled.input`
 `;
 
 export const Icon = styled.img`
-  width: 26px;
-  margin-right: 8px;
+  width: 20px;
+  position: absolute;
+  right: 28px;
+  bottom: 4px;
+
   &:hover {
     -webkit-transform: scale(1.4);
     transform: scale(1.3);
