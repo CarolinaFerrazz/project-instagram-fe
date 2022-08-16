@@ -5,6 +5,7 @@ export const ContainerAllComents = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 90%;
+  max-height: fit-content;
 `;
 
 export const ContainerTimeAndLike = styled.div`

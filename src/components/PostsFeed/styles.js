@@ -58,7 +58,7 @@ export const ContainerLikes = styled.div`
   padding: 0 16px;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
   align-items: center;
 `;
 
