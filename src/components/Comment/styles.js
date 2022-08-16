@@ -4,16 +4,19 @@ export const ContainerAllComents = styled.div`
   margin: 0px 20px;
   display: flex;
   flex-direction: column;
+  min-width: 90%;
 `;
 
 export const ContainerTimeAndLike = styled.div`
   display: flex;
   align-items: center;
+  min-width: 100%;
 `;
 
 export const ContainerUserNameAndComment = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
 `;
 
 export const ContainerComment = styled.div`
@@ -23,10 +26,10 @@ export const ContainerComment = styled.div`
   word-break: break-word;
   display: flex;
 `;
+
 export const UserNameComment = styled.p`
   color: #74b3ce;
   margin-bottom: 0;
-  min-width: fit-content;
 `;
 
 export const TextComment = styled.p`

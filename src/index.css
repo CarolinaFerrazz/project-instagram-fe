@@ -16,3 +16,11 @@ body {
 button {
   font-family: "Alata";
 }
+
+input ::placeholder {
+  font-family: "Alata";
+}
+
+textarea ::placeholder {
+  font-family: "Alata";
+}
