@@ -1,5 +1,5 @@
 import axios from "axios";
-import LINK from "./Link";
+import LINK from "./Links";
 
 export default async function LoginUser(credentials) {
     try {
