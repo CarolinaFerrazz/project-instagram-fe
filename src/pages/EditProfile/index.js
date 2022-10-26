@@ -43,8 +43,7 @@ const EditProfile = () => {
     const updatedUser = await UpdateProfile(update, auth.token);
 
     if (updatedUser?.code) {
-
-      setErrorMessage(updatedUser.message)
+      setErrorMessage(updatedUser.message);
       setSuccessMessage("");
     } else {
       const user = {
@@ -77,7 +76,6 @@ const EditProfile = () => {
       {errorMessage ? <Messages mesgError={errorMessage} /> : null}
       {successMessage ? <Messages mesgSuccess={successMessage} /> : null}
       <AllAlignCenter>
-
         <Container>
           <ContainerPictureAndName>
             <ProfilePicture src={user.avatar} />
@@ -96,20 +94,15 @@ const EditProfile = () => {
             </ContainerTextUserAndPicture>
           </ContainerPictureAndName>
           <ContainerFormEditProfile>
-            <LabelChangeName>
-              Name
-              <InputChangeName
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </LabelChangeName>
+            <LabelChangeName>Name</LabelChangeName>
+            <InputChangeName
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />  
             <TextAboutChangeName>
               Help people find your account using the name they call you: your
               full name, your nickname or your business name.
-            </TextAboutChangeName>
-            <TextAboutChangeName>
-              You can only change your name twice every 14 days.
             </TextAboutChangeName>
             <LabelChangeBio>Bio</LabelChangeBio>
             <InputChangeBio

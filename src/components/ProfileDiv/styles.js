@@ -14,9 +14,8 @@ export const Container = styled.div`
 
 export const UserName = styled.p`
   color: #74b3ce;
-  font-size: 28px;
-  margin-bottom: 24px;
-  font-weight: 700;
+  font-size: 26px;
+  margin-bottom: 16px;
 `;
 
 export const ContainerImageAndNumbers = styled.div`
@@ -48,29 +47,30 @@ export const ContainerNumberAndTitle = styled.div`
 `;
 
 export const NumberInfoNumbers = styled.p`
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
   margin: 0;
 `;
 
 export const TitleInfoNumbers = styled.p`
   color: #d1d1d1;
-  font-size: 22px;
+  font-size: 18px;
   text-transform: uppercase;
   margin-top: 4px;
 `;
 
 export const NameProfile = styled.p`
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   margin: 0;
   margin-top: 20px;
 `;
 
 export const DescriptionProfile = styled.p`
   color: #d1d1d1;
-  font-size: 22px;
+  font-size: 18px;
   margin: 0;
+  margin-top: 4px;
 `;
 
 export const ContainerButtonsProfile = styled.div`
@@ -114,6 +114,7 @@ export const LinkEditProfile = styled(Link)`
   align-items: center;
   color: #fff;
   text-decoration: none;
+  font-size: 16px;
 
   &:hover {
     font-weight: 700;

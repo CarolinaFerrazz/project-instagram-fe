@@ -8,6 +8,7 @@ export const Container = styled.nav`
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px #404040;
+  flex-wrap: wrap;
 `;
 
 export const ContainerHome = styled.div`
@@ -27,6 +28,8 @@ export const LinkHome = styled(Link)`
   text-decoration: none;
   font-size: 28px;
   text-align: center;
+  display: flex;
+  align-items: center;
 
   &:hover {
     -webkit-transform: scale(1.2);

@@ -34,7 +34,11 @@ export const ContainerInfoUser = styled.div`
 
 export const ImageProfileUser = styled.img`
   border-radius: 50%;
-  width: 80px;
+  max-width: 80px;
+  min-width: 80px;
+  max-height: 80px;
+  min-width: 80px;
+  object-fit: cover;
 `;
 
 export const UserName = styled.p`

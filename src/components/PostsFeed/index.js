@@ -20,6 +20,7 @@ import RemoveLike from "../../services/RemoveLike";
 import useAuth from "../../hooks/useAuth";
 import AddLike from "../../services/AddLike";
 import { useNavigate } from "react-router-dom";
+
 const PostsFeed = (props) => {
   const { auth } = useAuth();
   const {
@@ -65,9 +66,12 @@ const PostsFeed = (props) => {
         <Container>
           <ContainerNameUser>
             <ButtonUser>
-
-              <ImageUser onClick={() => navigate("/viewprofile", { state: { id: user.id } })} src={user.profilePhoto} />
-
+              <ImageUser
+                onClick={() =>
+                  navigate("/viewprofile", { state: { id: user.id } })
+                }
+                src={user.profilePhoto}
+              />
             </ButtonUser>
             <NameUser>{name}</NameUser>
           </ContainerNameUser>

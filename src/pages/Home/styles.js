@@ -5,12 +5,24 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 219px;
+  padding: 160px;
   text-align: center;
+  flex-direction: column;
 `;
 
 export const TitleWelcome = styled.p`
-  font-size: 60px;
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 16px;
+`;
+
+export const ContainerIconWelcome = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const IconWelcome = styled.img`
+  width: 160px;
 `;
 
 export const ContainerHeader = styled.nav`
@@ -22,12 +34,19 @@ export const ContainerHeader = styled.nav`
   border-bottom: solid 1px #404040;
 `;
 
+export const IconHome = styled.img`
+  margin-right: 8px;
+  width: 28px;
+`;
+
 export const LinkHome = styled(Link)`
   padding: 8px 20px;
   margin: 8px;
   color: #d1d1d1;
   text-decoration: none;
   font-size: 28px;
+  display: flex;
+  align-items: center;
 
   &:hover {
     -webkit-transform: scale(1.2);

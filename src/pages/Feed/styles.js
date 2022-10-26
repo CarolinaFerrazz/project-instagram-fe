@@ -7,11 +7,12 @@ export const Container = styled.div`
 
 export const ContainerIcon = styled.div`
   display: flex;
+  justify-content: right;
+  right: 80px;
   flex-wrap: wrap;
-  align-items: center;
-  margin-left: 80px;
   bottom: 8px;
   position: fixed;
+  bottom: 20px;
 `;
 
 export const ButtonAddPost = styled.button`
@@ -20,7 +21,10 @@ export const ButtonAddPost = styled.button`
 `;
 
 export const IconAdd = styled.img`
-  width: 50px;
+  width: 30px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 8px;
 
   &:hover {
     -webkit-transform: scale(1.2);

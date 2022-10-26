@@ -22,15 +22,15 @@ const Header = () => {
         <ContainerHome>
           <LinkHome title="Home Page" to="/feed">
             <IconHome alt="icon" src={Icon} />
-            Fake Instagram
+            Fakestagram
           </LinkHome>
         </ContainerHome>
         <ContainerIcons>
-          <LinksHeader title="Search" href="/search">
-            <IconSearchBar alt="icon" src={IncoSearch}></IconSearchBar>
-          </LinksHeader>
           <LinksHeader title="Feed" href="/feed">
             <FeedIcon src={IconFeed} alt="Feed icon"></FeedIcon>
+          </LinksHeader>
+          <LinksHeader title="Search" href="/search">
+            <IconSearchBar alt="icon" src={IncoSearch}></IconSearchBar>
           </LinksHeader>
           <LinksHeader title="Messages" href="/feed">
             <DirectIcon src={IconDirect} alt="Messages icon"></DirectIcon>

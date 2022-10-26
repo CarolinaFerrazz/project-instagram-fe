@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const AlignAllCenter = styled.div`
   display: flex;
@@ -9,15 +8,17 @@ export const AlignAllCenter = styled.div`
 
 export const Container = styled.div`
   margin: 20px 8px;
-  border: solid 1px #74b3ce;
+  border: solid 1px #404040;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   border-radius: 16px;
+  background-color: #303030;
 `;
 
 export const ContainerNameUser = styled.div`
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   padding-left: 4px;
 `;
 
@@ -26,22 +27,19 @@ export const ButtonUser = styled.button`
   border: none;
 `;
 
-export const LinkProfileUser = styled(Link)``;
-
 export const ImageUser = styled.img`
-  max-width: 50px;
-  min-width: 50px;
-  max-height: 50px;
-  min-height: 50px;
+  max-width: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  min-height: 40px;
   border-radius: 50%;
   object-fit: cover;
 `;
 
 export const NameUser = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   color: #74b3ce;
   padding-left: 8px;
-  font-weight: 700;
 `;
 
 export const ImagePost = styled.img`
@@ -49,22 +47,25 @@ export const ImagePost = styled.img`
   min-width: 500px;
   min-height: 500px;
   max-height: 500px;
-  margin-top: 4px;
-  flex-wrap: wrap;
-  border-top: solid 2px #74b3ce;
-  border-bottom: solid 2px #74b3ce;
+  border-top: solid 1px #404040;
+  border-bottom: solid 1px #404040;
   object-fit: cover;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const ContainerLikes = styled.div`
   padding: 0 16px;
   display: flex;
-  margin-bottom: 16px;
-  margin-bottom: 0;
+  flex-wrap: wrap;
+  margin-bottom: 0px;
   align-items: center;
 `;
 
 export const IconLike = styled.img`
+  width: 24px;
+  display: flex;
+  align-items: center;
   &:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.1);
@@ -73,7 +74,7 @@ export const IconLike = styled.img`
 
 export const NumberOfLikes = styled.p`
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   margin: 0;
   font-weight: 700;
   margin-left: 8px;
@@ -81,7 +82,7 @@ export const NumberOfLikes = styled.p`
 
 export const TextLikes = styled.p`
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   margin-left: 4px;
   font-weight: 700;
 `;

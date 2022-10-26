@@ -10,6 +10,7 @@ import {
   NumberInfoNumbers,
   TitleInfoNumbers,
   UserName,
+  IconFollow,
 } from "./styles";
 import Follow from "../../assets/follow.svg";
 import { useNavigate } from "react-router-dom";
@@ -34,29 +35,20 @@ export default function ViewProfileDiv(props) {
   const { auth } = useAuth();
 
   async function handleFollow() {
-
-
     if (isFollowing) {
       const body = {
-        toUnfollowUserId: userData.id
-      }
-      await RemoveFollowing(body, auth.token)
+        toUnfollowUserId: userData.id,
+      };
+      await RemoveFollowing(body, auth.token);
       handleFollowClicked();
     } else {
       const body = {
-        toFollowUserId: userData.id
-      }
-      await AddFollowing(body, auth.token)
+        toFollowUserId: userData.id,
+      };
+      await AddFollowing(body, auth.token);
       handleFollowClicked();
     }
-
-
-
-
   }
-
-
-
 
   console.log(userData.id);
 
@@ -70,9 +62,11 @@ export default function ViewProfileDiv(props) {
             <NumberInfoNumbers>{postList.length}</NumberInfoNumbers>
             <TitleInfoNumbers>Posts</TitleInfoNumbers>
           </ContainerNumberAndTitle>
-          <ContainerNumberAndTitle onClick={() =>
-            navigate("/viewfollowers", { state: { id: userData.id } })
-          }>
+          <ContainerNumberAndTitle
+            onClick={() =>
+              navigate("/viewfollowers", { state: { id: userData.id } })
+            }
+          >
             <NumberInfoNumbers>{followers.length}</NumberInfoNumbers>
             <TitleInfoNumbers>Followers</TitleInfoNumbers>
           </ContainerNumberAndTitle>
@@ -91,16 +85,11 @@ export default function ViewProfileDiv(props) {
         {description ? description : "Say whats on your mind"}
       </DescriptionProfile>
       <ContainerButtonsProfile>
-        {/* SE CARREGAR NO BOTAO O TEXTO PASSA PARA O ICON que esta comentado na linha de baixo e o seu IMPORT la em cima */}
-        {userData.id === auth.id
-          ? null
-          :
+        {userData.id === auth.id ? null : (
           <ButtonFollow onClick={handleFollow}>
-            {isFollowing ? <img alt="icon" src={Follow} /> : "Follow"}
+            {isFollowing ? <IconFollow alt="icon" src={Follow} /> : "Follow"}
           </ButtonFollow>
-
-        }
-
+        )}
       </ContainerButtonsProfile>
     </>
   );

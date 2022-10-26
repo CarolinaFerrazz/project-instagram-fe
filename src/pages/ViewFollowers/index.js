@@ -19,17 +19,17 @@ const ViewFollowers = () => {
   const navigate = useNavigate();
 
   function handle(id) {
-    navigate("/viewprofile", { state: { id: id } })
+    navigate("/viewprofile", { state: { id: id } });
   }
 
   useEffect(() => {
     async function get() {
       const users = await GetFollowers(location.state.id, auth.token);
-      setUsersList(users)
+      setUsersList(users);
     }
     get();
     // eslint-disable-next-line
-  }, [])
+  }, []);
   return (
     <>
       <Header />
@@ -37,7 +37,7 @@ const ViewFollowers = () => {
         <Container>
           <TitleFollowers>Followers</TitleFollowers>
           <TextNumberFollowers>{usersList.length}</TextNumberFollowers>
-          {usersList.map(user =>
+          {usersList.map((user) => (
             <LessInfoUser
               profilePhoto={user.profilePhoto}
               name={user.name}
@@ -45,7 +45,8 @@ const ViewFollowers = () => {
               id={user.id}
               handle={handle}
               key={user.id}
-            />)}
+            />
+          ))}
         </Container>
       </AllAlignCenter>
     </>

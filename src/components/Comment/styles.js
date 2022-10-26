@@ -4,16 +4,20 @@ export const ContainerAllComents = styled.div`
   margin: 0px 20px;
   display: flex;
   flex-direction: column;
+  min-width: 90%;
+  max-height: fit-content;
 `;
 
 export const ContainerTimeAndLike = styled.div`
   display: flex;
   align-items: center;
+  min-width: 100%;
 `;
 
 export const ContainerUserNameAndComment = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
 `;
 
 export const ContainerComment = styled.div`
@@ -21,12 +25,12 @@ export const ContainerComment = styled.div`
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
+  display: flex;
 `;
 
 export const UserNameComment = styled.p`
   color: #74b3ce;
   margin-bottom: 0;
-  min-width: fit-content;
 `;
 
 export const TextComment = styled.p`
@@ -36,9 +40,10 @@ export const TextComment = styled.p`
 
 export const TimeComment = styled.p`
   color: #b0b0b0;
-  margin-top: 4px;
+  margin-top: 0;
   display: flex;
   flex: 3;
+  font-size: 10px;
 `;
 
 export const LikeComment = styled.img`

@@ -67,7 +67,7 @@ const Login = () => {
           <TitleLogin>Fake Instagram</TitleLogin>
           <ContainerFormLogin>
             <InputLogin
-              placeholder="email address"
+              placeholder="Email address"
               name="email"
               type="text"
               value={email}

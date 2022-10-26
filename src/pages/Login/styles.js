@@ -35,14 +35,13 @@ export const InputLogin = styled.input`
   box-sizing: border-box;
   font-size: 18px;
   padding: 8px 16px;
-  color: #202020;
-  background: #74b3ce;
+  color: #fff;
+  background: #363636;
   border-radius: 16px;
-  opacity: 60%;
 
   &::placeholder {
     opacity: 100%;
-    color: #404040;
+    color: #8d8d8d;
     justify-content: center;
   }
 `;
@@ -64,6 +63,7 @@ export const ButtonLogin = styled.button`
   &:hover {
     -webkit-transform: scale(1.4);
     transform: scale(1.1);
+    font-weight: 700;
   }
 `;
 

@@ -16,7 +16,15 @@ import useAuth from "../../hooks/useAuth";
 import AddCommentLike from "../../services/AddCommentLike";
 import RemoveCommentLike from "../../services/RemoveCommentLike";
 const Comment = (props) => {
-  const { creationDate, description, id, user, likes, isLiked, commentLikeClicked } = props;
+  const {
+    creationDate,
+    description,
+    id,
+    user,
+    likes,
+    isLiked,
+    commentLikeClicked,
+  } = props;
   const { auth } = useAuth();
   const [liked, setLiked] = useState(isLiked);
   const [numLikes, setNumLikes] = useState(likes);
@@ -25,37 +33,34 @@ const Comment = (props) => {
       commentId: id,
     };
 
-
     if (!liked) {
-      AddCommentLike(body, auth.token)
-      setLiked(!liked)
-      setNumLikes(numLikes + 1)
-      commentLikeClicked()
+      AddCommentLike(body, auth.token);
+      setLiked(!liked);
+      setNumLikes(numLikes + 1);
+      commentLikeClicked();
     } else {
-      RemoveCommentLike(body, auth.token)
-      setLiked(!liked)
-      setNumLikes(numLikes - 1)
-      commentLikeClicked()
+      RemoveCommentLike(body, auth.token);
+      setLiked(!liked);
+      setNumLikes(numLikes - 1);
+      commentLikeClicked();
     }
-
-
-
   }
-
 
   return (
     <ContainerAllComents>
       <ContainerUserNameAndComment>
         <UserNameComment>{user}</UserNameComment>
         <ContainerComment>
-          {" "}
           <TextComment>{description}</TextComment>
         </ContainerComment>
       </ContainerUserNameAndComment>
       <ContainerTimeAndLike>
         <TimeComment>{creationDate}</TimeComment>
         <NumberLikesComment>{numLikes}</NumberLikesComment>
-        <LikeComment onClick={handleCommentLike} src={liked ? IconLikeEnabled : IconLikeDisabled} />
+        <LikeComment
+          onClick={handleCommentLike}
+          src={liked ? IconLikeEnabled : IconLikeDisabled}
+        />
       </ContainerTimeAndLike>
     </ContainerAllComents>
   );
